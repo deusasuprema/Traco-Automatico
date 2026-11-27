@@ -38,6 +38,13 @@ android {
     }
 }
 
+tasks.register("prepareReleaseApk", org.gradle.api.tasks.Copy::class) {
+    dependsOn("assembleRelease")
+    from(layout.buildDirectory.file("outputs/apk/release/app-release.apk"))
+    into(layout.buildDirectory.dir("outputs/weelife"))
+    rename { "WeeLife Line Art.apk" }
+}
+
 dependencies {
     implementation("androidx.activity:activity-ktx:1.10.1")
     implementation("androidx.core:core-ktx:1.15.0")
