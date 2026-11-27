@@ -16,10 +16,10 @@ com.tracolivre.automator.app-core-ktx-1.15.0-14 C:\Users\Administrator\.gradle\c
 com.tracolivre.automator.app-savedstate-1.2.1-15 C:\Users\Administrator\.gradle\caches\8.11.1\transforms\de7cddcac156a9744b7d5523f2a80f82\transformed\savedstate-1.2.1\res
 com.tracolivre.automator.app-profileinstaller-1.4.0-16 C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\res
 com.tracolivre.automator.app-lifecycle-runtime-2.6.2-17 C:\Users\Administrator\.gradle\caches\8.11.1\transforms\f8a2ad4dad1ef3500dcff10d268e3aef\transformed\lifecycle-runtime-2.6.2\res
-com.tracolivre.automator.app-pngs-18 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build\generated\res\pngs\release
-com.tracolivre.automator.app-resValues-19 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build\generated\res\resValues\release
-com.tracolivre.automator.app-packageReleaseResources-20 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
-com.tracolivre.automator.app-packageReleaseResources-21 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
-com.tracolivre.automator.app-release-22 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build\intermediates\merged_res\release\mergeReleaseResources
-com.tracolivre.automator.app-main-23 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res
-com.tracolivre.automator.app-release-24 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\release\res
+com.tracolivre.automator.app-pngs-18 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build\generated\res\pngs\release
+com.tracolivre.automator.app-resValues-19 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build\generated\res\resValues\release
+com.tracolivre.automator.app-packageReleaseResources-20 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.tracolivre.automator.app-packageReleaseResources-21 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.tracolivre.automator.app-release-22 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.tracolivre.automator.app-main-23 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res
+com.tracolivre.automator.app-release-24 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\release\res

@@ -1,6 +1,6 @@
 <lint-module
     format="1"
-    dir="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app"
+    dir="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app"
     name=":app"
     type="APP"
     maven="TracoAutomatico:app:unspecified"
