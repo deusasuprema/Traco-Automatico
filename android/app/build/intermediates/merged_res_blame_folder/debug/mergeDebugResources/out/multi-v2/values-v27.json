@@ -4,7 +4,7 @@
             "outputFile": "com.tracolivre.automator.app-mergeDebugResources-20:/values-v27/values-v27.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\Documents\\GitHub\\Criador de Desenhos\\android\\app\\src\\main\\res\\values-v27\\styles.xml",
+                    "source": "C:\\Users\\Administrator\\Documents\\GitHub\\Traco Automatico\\android\\app\\src\\main\\res\\values-v27\\styles.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

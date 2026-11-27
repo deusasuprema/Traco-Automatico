@@ -37,13 +37,20 @@ class DrawingAccessibilityService : AccessibilityService() {
         const val KEY_TARGET_PACKAGE = "target_package"
         const val KEY_IMAGE_ASPECT = "image_aspect"
         const val KEY_BRUSH_SIZE = "brush_size"
-        const val KEY_DRAWING_APP_PROFILE = "drawing_app_profile"
         const val KEY_AWAITING_TARGET = "awaiting_target"
         const val KEY_PLAN_READY = "plan_ready"
         const val KEY_IS_DRAWING = "is_drawing"
         const val KEY_STATUS = "status"
 
         private const val DRAWING_APP_PACKAGE = "com.newlang.weelife.sa"
+        internal val BRUSH_SIZE_LABELS = listOf(
+            "Muito fino",
+            "Fino",
+            "Médio-fino",
+            "Médio",
+            "Médio-grosso",
+            "Grosso"
+        )
         private const val DRAWING_SPEED_PIXELS_PER_SECOND = 1000f
         private const val MAX_STROKE_DURATION_MS = 2200L
         private const val TAG = "DrawingAccessibility"
@@ -70,7 +77,6 @@ class DrawingAccessibilityService : AccessibilityService() {
     private var isDrawing = false
     private var isPaused = false
     private var targetIsForeground = false
-    private var selectedBrushSize = 2
 
     override fun onCreate() {
         super.onCreate()
@@ -103,12 +109,12 @@ class DrawingAccessibilityService : AccessibilityService() {
         val packageName = event.packageName?.toString() ?: return
         val preferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
         if (packageName == this.packageName) {
-            if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+            if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED && MainActivity.isInForeground) {
                 targetIsForeground = false
                 removeQuickAccessPanel()
                 removeQuickAccessBubble()
                 if (isDrawing) {
-                    pauseDrawing("Desenho pausado para abrir o Traço Automático.", false)
+                    pauseDrawing("Desenho pausado para abrir o WeeLife Line Art.", false)
                 }
             }
             return
@@ -194,9 +200,9 @@ class DrawingAccessibilityService : AccessibilityService() {
             )
         }
         showActionPanel(
-            "Traço Automático",
+            "WeeLife Line Art",
             if (isTargetApp) {
-                "No WeLife, reconheça a lousa para encaixar o desenho."
+                "No WeeLife, escolha manualmente o lápis e a espessura desejada; depois reconheça a lousa."
             } else {
                 "Selecione o lápis e marque a área do desenho."
             },
@@ -257,13 +263,13 @@ class DrawingAccessibilityService : AccessibilityService() {
     private fun showQuickAccessBubble() {
         if (quickAccessBubble != null || !isConnected || !targetIsForeground) return
         val bubble = Button(this).apply {
-            text = "TA"
+            text = "WL"
             textSize = 12f
             isAllCaps = false
             minWidth = dp(48)
             minHeight = dp(48)
             setPadding(dp(4), 0, dp(4), 0)
-            contentDescription = "Abrir controles do Traço Automático"
+            contentDescription = "Abrir controles do WeeLife Line Art"
             setOnClickListener {
                 if (quickAccessPanel == null) showQuickAccessPanel() else removeQuickAccessPanel()
             }
@@ -299,7 +305,7 @@ class DrawingAccessibilityService : AccessibilityService() {
             setBackgroundColor(Color.rgb(36, 36, 58))
         }
         panel.addView(TextView(this).apply {
-            text = "Traço Automático"
+            text = "WeeLife Line Art"
             textSize = 14f
             setTextColor(Color.WHITE)
         })
@@ -389,7 +395,7 @@ class DrawingAccessibilityService : AccessibilityService() {
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             )
         } catch (error: RuntimeException) {
-            publishStatus("Não consegui abrir o Traço Automático: ${error.message}")
+            publishStatus("Não consegui abrir o WeeLife Line Art: ${error.message}")
         }
     }
 
@@ -494,13 +500,22 @@ class DrawingAccessibilityService : AccessibilityService() {
             return
         }
 
+        val manualToolInstructions = if (targetPackage == DRAWING_APP_PACKAGE) {
+            val brushSize = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+                .getInt(KEY_BRUSH_SIZE, 2)
+                .coerceIn(0, BRUSH_SIZE_LABELS.lastIndex)
+            "No WeeLife, selecione manualmente o lápis e a espessura \"${BRUSH_SIZE_LABELS[brushSize]}\". " +
+                "O app não mudará essas ferramentas."
+        } else {
+            ""
+        }
         publishStatus(
             if (automatic) "Lousa reconhecida. Confira o retângulo destacado antes de desenhar."
             else "Área marcada. Confira o retângulo antes de desenhar."
         )
         showActionPanel(
             if (automatic) "Lousa reconhecida" else "Área marcada",
-            "Confira o retângulo destacado. O desenho ficará dentro desta área.",
+            "Confira o retângulo destacado. $manualToolInstructions O desenho ficará dentro desta área.",
             listOf(
                 "Usar esta área" to {
                     removePrompt()
@@ -640,69 +655,13 @@ class DrawingAccessibilityService : AccessibilityService() {
             publishStatus("Não foi possível carregar os traços: ${error.message}")
             return
         }
-        selectedBrushSize = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-            .getInt(KEY_BRUSH_SIZE, 2).coerceIn(0, 5)
         nextStroke = 0
         isDrawing = true
         isPaused = false
         targetIsForeground = true
         publishStatus("Desenhando 0 de ${strokes.size} traços...")
-        selectProfileToolsAndStart()
-    }
-
-    private fun selectProfileToolsAndStart() {
-        val usesDrawingAppProfile = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-            .getBoolean(KEY_DRAWING_APP_PROFILE, false) && targetPackage == DRAWING_APP_PACKAGE
-        if (!usesDrawingAppProfile) {
-            showProgressOverlay()
-            dispatchNextBatch()
-            return
-        }
-
-        val metrics = resources.displayMetrics
-        if (metrics.widthPixels <= metrics.heightPixels) {
-            stopDrawing("Gire o aparelho para a horizontal e tente novamente.")
-            return
-        }
-        val sizePositions = floatArrayOf(0.334f, 0.385f, 0.436f, 0.488f, 0.539f, 0.590f)
-        val sizePosition = sizePositions[selectedBrushSize]
-        publishStatus("Selecionando o lápis e a espessura no WeLife...")
-        tapScreenPoint(0.924f, 0.550f) {
-            mainHandler.postDelayed({
-                if (!isDrawing) return@postDelayed
-                tapScreenPoint(sizePosition, 0.901f) {
-                    mainHandler.postDelayed({
-                        if (isDrawing) {
-                            showProgressOverlay()
-                            if (isDrawing) dispatchNextBatch()
-                        }
-                    }, 300L)
-                }
-            }, 300L)
-        }
-    }
-
-    private fun tapScreenPoint(xRatio: Float, yRatio: Float, onCompleted: () -> Unit) {
-        val metrics = resources.displayMetrics
-        val x = metrics.widthPixels * xRatio
-        val y = metrics.heightPixels * yRatio
-        val path = Path().apply {
-            moveTo(x, y)
-            lineTo(x + 1f, y + 1f)
-        }
-        val gesture = GestureDescription.Builder()
-            .addStroke(GestureDescription.StrokeDescription(path, 0L, 80L))
-            .build()
-        val accepted = dispatchGesture(gesture, object : GestureResultCallback() {
-            override fun onCompleted(gestureDescription: GestureDescription) {
-                if (isDrawing) onCompleted()
-            }
-
-            override fun onCancelled(gestureDescription: GestureDescription) {
-                if (isDrawing) stopDrawing("Não foi possível selecionar o lápis ou o tamanho escolhido.")
-            }
-        }, mainHandler)
-        if (!accepted) stopDrawing("O Android não aceitou a seleção do lápis e tamanho.")
+        showProgressOverlay()
+        dispatchNextBatch()
     }
 
     private fun dispatchNextBatch() {

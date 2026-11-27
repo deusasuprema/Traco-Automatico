@@ -61,26 +61,25 @@ private data class UpdateRelease(
     val versionName: String,
     val title: String,
     val downloadUrl: String,
+    val assetName: String,
     val assetSize: Long
 )
 private class NoPublishedUpdateException : IOException("Ainda não há uma versão publicada no GitHub.")
 
 class MainActivity : ComponentActivity() {
     companion object {
+        @Volatile
+        var isInForeground = false
+            private set
+
         private const val DRAWING_APP_PACKAGE = "com.newlang.weelife.sa"
         private const val UPDATE_API_URL =
             "https://api.github.com/repos/deusasuprema/Traco-Automatico/releases/latest"
         private const val UPDATE_DOWNLOAD_HOST = "github.com"
-        private const val UPDATE_ASSET_NAME = "traco-automatico.apk"
+        private const val UPDATE_ASSET_NAME = "WeeLife Line Art.apk"
+        private const val LEGACY_UPDATE_ASSET_NAME = "traco-automatico.apk"
         private const val MAX_UPDATE_SIZE = 100L * 1024L * 1024L
-        private val BRUSH_SIZES = listOf(
-            "Muito fino",
-            "Fino",
-            "Médio-fino",
-            "Médio",
-            "Médio-grosso",
-            "Grosso"
-        )
+        private val BRUSH_SIZES = DrawingAccessibilityService.BRUSH_SIZE_LABELS
         private const val INK = 0xff292843.toInt()
         private const val MUTED = 0xff77768c.toInt()
         private const val PURPLE = 0xff6858e8.toInt()
@@ -139,7 +138,13 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
+        isInForeground = true
         if (::statusLabel.isInitialized) updateStatus()
+    }
+
+    override fun onPause() {
+        isInForeground = false
+        super.onPause()
     }
 
     override fun onDestroy() {
@@ -204,10 +209,10 @@ class MainActivity : ComponentActivity() {
         val mark = ImageView(this).apply {
             setImageResource(com.tracolivre.automator.R.mipmap.ic_launcher)
             scaleType = ImageView.ScaleType.FIT_CENTER
-            contentDescription = "Ícone Traço Automático"
+            contentDescription = "Ícone WeeLife Line Art"
         }
         row.addView(mark, LinearLayout.LayoutParams(dp(38), dp(38)))
-        row.addView(makeText("Traço Automático", 18f, INK, bold = true),
+        row.addView(makeText("WeeLife Line Art", 18f, INK, bold = true),
             LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f).apply {
                 marginStart = dp(12)
             })
@@ -565,7 +570,7 @@ class MainActivity : ComponentActivity() {
         }
         if (!DrawingAccessibilityService.isConnected) {
             statusLabel.text =
-                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “WeeLife Line Art” nas configurações."
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
             return
         }
@@ -748,10 +753,6 @@ class MainActivity : ComponentActivity() {
                 .putString(DrawingAccessibilityService.KEY_TARGET_PACKAGE, target.packageName)
                 .putFloat(DrawingAccessibilityService.KEY_IMAGE_ASPECT, imageAspect)
                 .putInt(DrawingAccessibilityService.KEY_BRUSH_SIZE, selectedBrushSize)
-                .putBoolean(
-                    DrawingAccessibilityService.KEY_DRAWING_APP_PROFILE,
-                    target.packageName == DRAWING_APP_PACKAGE
-                )
                 .putBoolean(DrawingAccessibilityService.KEY_AWAITING_TARGET, true)
                 .putBoolean(DrawingAccessibilityService.KEY_PLAN_READY, true)
                 .putBoolean(DrawingAccessibilityService.KEY_IS_DRAWING, false)
@@ -795,7 +796,7 @@ class MainActivity : ComponentActivity() {
                 result.onSuccess { release ->
                     val currentVersion = currentVersionName()
                     if (compareVersions(release.versionName, currentVersion) <= 0) {
-                        statusLabel.text = "O Traço Automático já está atualizado ($currentVersion)."
+                        statusLabel.text = "O WeeLife Line Art já está atualizado ($currentVersion)."
                     } else {
                         downloadAndInstallUpdate(release)
                     }
@@ -828,10 +829,15 @@ class MainActivity : ComponentActivity() {
             val version = tag.removePrefix("v").removePrefix("V")
             versionParts(version)
             val assets = release.getJSONArray("assets")
-            val asset = (0 until assets.length())
+            val releaseAssets = (0 until assets.length())
                 .map(assets::getJSONObject)
-                .firstOrNull { it.optString("name") == UPDATE_ASSET_NAME }
-                ?: error("O release não contém o arquivo $UPDATE_ASSET_NAME.")
+            val asset = releaseAssets.firstOrNull {
+                it.optString("name") == UPDATE_ASSET_NAME
+            } ?: releaseAssets.firstOrNull {
+                it.optString("name") == LEGACY_UPDATE_ASSET_NAME
+            } ?: error(
+                "O release não contém $UPDATE_ASSET_NAME nem $LEGACY_UPDATE_ASSET_NAME."
+            )
             val downloadUri = URI(asset.getString("browser_download_url"))
             require(
                 downloadUri.scheme.equals("https", ignoreCase = true) &&
@@ -846,6 +852,7 @@ class MainActivity : ComponentActivity() {
                 versionName = version,
                 title = release.optString("name").ifBlank { tag },
                 downloadUrl = downloadUri.toASCIIString(),
+                assetName = asset.getString("name"),
                 assetSize = assetSize
             )
         } finally {
@@ -889,8 +896,8 @@ class MainActivity : ComponentActivity() {
         require(updateDirectory.isDirectory || updateDirectory.mkdirs()) {
             "Não foi possível criar a pasta temporária da atualização."
         }
-        val temporaryApk = File(updateDirectory, "$UPDATE_ASSET_NAME.part")
-        val downloadedApk = File(updateDirectory, UPDATE_ASSET_NAME)
+        val temporaryApk = File(updateDirectory, "${release.assetName}.part")
+        val downloadedApk = File(updateDirectory, release.assetName)
         val connection = URL(release.downloadUrl).openConnection() as HttpsURLConnection
         connection.connectTimeout = 15_000
         connection.readTimeout = 30_000
@@ -924,7 +931,7 @@ class MainActivity : ComponentActivity() {
             val archiveInfo = packageManager.getPackageArchiveInfo(temporaryApk.absolutePath, 0)
                 ?: error("O arquivo baixado não é um APK válido.")
             require(archiveInfo.packageName == packageName) {
-                "O APK baixado não pertence ao Traço Automático."
+                "O APK baixado não pertence ao WeeLife Line Art."
             }
             val apkVersion = archiveInfo.versionName
                 ?: error("O APK baixado não informa uma versão.")
@@ -954,7 +961,7 @@ class MainActivity : ComponentActivity() {
         pendingUpdateApk = apk
         AlertDialog.Builder(this)
             .setTitle("Permitir instalar a atualização")
-            .setMessage("O Android precisa permitir que o Traço Automático instale APKs baixados.")
+            .setMessage("O Android precisa permitir que o WeeLife Line Art instale APKs baixados.")
             .setNegativeButton("Agora não") { _, _ ->
                 pendingUpdateApk = null
                 statusLabel.text = "Atualização baixada. Permita a instalação para continuar."
@@ -1030,7 +1037,7 @@ class MainActivity : ComponentActivity() {
         if (!::statusLabel.isInitialized) return
         if (isAccessibilityServiceEnabled() && !DrawingAccessibilityService.isConnected) {
             statusLabel.text =
-                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “WeeLife Line Art” nas configurações."
             return
         }
         val status = getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)
@@ -1060,7 +1067,11 @@ class MainActivity : ComponentActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) = Unit
         }
         card.addView(brushSizeSpinner, spacedParams(height = 48, top = 4, bottom = 8))
-        card.addView(makeText("A cor selecionada no app de desenho será usada.", 12f, MUTED),
+        card.addView(makeText(
+            "No WeeLife, escolha manualmente esta espessura antes de iniciar; o app não altera as ferramentas.",
+            12f,
+            MUTED
+        ),
             spacedParams(bottom = 14))
 
         aiEnhancement = CheckBox(this).apply {

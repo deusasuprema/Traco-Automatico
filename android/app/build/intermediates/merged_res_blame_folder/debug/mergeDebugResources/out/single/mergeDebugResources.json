@@ -1,22 +1,22 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable/ic_launcher_background.xml"
     },
     {
         "merged": "com.tracolivre.automator.app-debug-22:/xml_update_file_paths.xml.flat",
         "source": "com.tracolivre.automator.app-main-24:/xml/update_file_paths.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\xml_drawing_accessibility_service.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\xml\\drawing_accessibility_service.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/xml_drawing_accessibility_service.xml.flat",
+        "source": "com.tracolivre.automator.app-main-24:/xml/drawing_accessibility_service.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-anydpi-v26/ic_launcher.xml"
     }
 ]
