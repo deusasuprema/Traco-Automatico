@@ -1,12 +1,14 @@
 package com.tracolivre.automator
 
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.ComponentName
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.Typeface
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -15,6 +17,15 @@ import android.text.InputType
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -111,6 +122,7 @@ class MainActivity : ComponentActivity() {
     private var updateThread: Thread? = null
     private var pendingUpdateApk: File? = null
     private lateinit var installPermissionLauncher: ActivityResultLauncher<Intent>
+    private var imageSearchDialog: Dialog? = null
     private var selectedBrushSize = 2
     private var detail = 55
 
@@ -150,6 +162,7 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         imageDownloadThread?.interrupt()
         updateThread?.interrupt()
+        imageSearchDialog?.dismiss()
         selectedBitmap?.recycle()
         super.onDestroy()
     }
@@ -322,9 +335,9 @@ class MainActivity : ComponentActivity() {
         }
         card.addView(chooseImageButton, spacedParams(top = 8))
         internetImageButton = Button(this).apply {
-            text = "Importar imagem da internet"
+            text = "Pesquisar imagens no Google"
             isAllCaps = false
-            setOnClickListener { showInternetImageDialog() }
+            setOnClickListener { showGoogleImageSearchDialog() }
         }
         card.addView(internetImageButton, spacedParams(top = 4))
         removeImageButton = quietButton("Remover imagem") {
@@ -360,19 +373,217 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun showInternetImageDialog() {
-        val urlInput = EditText(this).apply {
-            hint = "https://exemplo.com/imagem.jpg"
-            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI
-            isSingleLine = true
+    private fun showGoogleImageSearchDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+
+        val browserStatus = TextView(this).apply {
+            text = "Pesquise um termo, por exemplo: Art line Animes."
+            textSize = 13f
+            setTextColor(MUTED)
+            setPadding(dp(16), dp(6), dp(16), dp(6))
         }
+        val queryInput = EditText(this).apply {
+            hint = "Art line Animes"
+            inputType = InputType.TYPE_CLASS_TEXT
+            imeOptions = EditorInfo.IME_ACTION_SEARCH
+            isSingleLine = true
+            contentDescription = "Termo para pesquisar imagens no Google"
+        }
+        val webView = WebView(this).apply {
+            setBackgroundColor(Color.WHITE)
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
+            settings.allowFileAccess = false
+            settings.allowContentAccess = false
+            settings.javaScriptCanOpenWindowsAutomatically = false
+            settings.setSupportMultipleWindows(false)
+            settings.mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
+            webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(
+                    view: WebView,
+                    request: WebResourceRequest
+                ): Boolean {
+                    if (!request.isForMainFrame) return false
+                    val uri = request.url
+                    return !uri.scheme.equals("https", ignoreCase = true) ||
+                        !isGoogleSearchHost(uri.host)
+                }
+
+                override fun onPageFinished(view: WebView, url: String?) {
+                    browserStatus.text =
+                        "Toque numa imagem para ampliar; depois mantenha-a pressionada para selecioná-la."
+                }
+
+                override fun onReceivedError(
+                    view: WebView,
+                    request: WebResourceRequest,
+                    error: WebResourceError
+                ) {
+                    if (request.isForMainFrame) {
+                        browserStatus.text =
+                            "Não foi possível carregar a busca. Verifique sua conexão com a internet."
+                    }
+                }
+            }
+            setOnLongClickListener {
+                val hit = hitTestResult
+                val imageUrl = imageUrlFromSearchResult(hit.type, hit.extra)
+                if (imageUrl == null) {
+                    false
+                } else {
+                    confirmGoogleImage(imageUrl, dialog)
+                    true
+                }
+            }
+        }
+
+        val searchButton = Button(this).apply {
+            text = "Pesquisar"
+            isAllCaps = false
+            contentDescription = "Pesquisar no Google Imagens"
+        }
+        val performSearch = {
+            val query = queryInput.text.toString().trim()
+            if (query.isBlank()) {
+                browserStatus.text = "Digite o que deseja pesquisar."
+            } else {
+                browserStatus.text = "Carregando imagens..."
+                val searchUri = Uri.parse("https://www.google.com/search")
+                    .buildUpon()
+                    .appendQueryParameter("tbm", "isch")
+                    .appendQueryParameter("q", query)
+                    .appendQueryParameter("igu", "1")
+                    .build()
+                webView.loadUrl(searchUri.toString())
+                queryInput.clearFocus()
+                (getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager)
+                    ?.hideSoftInputFromWindow(queryInput.windowToken, 0)
+            }
+        }
+        searchButton.setOnClickListener { performSearch() }
+        queryInput.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
+                performSearch()
+                true
+            } else {
+                false
+            }
+        }
+
+        val closeButton = Button(this).apply {
+            text = "Fechar"
+            isAllCaps = false
+            setOnClickListener { dialog.dismiss() }
+        }
+        val searchRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+            addView(queryInput, LinearLayout.LayoutParams(0, dp(52), 1f))
+            addView(searchButton, LinearLayout.LayoutParams(dp(112), dp(52)))
+        }
+        val header = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+            setPadding(dp(16), dp(4), dp(8), dp(4))
+            addView(
+                makeText("Pesquisar imagens", 18f, INK, bold = true),
+                LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f)
+            )
+            addView(closeButton, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                dp(48)
+            ))
+        }
+        val instructions = TextView(this).apply {
+            text = "Mantenha uma imagem pressionada para usá-la. Verifique se você tem direito de usar a imagem."
+            textSize = 12f
+            setTextColor(MUTED)
+            setPadding(dp(16), dp(4), dp(16), dp(8))
+        }
+        val content = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setBackgroundColor(Color.WHITE)
+            addView(header, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                dp(56)
+            ))
+            addView(searchRow, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                dp(56)
+            ).apply {
+                marginStart = dp(12)
+                marginEnd = dp(12)
+            })
+            addView(browserStatus, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ))
+            addView(instructions, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ))
+            addView(webView, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                0,
+                1f
+            ))
+        }
+
+        dialog.setContentView(content)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setOnDismissListener {
+            webView.stopLoading()
+            webView.destroy()
+            if (imageSearchDialog === dialog) imageSearchDialog = null
+        }
+        imageSearchDialog = dialog
+        dialog.show()
+        dialog.window?.apply {
+            setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+        }
+    }
+
+    private fun isGoogleSearchHost(host: String?): Boolean {
+        val normalizedHost = host?.lowercase() ?: return false
+        return normalizedHost == "google.com" ||
+            normalizedHost.endsWith(".google.com") ||
+            normalizedHost == "google.com.br" ||
+            normalizedHost.endsWith(".google.com.br")
+    }
+
+    private fun imageUrlFromSearchResult(hitType: Int, rawUrl: String?): String? {
+        val candidate = rawUrl?.trim()?.takeIf { it.isNotEmpty() } ?: return null
+        val uri = Uri.parse(candidate)
+        val imageUrl = when (hitType) {
+            WebView.HitTestResult.IMAGE_TYPE -> candidate
+            WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE ->
+                uri.getQueryParameter("imgurl")
+                    ?: uri.getQueryParameter("mediaurl")
+                    ?: candidate
+            else -> return null
+        }
+        val imageUri = Uri.parse(imageUrl)
+        return imageUrl.takeIf {
+            imageUri.scheme.equals("https", ignoreCase = true) &&
+                !imageUri.host.isNullOrBlank() &&
+                imageUri.userInfo == null
+        }
+    }
+
+    private fun confirmGoogleImage(imageUrl: String, dialog: Dialog) {
         AlertDialog.Builder(this)
-            .setTitle("Importar imagem da internet")
-            .setMessage("Cole o link direto de uma imagem HTTPS. Links de páginas de sites não funcionam.")
-            .setView(urlInput)
-            .setNegativeButton("Cancelar", null)
-            .setPositiveButton("Importar") { _, _ ->
-                importImageFromInternet(urlInput.text.toString())
+            .setTitle("Usar esta imagem?")
+            .setMessage("A imagem será baixada e processada no aparelho. Confira a licença e os direitos de uso na origem.")
+            .setNegativeButton("Continuar pesquisando", null)
+            .setPositiveButton("Usar imagem") { _, _ ->
+                dialog.dismiss()
+                importImageFromInternet(imageUrl)
             }
             .show()
     }
@@ -381,12 +592,12 @@ class MainActivity : ComponentActivity() {
         val url = try {
             URI(rawUrl.trim()).also {
                 require(it.scheme.equals("https", ignoreCase = true) && !it.host.isNullOrBlank()) {
-                    "Use um link direto começando com https://."
+                    "A imagem selecionada não tem um endereço HTTPS válido."
                 }
                 require(it.userInfo == null) { "O link não pode conter usuário ou senha." }
             }.toASCIIString()
         } catch (error: Exception) {
-            statusLabel.text = error.message ?: "Link de imagem inválido."
+            statusLabel.text = error.message ?: "Endereço da imagem inválido."
             Toast.makeText(this, statusLabel.text, Toast.LENGTH_LONG).show()
             return
         }
@@ -449,7 +660,7 @@ class MainActivity : ComponentActivity() {
                         ?.trim()
                         ?.lowercase()
                     require(contentType?.startsWith("image/") == true) {
-                        "Esse link não parece ser uma imagem. Use o link direto do arquivo."
+                        "O resultado não forneceu um arquivo de imagem. Abra a prévia e selecione a imagem."
                     }
                     val maxBytes = 15 * 1024 * 1024
                     require(connection.contentLengthLong <= 0L || connection.contentLengthLong <= maxBytes) {
@@ -1083,7 +1294,7 @@ class MainActivity : ComponentActivity() {
         }
         card.addView(aiEnhancement)
         card.addView(makeText(
-            "Processamento no aparelho, sem internet ou Google Play services. A IA reconhece categorias comuns; se não encontrar o assunto, o app usa o modo local.",
+            "O processamento é feito no aparelho. A busca de imagens precisa de internet; o app não requer Google Play services.",
             11f,
             MUTED
         ), spacedParams(top = 2, bottom = 14))
