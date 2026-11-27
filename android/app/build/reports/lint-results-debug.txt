@@ -39,7 +39,7 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gr
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:213: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of recognizeCanvas [UseRequiresApi]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:410: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of recognizeCanvas [UseRequiresApi]
     @TargetApi(Build.VERSION_CODES.R)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -69,7 +69,7 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gr
 
    https://developer.android.com/ndk/guides/abis
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:13: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:12: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
         android:allowBackup="false"
                              ~~~~~
 
@@ -89,13 +89,13 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
    https://developer.android.com/about/versions/12/backup-restore#xml-changes
    https://goo.gle/DataExtractionRules
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:307: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:528: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
             val location = IntArray(2)
                            ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:309: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:530: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
             val localBounds = RectF(
                               ^
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:761: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1130: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
                     val path = android.graphics.Path()
                                ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,7 +110,7 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
    Some methods allocate memory on your behalf (such as Bitmap.create), and
    these should be handled in the same way.
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:215: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:412: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
@@ -161,34 +161,40 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\CanvasDetector.kt:28: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
                 if (isBoardPixel(bitmap.getPixel(x, y))) {
                                  ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:105: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:140: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             preferences.edit()
             ~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:493: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:160: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:714: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:661: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:887: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:671: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:897: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:678: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:904: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:336: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:526: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:444: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:580: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:572: Warning: Use the KTX function createBitmap instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:708: Warning: Use the KTX function createBitmap instead? [UseKtx]
             val foreground = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:610: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:746: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)
             ^
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:755: Warning: Use the KTX extension function Canvas.withTranslation instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:965: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+                    Uri.parse("package:$packageName")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1124: Warning: Use the KTX extension function Canvas.withTranslation instead? [UseKtx]
             canvas.save()
             ~~~~~~~~~~~~~
 C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:22: Warning: Use the KTX extension function Bitmap.scale instead? [UseKtx]
@@ -251,7 +257,7 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
    </lint>
    ```
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:369: Warning: Custom view AreaSelectionView overrides onTouchEvent but not performClick [ClickableViewAccessibility]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:590: Warning: Custom view AreaSelectionView overrides onTouchEvent but not performClick [ClickableViewAccessibility]
         override fun onTouchEvent(event: MotionEvent): Boolean {
                      ~~~~~~~~~~~~
 
@@ -262,130 +268,172 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
    actions should ideally be placed in View#performClick as some accessibility
    services invoke performClick when a click action should occur.
 
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:561: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:260: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            text = "TA"
+                    ~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:302: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            text = "Traço Automático"
+                    ~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:782: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:561: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:782: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                     ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:561: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:782: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                                           ~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:565: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:786: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Pausar"
                     ~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:627: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:848: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:627: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:848: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                                ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:627: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:848: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                                                      ~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:183: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:132: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                statusLabel.text = "Permita a instalação de apps desconhecidos para atualizar."
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:224: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Escolha uma imagem para começar."
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:191: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:232: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Preparar desenho"
                     ~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:227: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:272: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Sua arte aparece aqui"
                     ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:253: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:298: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Ver contornos"
                     ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:265: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Escolher imagem"
-                    ~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:271: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            text = "Criar desenho vetorial offline"
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:316: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
-                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:316: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:316: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
-                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:332: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:310: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            text = "Escolher da galeria"
+                    ~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:320: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            text = "Importar imagem da internet"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:393: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusLabel.text = "Baixando imagem..."
+                            ~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:509: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:509: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:509: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
+                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:522: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         statusLabel.text = "Imagem removida. Escolha outra imagem para começar."
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:347: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:537: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         tracePreviewButton.text = "Ver contornos"
                                    ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:355: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:545: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         tracePreviewButton.text = "Ver contornos"
                                    ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:394: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusLabel.text = "Nenhum app de desenho compatível foi encontrado."
-                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:398: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                    statusLabel.text = "Ative a Acessibilidade e tente novamente."
-                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:417: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-                traceSummaryLabel.text = "$template · ${strokes.size} traços vetoriais"
-                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:417: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                traceSummaryLabel.text = "$template · ${strokes.size} traços vetoriais"
-                                                                     ~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:428: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:558: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Nenhum app de desenho compatível foi encontrado."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:432: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:562: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Ative a Acessibilidade e toque novamente em Preparar desenho."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:439: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:568: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:575: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Escolha uma imagem para começar."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:462: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:598: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar uma cópia da imagem."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:511: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:647: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:511: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:647: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:511: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:647: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:529: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:665: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     statusLabel.text = "Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}"
                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:529: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:665: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     statusLabel.text = "Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}"
                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:628: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:764: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:628: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:764: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
                            ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:628: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:764: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
                                                        ~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:628: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:764: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
                                                                    ~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:628: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:764: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
                                                                                           ~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:630: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:766: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar o desenho: ${error.message}"
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:630: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:766: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar o desenho: ${error.message}"
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:698: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:784: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusLabel.text = "Verificando atualizações..."
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:798: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        statusLabel.text = "O Traço Automático já está atualizado ($currentVersion)."
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:798: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        statusLabel.text = "O Traço Automático já está atualizado ($currentVersion)."
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:858: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        statusLabel.text = "Baixando ${release.title}..."
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:858: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusLabel.text = "Baixando ${release.title}..."
+                            ~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:870: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    statusLabel.text = "Download concluído. Preparando a instalação..."
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:878: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        "Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:878: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        "Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}"
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:960: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                statusLabel.text = "Atualização baixada. Permita a instalação para continuar."
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:980: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusLabel.text = "Confirme a instalação na tela do Android."
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:982: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            statusLabel.text = "Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:982: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusLabel.text = "Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}"
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1033: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1067: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Separar o assunto com IA local"
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:721: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1090: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     detailLabel.text = "Detalhe  ·  $detail%"
                                        ~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:721: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1090: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     detailLabel.text = "Detalhe  ·  $detail%"
                                         ~~~~~~~~~~~~
 
@@ -402,4 +450,4 @@ C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main
 
    https://developer.android.com/guide/topics/resources/localization.html
 
-0 errors, 71 warnings
+0 errors, 87 warnings

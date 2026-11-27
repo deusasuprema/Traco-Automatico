@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="conditional_incidents">
+
+    <incident
+        id="UnusedAttribute"
+        severity="warning"
+        message="">
+        <fix-data minSdk="26-∞" requiresApi="30-∞"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/drawing_accessibility_service.xml"
+            line="6"
+            column="5"
+            startOffset="310"
+            endLine="6"
+            endColumn="37"
+            endOffset="342"/>
+        <map>
+            <entry
+                name="message"
+                string="Attribute `canTakeScreenshot` is only used in API level 30 and higher (current min is %1$s)"/>
+            <api-levels id="minSdk"
+                value="26-∞"/>
+            <api-levels id="requiresApi"
+                value="30-∞"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UnusedAttribute"
+        severity="warning"
+        message="">
+        <fix-data minSdk="26-∞" requiresApi="31-∞"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/drawing_accessibility_service.xml"
+            line="8"
+            column="5"
+            startOffset="409"
+            endLine="8"
+            endColumn="40"
+            endOffset="444"/>
+        <map>
+            <entry
+                name="message"
+                string="Attribute `isAccessibilityTool` is only used in API level 31 and higher (current min is %1$s)"/>
+            <api-levels id="minSdk"
+                value="26-∞"/>
+            <api-levels id="requiresApi"
+                value="31-∞"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1011"
+            column="34"
+            startOffset="44491"
+            endLine="1011"
+            endColumn="55"
+            endOffset="44512"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `SDK_INT` is always >= 30">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                startOffset="14915"
+                endOffset="14948"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="410"
+            column="5"
+            startOffset="14915"
+            endLine="410"
+            endColumn="38"
+            endOffset="14948"/>
+        <map>
+            <condition minGE="30-∞"/>
+        </map>
+    </incident>
+
+</incidents>

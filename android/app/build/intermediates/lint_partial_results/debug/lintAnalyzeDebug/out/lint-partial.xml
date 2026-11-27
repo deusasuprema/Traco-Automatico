@@ -2,31 +2,41 @@
 <incidents format="6" by="lint 8.9.2" type="partial_results">
     <map id="UnsafeImplicitIntentLaunch">
             <map id="actionsSent">
+                    <map id="android.intent.action.VIEW (used to start an activity)">
+                        <location id="0"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                            line="976"
+                            column="33"
+                            startOffset="42879"
+                            endLine="976"
+                            endColumn="59"
+                            endOffset="42905"/>
+                    </map>
                     <map id="android.settings.ACCESSIBILITY_SETTINGS (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="205"
+                            line="246"
                             column="27"
-                            startOffset="7803"
-                            endLine="205"
+                            startOffset="9550"
+                            endLine="246"
                             endColumn="73"
-                            endOffset="7849"/>
+                            endOffset="9596"/>
                         <location id="1"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="399"
-                            column="35"
-                            startOffset="16387"
-                            endLine="399"
-                            endColumn="81"
-                            endOffset="16433"/>
+                            line="563"
+                            column="27"
+                            startOffset="23452"
+                            endLine="563"
+                            endColumn="73"
+                            endOffset="23498"/>
                         <location id="2"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="433"
+                            line="569"
                             column="27"
-                            startOffset="18050"
-                            endLine="433"
+                            startOffset="23785"
+                            endLine="569"
                             endColumn="73"
-                            endOffset="18096"/>
+                            endOffset="23831"/>
                     </map>
             </map>
     </map>
@@ -48,7 +58,7 @@
             endOffset="43"/>
         <entry
             name="model"
-            string="color[brand_purple(D)],drawable[ic_launcher_background(U),ic_launcher_foreground(U)],mipmap[ic_launcher(U)],string[app_name(U),accessibility_description(U),accessibility_service_name(U)],style[AppTheme(U)],xml[drawing_accessibility_service(U)];3^2^1,8^5;;;"/>
+            string="color[brand_purple(D)],drawable[ic_launcher_background(U),ic_launcher_foreground(U)],mipmap[ic_launcher(U)],string[app_name(U),accessibility_description(U),accessibility_service_name(U)],style[AppTheme(U)],xml[update_file_paths(U),drawing_accessibility_service(U)];3^2^1,9^5;;;"/>
     </map>
 
 </incidents>

@@ -1,3 +1,4 @@
+com.tracolivre.automator:xml/update_file_paths = 0x7f0c0001
 com.tracolivre.automator:styleable/FontFamilyFont = 0x7f0b0003
 com.tracolivre.automator:styleable/FontFamily = 0x7f0b0002
 com.tracolivre.automator:styleable/ColorStateListItem = 0x7f0b0001

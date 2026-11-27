@@ -9,3 +9,4 @@ string accessibility_service_name
 string app_name
 style AppTheme
 xml drawing_accessibility_service
+xml update_file_paths

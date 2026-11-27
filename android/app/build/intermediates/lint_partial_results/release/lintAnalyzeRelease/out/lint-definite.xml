@@ -1,0 +1,2327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-ktx than 1.10.1 is available: 1.13.0">
+        <fix-replace
+            description="Change to 1.13.0"
+            family="Update versions"
+            oldString="1.10.1"
+            replacement="1.13.0"
+            priority="0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="42"
+            column="20"
+            startOffset="830"
+            endLine="42"
+            endColumn="59"
+            endOffset="869"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1">
+        <fix-replace
+            description="Change to 1.19.1"
+            family="Update versions"
+            oldString="1.15.0"
+            replacement="1.19.1"
+            priority="0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="43"
+            column="20"
+            startOffset="890"
+            endLine="43"
+            endColumn="51"
+            endOffset="921"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.mediapipe:tasks-vision than 0.10.35 is available: 1.2.3">
+        <fix-replace
+            description="Change to 1.2.3"
+            family="Update versions"
+            oldString="0.10.35"
+            replacement="1.2.3"
+            priority="0"/>
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="44"
+            column="20"
+            startOffset="942"
+            endLine="44"
+            endColumn="63"
+            endOffset="985"/>
+    </incident>
+
+    <incident
+        id="UseRequiresApi"
+        severity="warning"
+        message="Use `@RequiresApi(Build.VERSION_CODES.R) instead of `@TargetApi` to propagate the requirement to callers of `recognizeCanvas`">
+        <fix-replace
+            description="Replace with `@RequiresApi`"
+            robot="true"
+            independent="true"
+            oldPattern="(TargetApi)"
+            replacement="androidx.annotation.RequiresApi"
+            shortenNames="true"
+            priority="0"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="410"
+            column="5"
+            startOffset="14915"
+            endLine="410"
+            endColumn="38"
+            endOffset="14948"/>
+    </incident>
+
+    <incident
+        id="ChromeOsAbiSupport"
+        severity="warning"
+        message="Missing x86_64 ABI support for ChromeOS">
+        <location
+            file="${:app*projectDir}/build.gradle.kts"
+            line="17"
+            column="27"
+            startOffset="368"
+            endLine="17"
+            endColumn="61"
+            endOffset="402"/>
+    </incident>
+
+    <incident
+        id="DrawAllocation"
+        severity="warning"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="528"
+            column="28"
+            startOffset="20388"
+            endLine="528"
+            endColumn="39"
+            endOffset="20399"/>
+    </incident>
+
+    <incident
+        id="DrawAllocation"
+        severity="warning"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="530"
+            column="31"
+            startOffset="20472"
+            endLine="535"
+            endColumn="14"
+            endOffset="20665"/>
+    </incident>
+
+    <incident
+        id="DrawAllocation"
+        severity="warning"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1130"
+            column="32"
+            startOffset="50179"
+            endLine="1130"
+            endColumn="55"
+            endOffset="50202"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R` is never true here">
+        <fix-data conditional="false"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="412"
+            column="13"
+            startOffset="14997"
+            endLine="412"
+            endColumn="58"
+            endOffset="15042"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v26`) is unnecessary; `minSdkVersion` is 26. Merge all the resources in this folder into `mipmap-anydpi`.">
+        <fix-data file="${:app*release*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26" folderName="mipmap-anydpi" requiresApi="26"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="4"
+            endColumn="17"
+            endOffset="236"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(x, y)"
+            replacement="bitmap[x, y]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/CanvasDetector.kt"
+                startOffset="846"
+                endOffset="867"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/CanvasDetector.kt"
+            line="28"
+            column="34"
+            startOffset="846"
+            endLine="28"
+            endColumn="55"
+            endOffset="867"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5436"
+                    endOffset="5440"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5441"
+                    endOffset="5442"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5613"
+                    endOffset="5621"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5459"
+                    endOffset="5460"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5443"
+                    endOffset="5443"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="5499"
+                    endOffset="5499"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="140"
+            column="13"
+            startOffset="5424"
+            endLine="140"
+            endColumn="31"
+            endOffset="5442"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="6200"
+                    endOffset="6204"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="6205"
+                    endOffset="6206"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="6266"
+                    endOffset="6274"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="6219"
+                    endOffset="6220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="6207"
+                    endOffset="6207"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="160"
+            column="9"
+            startOffset="6152"
+            endLine="160"
+            endColumn="63"
+            endOffset="6206"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="28104"
+                    endOffset="28108"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="28109"
+                    endOffset="28110"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="28178"
+                    endOffset="28186"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="28127"
+                    endOffset="28128"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="28111"
+                    endOffset="28111"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="714"
+            column="13"
+            startOffset="28056"
+            endLine="714"
+            endColumn="67"
+            endOffset="28110"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="34918"
+                    endOffset="34922"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="34923"
+                    endOffset="34924"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="34989"
+                    endOffset="34997"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="34937"
+                    endOffset="34938"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="34925"
+                    endOffset="34925"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="887"
+            column="9"
+            startOffset="34870"
+            endLine="887"
+            endColumn="63"
+            endOffset="34924"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35214"
+                    endOffset="35218"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35219"
+                    endOffset="35220"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35280"
+                    endOffset="35288"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35233"
+                    endOffset="35234"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35221"
+                    endOffset="35221"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="897"
+            column="9"
+            startOffset="35166"
+            endLine="897"
+            endColumn="63"
+            endOffset="35220"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35432"
+                    endOffset="35436"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35437"
+                    endOffset="35438"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35546"
+                    endOffset="35554"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35451"
+                    endOffset="35452"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35439"
+                    endOffset="35439"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                    startOffset="35490"
+                    endOffset="35490"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="904"
+            column="9"
+            startOffset="35384"
+            endLine="904"
+            endColumn="63"
+            endOffset="35438"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21807"
+                    endOffset="21811"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21812"
+                    endOffset="21813"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="22053"
+                    endOffset="22061"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21826"
+                    endOffset="21827"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21814"
+                    endOffset="21814"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21894"
+                    endOffset="21894"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="21969"
+                    endOffset="21969"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="526"
+            column="9"
+            startOffset="21731"
+            endLine="526"
+            endColumn="91"
+            endOffset="21813"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24137"
+                    endOffset="24141"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24142"
+                    endOffset="24143"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24311"
+                    endOffset="24319"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24156"
+                    endOffset="24157"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24144"
+                    endOffset="24144"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="24224"
+                    endOffset="24224"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="580"
+            column="9"
+            startOffset="24061"
+            endLine="580"
+            endColumn="91"
+            endOffset="24143"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX function `createBitmap` instead?">
+        <fix-replace
+            description="Replace with the createBitmap function"
+            family="Replace with the createBitmap function"
+            robot="true"
+            independent="true"
+            oldString="Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)"
+            replacement="createBitmap(bitmap.width, bitmap.height)"
+            reformat="value"
+            imports="androidx.core.graphics.createBitmap"
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="30635"
+                endOffset="30708"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="708"
+            column="30"
+            startOffset="30635"
+            endLine="708"
+            endColumn="103"
+            endOffset="30708"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="31965"
+                    endOffset="31969"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="31970"
+                    endOffset="31971"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32857"
+                    endOffset="32865"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="31988"
+                    endOffset="31989"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="31972"
+                    endOffset="31972"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32067"
+                    endOffset="32067"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32152"
+                    endOffset="32152"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32239"
+                    endOffset="32239"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32268"
+                    endOffset="32268"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32341"
+                    endOffset="32341"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32403"
+                    endOffset="32403"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32421"
+                    endOffset="32421"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32504"
+                    endOffset="32504"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32582"
+                    endOffset="32582"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32661"
+                    endOffset="32661"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32689"
+                    endOffset="32689"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32749"
+                    endOffset="32749"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="32823"
+                    endOffset="32823"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="746"
+            column="13"
+            startOffset="31872"
+            endLine="747"
+            endColumn="24"
+            endOffset="31971"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toUri` instead?">
+        <fix-replace
+            description="Replace with the toUri extension function"
+            family="Replace with the toUri extension function"
+            robot="true"
+            independent="true"
+            oldString="Uri.parse(&quot;package:$packageName&quot;)"
+            replacement="&quot;package:$packageName&quot;.toUri()"
+            reformat="value"
+            imports="androidx.core.net.toUri"
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="42456"
+                endOffset="42489"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="965"
+            column="21"
+            startOffset="42456"
+            endLine="965"
+            endColumn="54"
+            endOffset="42489"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Canvas.withTranslation` instead?">
+        <fix-composite
+            description="Replace with the withTranslation extension function"
+            family="Replace with the withTranslation extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with withTranslation((width - contentWidth) / 2f, (height - contentHeight) / 2f"
+                robot="true"
+                independent="true"
+                oldString="save("
+                replacement="withTranslation((width - contentWidth) / 2f, (height - contentHeight) / 2f"
+                reformat="value"
+                imports="androidx.core.graphics.withTranslation"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="49855"
+                    endOffset="49860"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="49860"
+                    endOffset="49861"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString="canvas.restore()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50585"
+                    endOffset="50601"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;canvas.&quot;"
+                robot="true"
+                independent="true"
+                oldString="canvas."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="49963"
+                    endOffset="49970"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;canvas.&quot;"
+                robot="true"
+                independent="true"
+                oldString="canvas."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50512"
+                    endOffset="50519"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;            canvas.translate((width - contentWidth) / 2f, (height - contentHeight) / 2f)&#xA;&quot;"
+                robot="true"
+                independent="true"
+                oldString="            canvas.translate((width - contentWidth) / 2f, (height - contentHeight) / 2f)&#xA;"
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="49862"
+                    endOffset="49951"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="49951"
+                    endOffset="49951"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50005"
+                    endOffset="50005"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50061"
+                    endOffset="50061"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50101"
+                    endOffset="50101"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50148"
+                    endOffset="50148"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50203"
+                    endOffset="50203"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50285"
+                    endOffset="50285"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50354"
+                    endOffset="50354"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50416"
+                    endOffset="50416"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50470"
+                    endOffset="50470"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50492"
+                    endOffset="50492"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50541"
+                    endOffset="50541"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="50559"
+                    endOffset="50559"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1124"
+            column="13"
+            startOffset="49848"
+            endLine="1124"
+            endColumn="26"
+            endOffset="49861"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.scale` instead?">
+        <fix-replace
+            description="Replace with the scale extension function"
+            family="Replace with the scale extension function"
+            robot="true"
+            independent="true"
+            oldString="Bitmap.createScaledBitmap(bitmap, width, height, true)"
+            replacement="bitmap.scale(width, height)"
+            reformat="value"
+            imports="androidx.core.graphics.scale"
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+                startOffset="727"
+                endOffset="781"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+            line="22"
+            column="22"
+            startOffset="727"
+            endLine="22"
+            endColumn="76"
+            endOffset="781"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.scale` instead?">
+        <fix-replace
+            description="Replace with the scale extension function"
+            family="Replace with the scale extension function"
+            robot="true"
+            independent="true"
+            oldString="Bitmap.createScaledBitmap(bitmap, width, height, true)"
+            replacement="bitmap.scale(width, height)"
+            reformat="value"
+            imports="androidx.core.graphics.scale"
+            priority="0">
+            <range
+                file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+                startOffset="3835"
+                endOffset="3889"/>
+        </fix-replace>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+            line="87"
+            column="22"
+            startOffset="3835"
+            endLine="87"
+            endColumn="76"
+            endOffset="3889"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view `AreaSelectionView` overrides `onTouchEvent` but not `performClick`">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="590"
+            column="22"
+            startOffset="22869"
+            endLine="590"
+            endColumn="34"
+            endOffset="22881"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="260"
+            column="21"
+            startOffset="9574"
+            endLine="260"
+            endColumn="23"
+            endOffset="9576"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="302"
+            column="21"
+            startOffset="11149"
+            endLine="302"
+            endColumn="37"
+            endOffset="11165"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="782"
+            column="20"
+            startOffset="30759"
+            endLine="782"
+            endColumn="66"
+            endOffset="30805"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="782"
+            column="21"
+            startOffset="30760"
+            endLine="782"
+            endColumn="32"
+            endOffset="30771"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="782"
+            column="43"
+            startOffset="30782"
+            endLine="782"
+            endColumn="47"
+            endOffset="30786"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="786"
+            column="21"
+            startOffset="30916"
+            endLine="786"
+            endColumn="27"
+            endOffset="30922"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="848"
+            column="31"
+            startOffset="33608"
+            endLine="848"
+            endColumn="77"
+            endOffset="33654"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="848"
+            column="32"
+            startOffset="33609"
+            endLine="848"
+            endColumn="43"
+            endOffset="33620"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="848"
+            column="54"
+            startOffset="33631"
+            endLine="848"
+            endColumn="58"
+            endOffset="33635"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="132"
+            column="37"
+            startOffset="5280"
+            endLine="132"
+            endColumn="95"
+            endOffset="5338"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="224"
+            column="21"
+            startOffset="8637"
+            endLine="224"
+            endColumn="53"
+            endOffset="8669"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="232"
+            column="21"
+            startOffset="8957"
+            endLine="232"
+            endColumn="37"
+            endOffset="8973"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="272"
+            column="21"
+            startOffset="10528"
+            endLine="272"
+            endColumn="42"
+            endOffset="10549"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="298"
+            column="21"
+            startOffset="11605"
+            endLine="298"
+            endColumn="34"
+            endOffset="11618"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="310"
+            column="21"
+            startOffset="12131"
+            endLine="310"
+            endColumn="40"
+            endOffset="12150"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="320"
+            column="21"
+            startOffset="12521"
+            endLine="320"
+            endColumn="48"
+            endOffset="12548"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="393"
+            column="29"
+            startOffset="15674"
+            endLine="393"
+            endColumn="47"
+            endOffset="15692"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="509"
+            column="13"
+            startOffset="21039"
+            endLine="509"
+            endColumn="97"
+            endOffset="21123"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="509"
+            column="14"
+            startOffset="21040"
+            endLine="509"
+            endColumn="50"
+            endOffset="21076"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="509"
+            column="57"
+            startOffset="21083"
+            endLine="509"
+            endColumn="96"
+            endOffset="21122"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="522"
+            column="29"
+            startOffset="21606"
+            endLine="522"
+            endColumn="80"
+            endOffset="21657"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="537"
+            column="36"
+            startOffset="22293"
+            endLine="537"
+            endColumn="49"
+            endOffset="22306"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="545"
+            column="36"
+            startOffset="22666"
+            endLine="545"
+            endColumn="49"
+            endOffset="22679"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="558"
+            column="33"
+            startOffset="23204"
+            endLine="558"
+            endColumn="81"
+            endOffset="23252"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="562"
+            column="33"
+            startOffset="23363"
+            endLine="562"
+            endColumn="94"
+            endOffset="23424"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="568"
+            column="18"
+            startOffset="23633"
+            endLine="568"
+            endColumn="142"
+            endOffset="23757"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="575"
+            column="33"
+            startOffset="23961"
+            endLine="575"
+            endColumn="65"
+            endOffset="23993"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="598"
+            column="33"
+            startOffset="25024"
+            endLine="598"
+            endColumn="79"
+            endOffset="25070"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="647"
+            column="44"
+            startOffset="27412"
+            endLine="647"
+            endColumn="139"
+            endOffset="27507"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="647"
+            column="45"
+            startOffset="27413"
+            endLine="647"
+            endColumn="72"
+            endOffset="27440"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="647"
+            column="103"
+            startOffset="27471"
+            endLine="647"
+            endColumn="138"
+            endOffset="27506"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="665"
+            column="40"
+            startOffset="28346"
+            endLine="665"
+            endColumn="119"
+            endOffset="28425"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="665"
+            column="41"
+            startOffset="28347"
+            endLine="665"
+            endColumn="78"
+            endOffset="28384"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="764"
+            column="17"
+            startOffset="32913"
+            endLine="764"
+            endColumn="108"
+            endOffset="33004"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="764"
+            column="28"
+            startOffset="32924"
+            endLine="764"
+            endColumn="41"
+            endOffset="32937"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="764"
+            column="56"
+            startOffset="32952"
+            endLine="764"
+            endColumn="63"
+            endOffset="32959"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="764"
+            column="68"
+            startOffset="32964"
+            endLine="764"
+            endColumn="76"
+            endOffset="32972"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="764"
+            column="91"
+            startOffset="32987"
+            endLine="764"
+            endColumn="107"
+            endOffset="33003"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="766"
+            column="32"
+            startOffset="33073"
+            endLine="766"
+            endColumn="87"
+            endOffset="33128"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="766"
+            column="33"
+            startOffset="33074"
+            endLine="766"
+            endColumn="70"
+            endOffset="33111"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="784"
+            column="29"
+            startOffset="33746"
+            endLine="784"
+            endColumn="56"
+            endOffset="33773"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="798"
+            column="44"
+            startOffset="34399"
+            endLine="798"
+            endColumn="102"
+            endOffset="34457"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="798"
+            column="45"
+            startOffset="34400"
+            endLine="798"
+            endColumn="84"
+            endOffset="34439"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="858"
+            column="28"
+            startOffset="37320"
+            endLine="858"
+            endColumn="58"
+            endOffset="37350"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="858"
+            column="29"
+            startOffset="37321"
+            endLine="858"
+            endColumn="38"
+            endOffset="37330"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="870"
+            column="41"
+            startOffset="37827"
+            endLine="870"
+            endColumn="87"
+            endOffset="37873"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="878"
+            column="25"
+            startOffset="38198"
+            endLine="878"
+            endColumn="112"
+            endOffset="38285"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="878"
+            column="26"
+            startOffset="38199"
+            endLine="878"
+            endColumn="65"
+            endOffset="38238"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="960"
+            column="37"
+            startOffset="42190"
+            endLine="960"
+            endColumn="94"
+            endOffset="42247"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="980"
+            column="33"
+            startOffset="43127"
+            endLine="980"
+            endColumn="74"
+            endOffset="43168"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="982"
+            column="32"
+            startOffset="43238"
+            endLine="982"
+            endColumn="117"
+            endOffset="43323"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="982"
+            column="33"
+            startOffset="43239"
+            endLine="982"
+            endColumn="70"
+            endOffset="43276"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1033"
+            column="18"
+            startOffset="45555"
+            endLine="1033"
+            endColumn="142"
+            endOffset="45679"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1067"
+            column="21"
+            startOffset="47373"
+            endLine="1067"
+            endColumn="51"
+            endOffset="47403"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1090"
+            column="40"
+            startOffset="48549"
+            endLine="1090"
+            endColumn="62"
+            endOffset="48571"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1090"
+            column="41"
+            startOffset="48550"
+            endLine="1090"
+            endColumn="53"
+            endOffset="48562"/>
+    </incident>
+
+</incidents>

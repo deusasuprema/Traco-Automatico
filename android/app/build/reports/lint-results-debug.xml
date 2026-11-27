@@ -93,7 +93,7 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="213"
+            line="410"
             column="5"/>
     </issue>
 
@@ -129,7 +129,7 @@
         errorLine2="                             ~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml"
-            line="13"
+            line="12"
             column="30"/>
     </issue>
 
@@ -145,7 +145,7 @@
         errorLine2="                           ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="307"
+            line="528"
             column="28"/>
     </issue>
 
@@ -161,7 +161,7 @@
         errorLine2="                              ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="309"
+            line="530"
             column="31"/>
     </issue>
 
@@ -177,7 +177,7 @@
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="761"
+            line="1130"
             column="32"/>
     </issue>
 
@@ -193,7 +193,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="215"
+            line="412"
             column="13"/>
     </issue>
 
@@ -269,8 +269,24 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="105"
+            line="140"
             column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="160"
+            column="9"/>
     </issue>
 
     <issue
@@ -285,7 +301,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="493"
+            line="714"
             column="13"/>
     </issue>
 
@@ -301,7 +317,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="661"
+            line="887"
             column="9"/>
     </issue>
 
@@ -317,7 +333,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="671"
+            line="897"
             column="9"/>
     </issue>
 
@@ -333,7 +349,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="678"
+            line="904"
             column="9"/>
     </issue>
 
@@ -349,7 +365,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="336"
+            line="526"
             column="9"/>
     </issue>
 
@@ -365,7 +381,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="444"
+            line="580"
             column="9"/>
     </issue>
 
@@ -381,7 +397,7 @@
         errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="572"
+            line="708"
             column="30"/>
     </issue>
 
@@ -397,8 +413,24 @@
         errorLine2="            ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="610"
+            line="746"
             column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                    Uri.parse(&quot;package:$packageName&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="965"
+            column="21"/>
     </issue>
 
     <issue
@@ -413,7 +445,7 @@
         errorLine2="            ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="755"
+            line="1124"
             column="13"/>
     </issue>
 
@@ -461,8 +493,44 @@
         errorLine2="                     ~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="369"
+            line="590"
             column="22"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;TA&quot;"
+        errorLine2="                    ~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="260"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;Traço Automático&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="302"
+            column="21"/>
     </issue>
 
     <issue
@@ -479,7 +547,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="561"
+            line="782"
             column="20"/>
     </issue>
 
@@ -497,7 +565,7 @@
         errorLine2="                    ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="561"
+            line="782"
             column="21"/>
     </issue>
 
@@ -515,7 +583,7 @@
         errorLine2="                                          ~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="561"
+            line="782"
             column="43"/>
     </issue>
 
@@ -533,7 +601,7 @@
         errorLine2="                    ~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="565"
+            line="786"
             column="21"/>
     </issue>
 
@@ -551,7 +619,7 @@
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="627"
+            line="848"
             column="31"/>
     </issue>
 
@@ -569,7 +637,7 @@
         errorLine2="                               ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="627"
+            line="848"
             column="32"/>
     </issue>
 
@@ -587,8 +655,26 @@
         errorLine2="                                                     ~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="627"
+            line="848"
             column="54"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                statusLabel.text = &quot;Permita a instalação de apps desconhecidos para atualizar.&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="132"
+            column="37"/>
     </issue>
 
     <issue
@@ -605,7 +691,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="183"
+            line="224"
             column="21"/>
     </issue>
 
@@ -623,7 +709,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="191"
+            line="232"
             column="21"/>
     </issue>
 
@@ -641,7 +727,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="227"
+            line="272"
             column="21"/>
     </issue>
 
@@ -659,7 +745,7 @@
         errorLine2="                    ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="253"
+            line="298"
             column="21"/>
     </issue>
 
@@ -673,11 +759,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            text = &quot;Escolher imagem&quot;"
-        errorLine2="                    ~~~~~~~~~~~~~~~">
+        errorLine1="            text = &quot;Escolher da galeria&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="265"
+            line="310"
             column="21"/>
     </issue>
 
@@ -691,12 +777,30 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            text = &quot;Criar desenho vetorial offline&quot;"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            text = &quot;Importar imagem da internet&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="271"
+            line="320"
             column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        statusLabel.text = &quot;Baixando imagem...&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="393"
+            column="29"/>
     </issue>
 
     <issue
@@ -709,12 +813,12 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="316"
-            column="17"/>
+            line="509"
+            column="13"/>
     </issue>
 
     <issue
@@ -727,12 +831,12 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
-        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="316"
-            column="18"/>
+            line="509"
+            column="14"/>
     </issue>
 
     <issue
@@ -745,12 +849,12 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
-        errorLine2="                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="316"
-            column="61"/>
+            line="509"
+            column="57"/>
     </issue>
 
     <issue
@@ -767,7 +871,7 @@
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="332"
+            line="522"
             column="29"/>
     </issue>
 
@@ -785,7 +889,7 @@
         errorLine2="                                   ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="347"
+            line="537"
             column="36"/>
     </issue>
 
@@ -803,80 +907,8 @@
         errorLine2="                                   ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="355"
+            line="545"
             column="36"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="https://developer.android.com/guide/topics/resources/localization.html"
-        urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                    statusLabel.text = &quot;Nenhum app de desenho compatível foi encontrado.&quot;"
-        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="394"
-            column="41"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="https://developer.android.com/guide/topics/resources/localization.html"
-        urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                    statusLabel.text = &quot;Ative a Acessibilidade e tente novamente.&quot;"
-        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="398"
-            column="41"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="https://developer.android.com/guide/topics/resources/localization.html"
-        urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                traceSummaryLabel.text = &quot;$template · ${strokes.size} traços vetoriais&quot;"
-        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="417"
-            column="42"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="https://developer.android.com/guide/topics/resources/localization.html"
-        urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                traceSummaryLabel.text = &quot;$template · ${strokes.size} traços vetoriais&quot;"
-        errorLine2="                                                                     ~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="417"
-            column="70"/>
     </issue>
 
     <issue
@@ -893,7 +925,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="428"
+            line="558"
             column="33"/>
     </issue>
 
@@ -911,8 +943,26 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="432"
+            line="562"
             column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações.&quot;"
+        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="568"
+            column="18"/>
     </issue>
 
     <issue
@@ -929,7 +979,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="439"
+            line="575"
             column="33"/>
     </issue>
 
@@ -947,7 +997,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="462"
+            line="598"
             column="33"/>
     </issue>
 
@@ -965,7 +1015,7 @@
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="511"
+            line="647"
             column="44"/>
     </issue>
 
@@ -983,7 +1033,7 @@
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="511"
+            line="647"
             column="45"/>
     </issue>
 
@@ -1001,7 +1051,7 @@
         errorLine2="                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="511"
+            line="647"
             column="103"/>
     </issue>
 
@@ -1019,7 +1069,7 @@
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="529"
+            line="665"
             column="40"/>
     </issue>
 
@@ -1037,7 +1087,7 @@
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="529"
+            line="665"
             column="41"/>
     </issue>
 
@@ -1055,7 +1105,7 @@
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="628"
+            line="764"
             column="17"/>
     </issue>
 
@@ -1073,7 +1123,7 @@
         errorLine2="                           ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="628"
+            line="764"
             column="28"/>
     </issue>
 
@@ -1091,7 +1141,7 @@
         errorLine2="                                                       ~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="628"
+            line="764"
             column="56"/>
     </issue>
 
@@ -1109,7 +1159,7 @@
         errorLine2="                                                                   ~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="628"
+            line="764"
             column="68"/>
     </issue>
 
@@ -1127,7 +1177,7 @@
         errorLine2="                                                                                          ~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="628"
+            line="764"
             column="91"/>
     </issue>
 
@@ -1145,7 +1195,7 @@
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="630"
+            line="766"
             column="32"/>
     </issue>
 
@@ -1163,8 +1213,242 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="630"
+            line="766"
             column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        statusLabel.text = &quot;Verificando atualizações...&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="784"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        statusLabel.text = &quot;O Traço Automático já está atualizado ($currentVersion).&quot;"
+        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="798"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        statusLabel.text = &quot;O Traço Automático já está atualizado ($currentVersion).&quot;"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="798"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        statusLabel.text = &quot;Baixando ${release.title}...&quot;"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="858"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="        statusLabel.text = &quot;Baixando ${release.title}...&quot;"
+        errorLine2="                            ~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="858"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                    statusLabel.text = &quot;Download concluído. Preparando a instalação...&quot;"
+        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="870"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        &quot;Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="878"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        &quot;Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="878"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                statusLabel.text = &quot;Atualização baixada. Permita a instalação para continuar.&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="960"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusLabel.text = &quot;Confirme a instalação na tela do Android.&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="980"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusLabel.text = &quot;Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="982"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusLabel.text = &quot;Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="982"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações.&quot;"
+        errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1033"
+            column="18"/>
     </issue>
 
     <issue
@@ -1181,7 +1465,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="698"
+            line="1067"
             column="21"/>
     </issue>
 
@@ -1199,7 +1483,7 @@
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="721"
+            line="1090"
             column="40"/>
     </issue>
 
@@ -1217,7 +1501,7 @@
         errorLine2="                                        ~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="721"
+            line="1090"
             column="41"/>
     </issue>
 

@@ -55,12 +55,12 @@
         message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="647"
+            line="1011"
             column="34"
-            startOffset="28020"
-            endLine="647"
+            startOffset="44491"
+            endLine="1011"
             endColumn="55"
-            endOffset="28041"/>
+            endOffset="44512"/>
         <map>
             <entry
                 name="queryAll"
@@ -78,17 +78,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                startOffset="7776"
-                endOffset="7809"/>
+                startOffset="14915"
+                endOffset="14948"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="213"
+            line="410"
             column="5"
-            startOffset="7776"
-            endLine="213"
+            startOffset="14915"
+            endLine="410"
             endColumn="38"
-            endOffset="7809"/>
+            endOffset="14948"/>
         <map>
             <condition minGE="30-∞"/>
         </map>

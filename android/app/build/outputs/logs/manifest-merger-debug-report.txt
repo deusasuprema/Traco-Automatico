@@ -1,9 +1,20 @@
 -- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:27:9-35:20
+	android:grantUriPermissions
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:31:13-47
+	android:authorities
+		INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:29:13-59
+	android:exported
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:28:13-62
 manifest
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-42:12
-INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-42:12
-INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-42:12
-INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-42:12
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-51:12
+INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-51:12
+INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-51:12
+INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:1-51:12
 MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\9b53973875d4dc8be171a0e791310188\transformed\activity-ktx-1.10.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity:1.10.1] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\4f1f0a5ae2cd969aae2e7e34f42d6454\transformed\activity-1.10.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:17:1-30:12
@@ -34,42 +45,35 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Adminis
 		INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml
-	xmlns:tools
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:2:5-51
 	android:versionCode
 		INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:3:5-87
-REJECTED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
-	tools:node
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:3:65-84
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:2:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:3:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:4:5-99
-REJECTED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
-REJECTED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:22:5-79
-	tools:node
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:4:77-96
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:2:22-64
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:3:5-83
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:4:22-76
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:3:22-80
 queries
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:5:5-10:15
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:4:5-9:15
 intent#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:6:9-9:18
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:5:9-8:18
 action#android.intent.action.MAIN
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:13-65
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:6:13-65
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:21-62
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:6:21-62
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:13-73
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:13-73
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:23-70
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:23-70
 application
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:12:5-41:19
-INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:12:5-41:19
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:11:5-50:19
+INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:11:5-50:19
 MERGED from [androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
@@ -87,49 +91,55 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:16:9-48
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:15:9-48
 	android:icon
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:13:9-36
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:12:9-36
 	android:theme
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:17:9-40
 activity#com.tracolivre.automator.MainActivity
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:19:9-26:20
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:18:9-25:20
 	android:exported
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:20:13-41
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:22:13-25:29
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:21:13-24:29
 service#com.tracolivre.automator.DrawingAccessibilityService
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:28:9-40:19
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:37:9-49:19
 	android:label
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:32:13-63
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:41:13-63
 	android:exported
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:40:13-36
 	android:permission
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:33:13-79
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:42:13-79
 	android:description
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:30:13-68
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:39:13-68
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:29:13-56
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:38:13-56
 intent-filter#action:name:android.accessibilityservice.AccessibilityService
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:34:13-36:29
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:43:13-45:29
 action#android.accessibilityservice.AccessibilityService
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:35:17-92
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:44:17-92
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:35:25-89
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:44:25-89
 meta-data#android.accessibilityservice
-ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:37:13-39:73
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:46:13-48:73
 	android:resource
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:39:17-70
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:48:17-70
 	android:name
-		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:38:17-60
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:47:17-60
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:32:13-34:61
+	android:resource
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:34:17-58
+	android:name
+		ADDED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:33:17-67
 uses-sdk
 INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml
@@ -264,6 +274,12 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:22-76
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
 ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:36:9-38:40

@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 71 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 87 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Nov 26 22:09:33 BRT 2026 by AGP (8.9.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Nov 27 07:06:36 BRT 2026 by AGP (8.9.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -195,9 +195,9 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (2)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (1)</a>
       <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (1)</a>
-      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (13)</a>
+      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (15)</a>
       <a class="mdl-navigation__link" href="#ClickableViewAccessibility"><i class="material-icons warning-icon">warning</i>Accessibility in Custom Views (1)</a>
-      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (42)</a>
+      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (56)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -250,7 +250,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
-<td class="countColumn">13</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">15</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseKtx">UseKtx</a>: Use KTX extension function</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Accessibility">Accessibility</a>
 </td></tr>
@@ -260,7 +260,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
 </td></tr>
 <tr>
-<td class="countColumn">42</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">56</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (10)</a>
 </td></tr>
@@ -404,14 +404,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:213</span>: <span class="message">Use <code>@RequiresApi(Build.VERSION_CODES.R) instead of </code>@TargetApi` to propagate the requirement to callers of <code>recognizeCanvas</code></span><br /><pre class="errorlines">
-<span class="lineno"> 210 </span>      }
-<span class="lineno"> 211 </span>  }
-<span class="lineno"> 212 </span>
-<span class="caretline"><span class="lineno"> 213 </span>  <span class="warning"><span class="annotation">@TargetApi</span>(Build.VERSION_CODES.R)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 214 </span>  private <span class="keyword">fun</span> recognizeCanvas() {
-<span class="lineno"> 215 </span>      <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R) {
-<span class="lineno"> 216 </span>          publishStatus(<span class="string">"O reconhecimento automático requer Android 11. Use “Marcar área manualmente”."</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:410</span>: <span class="message">Use <code>@RequiresApi(Build.VERSION_CODES.R) instead of </code>@TargetApi` to propagate the requirement to callers of <code>recognizeCanvas</code></span><br /><pre class="errorlines">
+<span class="lineno"> 407 </span>      quickAccessPanel = <span class="keyword">null</span>
+<span class="lineno"> 408 </span>  }
+<span class="lineno"> 409 </span>
+<span class="caretline"><span class="lineno"> 410 </span>  <span class="warning"><span class="annotation">@TargetApi</span>(Build.VERSION_CODES.R)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 411 </span>  private <span class="keyword">fun</span> recognizeCanvas() {
+<span class="lineno"> 412 </span>      <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R) {
+<span class="lineno"> 413 </span>          publishStatus(<span class="string">"O reconhecimento automático requer Android 11. Use “Marcar área manualmente”."</span>)
 </pre>
 
 </div>
@@ -454,8 +454,8 @@ Dismiss</button>            </div>
 <div class="issue">
 <div class="warningslist">
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:17</span>: <span class="message">Missing x86_64 ABI support for ChromeOS</span><br /><pre class="errorlines">
-<span class="lineno"> 14 </span>        versionCode = 22
-<span class="lineno"> 15 </span>        versionName = "1.21"
+<span class="lineno"> 14 </span>        versionCode = 25
+<span class="lineno"> 15 </span>        versionName = "1.24"
 <span class="lineno"> 16 </span>        ndk {
 <span class="caretline"><span class="lineno"> 17 </span>            abiFilters += <span class="warning">listOf("arm64-v8a", "armeabi-v7a")</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 18 </span>        }
@@ -504,14 +504,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:13</span>: <span class="message">The attribute <code>android:allowBackup</code> is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute <code>android:dataExtractionRules</code> specifying an <code>@xml</code> resource which configures cloud backups and device transfers on Android 12 and higher.</span><br /><pre class="errorlines">
-<span class="lineno"> 10 </span>    <span class="tag">&lt;/queries></span>
-<span class="lineno"> 11 </span>
-<span class="lineno"> 12 </span>    <span class="tag">&lt;application</span><span class="attribute">
-</span><span class="caretline"><span class="lineno"> 13 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"</span><span class="warning"><span class="value">false</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 14 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
-<span class="lineno"> 15 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span>
-<span class="lineno"> 16 </span>        <span class="prefix">android:</span><span class="attribute">roundIcon</span>=<span class="value">"@mipmap/ic_launcher"</span>
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:12</span>: <span class="message">The attribute <code>android:allowBackup</code> is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute <code>android:dataExtractionRules</code> specifying an <code>@xml</code> resource which configures cloud backups and device transfers on Android 12 and higher.</span><br /><pre class="errorlines">
+<span class="lineno">  9 </span>    <span class="tag">&lt;/queries></span>
+<span class="lineno"> 10 </span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;application</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 12 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"</span><span class="warning"><span class="value">false</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 13 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
+<span class="lineno"> 14 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span>
+<span class="lineno"> 15 </span>        <span class="prefix">android:</span><span class="attribute">roundIcon</span>=<span class="value">"@mipmap/ic_launcher"</span>
 </pre>
 
 </div>
@@ -556,34 +556,34 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:307</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
-<span class="lineno"> 304 </span>            <span class="keyword">super</span>.onDraw(canvas)
-<span class="lineno"> 305 </span>            canvas.saveLayer(<span class="number">0f</span>, <span class="number">0f</span>, width.toFloat(), height.toFloat(), <span class="keyword">null</span>)
-<span class="lineno"> 306 </span>            canvas.drawColor(Color.argb(<span class="number">110</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">30</span>))
-<span class="caretline"><span class="lineno"> 307 </span>            <span class="keyword">val</span> location = <span class="warning">IntArray(<span class="number">2</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 308 </span>            getLocationOnScreen(location)
-<span class="lineno"> 309 </span>            <span class="keyword">val</span> localBounds = RectF(
-<span class="lineno"> 310 </span>                bounds.left - location[<span class="number">0</span>],
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:528</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
+<span class="lineno"> 525 </span>            <span class="keyword">super</span>.onDraw(canvas)
+<span class="lineno"> 526 </span>            canvas.saveLayer(<span class="number">0f</span>, <span class="number">0f</span>, width.toFloat(), height.toFloat(), <span class="keyword">null</span>)
+<span class="lineno"> 527 </span>            canvas.drawColor(Color.argb(<span class="number">110</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">30</span>))
+<span class="caretline"><span class="lineno"> 528 </span>            <span class="keyword">val</span> location = <span class="warning">IntArray(<span class="number">2</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 529 </span>            getLocationOnScreen(location)
+<span class="lineno"> 530 </span>            <span class="keyword">val</span> localBounds = RectF(
+<span class="lineno"> 531 </span>                bounds.left - location[<span class="number">0</span>],
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:309</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
-<span class="lineno"> 306 </span>            canvas.drawColor(Color.argb(<span class="number">110</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">30</span>))
-<span class="lineno"> 307 </span>            <span class="keyword">val</span> location = IntArray(<span class="number">2</span>)
-<span class="lineno"> 308 </span>            getLocationOnScreen(location)
-<span class="caretline"><span class="lineno"> 309 </span>            <span class="keyword">val</span> localBounds = <span class="warning">RectF(</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 310 </span>                bounds.left - location[<span class="number">0</span>],
-<span class="lineno"> 311 </span>                bounds.top - location[<span class="number">1</span>],
-<span class="lineno"> 312 </span>                bounds.right - location[<span class="number">0</span>],
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:530</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
+<span class="lineno"> 527 </span>            canvas.drawColor(Color.argb(<span class="number">110</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">30</span>))
+<span class="lineno"> 528 </span>            <span class="keyword">val</span> location = IntArray(<span class="number">2</span>)
+<span class="lineno"> 529 </span>            getLocationOnScreen(location)
+<span class="caretline"><span class="lineno"> 530 </span>            <span class="keyword">val</span> localBounds = <span class="warning">RectF(</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 531 </span>                bounds.left - location[<span class="number">0</span>],
+<span class="lineno"> 532 </span>                bounds.top - location[<span class="number">1</span>],
+<span class="lineno"> 533 </span>                bounds.right - location[<span class="number">0</span>],
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:761</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
-<span class="lineno"> 758 </span>            paint.strokeWidth = dp(<span class="number">1.5f</span>) / contentWidth
-<span class="lineno"> 759 </span>            strokes.forEach { stroke ->
-<span class="lineno"> 760 </span>                <span class="keyword">if</span> (stroke.points.size >= <span class="number">2</span>) {
-<span class="caretline"><span class="lineno"> 761 </span>                    <span class="keyword">val</span> path = <span class="warning">android.graphics.Path()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 762 </span>                    path.moveTo(stroke.points.first().x, stroke.points.first().y)
-<span class="lineno"> 763 </span>                    <span class="keyword">for</span> (pointIndex <span class="keyword">in</span> <span class="number">1</span> until stroke.points.size) {
-<span class="lineno"> 764 </span>                        <span class="keyword">val</span> point = stroke.points[pointIndex]
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:1130</span>: <span class="message">Avoid object allocations during draw/layout operations (preallocate and reuse instead)</span><br /><pre class="errorlines">
+<span class="lineno"> 1127 </span>            paint.strokeWidth = dp(<span class="number">1.5f</span>) / contentWidth
+<span class="lineno"> 1128 </span>            strokes.forEach { stroke ->
+<span class="lineno"> 1129 </span>                <span class="keyword">if</span> (stroke.points.size >= <span class="number">2</span>) {
+<span class="caretline"><span class="lineno"> 1130 </span>                    <span class="keyword">val</span> path = <span class="warning">android.graphics.Path()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 1131 </span>                    path.moveTo(stroke.points.first().x, stroke.points.first().y)
+<span class="lineno"> 1132 </span>                    <span class="keyword">for</span> (pointIndex <span class="keyword">in</span> <span class="number">1</span> until stroke.points.size) {
+<span class="lineno"> 1133 </span>                        <span class="keyword">val</span> point = stroke.points[pointIndex]
 </pre>
 
 </div>
@@ -625,14 +625,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:215</span>: <span class="message">Unnecessary; <code>Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R</code> is never true here</span><br /><pre class="errorlines">
-<span class="lineno"> 212 </span>
-<span class="lineno"> 213 </span>  <span class="annotation">@TargetApi</span>(Build.VERSION_CODES.R)
-<span class="lineno"> 214 </span>  private <span class="keyword">fun</span> recognizeCanvas() {
-<span class="caretline"><span class="lineno"> 215 </span>      <span class="keyword">if</span> (<span class="warning">Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 216 </span>          publishStatus(<span class="string">"O reconhecimento automático requer Android 11. Use “Marcar área manualmente”."</span>)
-<span class="lineno"> 217 </span>          showDrawingPrompt()
-<span class="lineno"> 218 </span>          <span class="keyword">return</span></pre>
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:412</span>: <span class="message">Unnecessary; <code>Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R</code> is never true here</span><br /><pre class="errorlines">
+<span class="lineno"> 409 </span>
+<span class="lineno"> 410 </span>  <span class="annotation">@TargetApi</span>(Build.VERSION_CODES.R)
+<span class="lineno"> 411 </span>  private <span class="keyword">fun</span> recognizeCanvas() {
+<span class="caretline"><span class="lineno"> 412 </span>      <span class="keyword">if</span> (<span class="warning">Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 413 </span>          publishStatus(<span class="string">"O reconhecimento automático requer Android 11. Use “Marcar área manualmente”."</span>)
+<span class="lineno"> 414 </span>          showDrawingPrompt()
+<span class="lineno"> 415 </span>          <span class="keyword">return</span></pre>
 
 <span class="location"><a href="../../src/main/res/mipmap-anydpi-v26">../../src/main/res/mipmap-anydpi-v26</a></span>: <span class="message">This folder configuration (<code>v26</code>) is unnecessary; <code>minSdkVersion</code> is 26. Merge all the resources in this folder into <code>mipmap-anydpi</code>.</span><br />
 </div>
@@ -782,106 +782,126 @@ Dismiss</button>            </div>
 <span class="lineno"> 31 </span>                    <span class="keyword">if</span> (x - runStart > bestEnd - bestStart) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:105</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 102 </span>          (preferences.getBoolean(KEY_PLAN_READY, <span class="keyword">false</span>) &amp;&amp; !isDrawing &amp;&amp; !isPaused))
-<span class="lineno"> 103 </span>  ) {
-<span class="lineno"> 104 </span>      targetPackage = wantedPackage
-<span class="caretline"><span class="lineno"> 105 </span>      <span class="warning">preferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 106 </span>          .putBoolean(KEY_AWAITING_TARGET, <span class="keyword">false</span>)
-<span class="lineno"> 107 </span>          .putString(KEY_STATUS, <span class="string">"App de desenho aberto. Escolha o lápis e marque a área."</span>)
-<span class="lineno"> 108 </span>          .apply()
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:140</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 137 </span>          (preferences.getBoolean(KEY_PLAN_READY, <span class="keyword">false</span>) &amp;&amp; !isDrawing &amp;&amp; !isPaused))
+<span class="lineno"> 138 </span>  ) {
+<span class="lineno"> 139 </span>      targetPackage = wantedPackage
+<span class="caretline"><span class="lineno"> 140 </span>      <span class="warning">preferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 141 </span>          .putBoolean(KEY_AWAITING_TARGET, <span class="keyword">false</span>)
+<span class="lineno"> 142 </span>          .putString(KEY_STATUS, <span class="string">"App de desenho aberto. Escolha o lápis e marque a área."</span>)
+<span class="lineno"> 143 </span>          .apply()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:493</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 490 </span>            isDrawing = <span class="keyword">false</span>
-<span class="lineno"> 491 </span>            isPaused = <span class="keyword">false</span>
-<span class="lineno"> 492 </span>            removeProgressOverlay()
-<span class="caretline"><span class="lineno"> 493 </span>            <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 494 </span>                .putBoolean(KEY_PLAN_READY, <span class="keyword">false</span>)
-<span class="lineno"> 495 </span>                .apply()
-<span class="lineno"> 496 </span>            publishStatus(<span class="string">"Desenho concluído."</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:160</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 157 </span>        isConnected = <span class="keyword">false</span>
+<span class="lineno"> 158 </span>        isDrawing = <span class="keyword">false</span>
+<span class="lineno"> 159 </span>        isPaused = <span class="keyword">false</span>
+<span class="caretline"><span class="lineno"> 160 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 161 </span>            .putBoolean(KEY_IS_DRAWING, <span class="keyword">false</span>)
+<span class="lineno"> 162 </span>            .apply()
+<span class="lineno"> 163 </span>        removePrompt()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:661</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 658 </span>        removePrompt()
-<span class="lineno"> 659 </span>        removeSelectionView()
-<span class="lineno"> 660 </span>        stopDrawing(message)
-<span class="caretline"><span class="lineno"> 661 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 662 </span>            .putBoolean(KEY_AWAITING_TARGET, <span class="keyword">false</span>)
-<span class="lineno"> 663 </span>            .apply()
-<span class="lineno"> 664 </span>    }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:714</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 711 </span>            isDrawing = <span class="keyword">false</span>
+<span class="lineno"> 712 </span>            isPaused = <span class="keyword">false</span>
+<span class="lineno"> 713 </span>            removeProgressOverlay()
+<span class="caretline"><span class="lineno"> 714 </span>            <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 715 </span>                .putBoolean(KEY_PLAN_READY, <span class="keyword">false</span>)
+<span class="lineno"> 716 </span>                .apply()
+<span class="lineno"> 717 </span>            publishStatus(<span class="string">"Desenho concluído."</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:671</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 668 </span>        isPaused = <span class="keyword">false</span>
-<span class="lineno"> 669 </span>        removeProgressOverlay()
-<span class="lineno"> 670 </span>        removePrompt()
-<span class="caretline"><span class="lineno"> 671 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 672 </span>            .putBoolean(KEY_PLAN_READY, <span class="keyword">false</span>)
-<span class="lineno"> 673 </span>            .apply()
-<span class="lineno"> 674 </span>        publishStatus(message)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:887</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 884 </span>        removePrompt()
+<span class="lineno"> 885 </span>        removeSelectionView()
+<span class="lineno"> 886 </span>        stopDrawing(message)
+<span class="caretline"><span class="lineno"> 887 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 888 </span>            .putBoolean(KEY_AWAITING_TARGET, <span class="keyword">false</span>)
+<span class="lineno"> 889 </span>            .apply()
+<span class="lineno"> 890 </span>    }
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UseKtxDivLink" onclick="reveal('UseKtxDiv');" />+ 8 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UseKtxDivLink" onclick="reveal('UseKtxDiv');" />+ 10 More Occurrences...</button>
 <div id="UseKtxDiv" style="display: none">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:678</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 675 </span>    }
-<span class="lineno"> 676 </span>
-<span class="lineno"> 677 </span>    private <span class="keyword">fun</span> publishStatus(message: String) {
-<span class="caretline"><span class="lineno"> 678 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 679 </span>            .putBoolean(KEY_IS_DRAWING, isDrawing)
-<span class="lineno"> 680 </span>            .putString(KEY_STATUS, message)
-<span class="lineno"> 681 </span>            .apply()
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:897</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 894 </span>        isPaused = <span class="keyword">false</span>
+<span class="lineno"> 895 </span>        removeProgressOverlay()
+<span class="lineno"> 896 </span>        removePrompt()
+<span class="caretline"><span class="lineno"> 897 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 898 </span>            .putBoolean(KEY_PLAN_READY, <span class="keyword">false</span>)
+<span class="lineno"> 899 </span>            .apply()
+<span class="lineno"> 900 </span>        publishStatus(message)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:336</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 333 </span>    }
-<span class="lineno"> 334 </span>
-<span class="lineno"> 335 </span>    private <span class="keyword">fun</span> invalidatePendingPlan(message: String) {
-<span class="caretline"><span class="lineno"> 336 </span>        <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 337 </span>            .putBoolean(DrawingAccessibilityService.KEY_AWAITING_TARGET, <span class="keyword">false</span>)
-<span class="lineno"> 338 </span>            .putBoolean(DrawingAccessibilityService.KEY_PLAN_READY, <span class="keyword">false</span>)
-<span class="lineno"> 339 </span>            .putString(DrawingAccessibilityService.KEY_STATUS, message)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:904</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 901 </span>    }
+<span class="lineno"> 902 </span>
+<span class="lineno"> 903 </span>    private <span class="keyword">fun</span> publishStatus(message: String) {
+<span class="caretline"><span class="lineno"> 904 </span>        <span class="warning">getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 905 </span>            .putBoolean(KEY_IS_DRAWING, isDrawing)
+<span class="lineno"> 906 </span>            .putString(KEY_STATUS, message)
+<span class="lineno"> 907 </span>            .apply()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:444</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 441 </span>        }
-<span class="lineno"> 442 </span>
-<span class="lineno"> 443 </span>        clearTracePreview()
-<span class="caretline"><span class="lineno"> 444 </span>        <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 445 </span>            .putBoolean(DrawingAccessibilityService.KEY_AWAITING_TARGET, <span class="keyword">false</span>)
-<span class="lineno"> 446 </span>            .putBoolean(DrawingAccessibilityService.KEY_PLAN_READY, <span class="keyword">false</span>)
-<span class="lineno"> 447 </span>            .apply()
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:526</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  523 </span>    }
+<span class="lineno">  524 </span>
+<span class="lineno">  525 </span>    private <span class="keyword">fun</span> invalidatePendingPlan(message: String) {
+<span class="caretline"><span class="lineno">  526 </span>        <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  527 </span>            .putBoolean(DrawingAccessibilityService.KEY_AWAITING_TARGET, <span class="keyword">false</span>)
+<span class="lineno">  528 </span>            .putBoolean(DrawingAccessibilityService.KEY_PLAN_READY, <span class="keyword">false</span>)
+<span class="lineno">  529 </span>            .putString(DrawingAccessibilityService.KEY_STATUS, message)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:572</span>: <span class="message">Use the KTX function <code>createBitmap</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 569 </span>      }
-<span class="lineno"> 570 </span>  }
-<span class="lineno"> 571 </span>  require(foundForeground) { <span class="string">"A IA não encontrou um objeto conhecido na imagem."</span> }
-<span class="caretline"><span class="lineno"> 572 </span>  <span class="keyword">val</span> foreground = <span class="warning">Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)</span></span>
-<span class="lineno"> 573 </span>  <span class="keyword">try</span> {
-<span class="lineno"> 574 </span>      foreground.setPixels(
-<span class="lineno"> 575 </span>          foregroundPixels,
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:580</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  577 </span>        }
+<span class="lineno">  578 </span>
+<span class="lineno">  579 </span>        clearTracePreview()
+<span class="caretline"><span class="lineno">  580 </span>        <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  581 </span>            .putBoolean(DrawingAccessibilityService.KEY_AWAITING_TARGET, <span class="keyword">false</span>)
+<span class="lineno">  582 </span>            .putBoolean(DrawingAccessibilityService.KEY_PLAN_READY, <span class="keyword">false</span>)
+<span class="lineno">  583 </span>            .apply()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:610</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 607 </span>        <span class="string">"A IA não ficou disponível ($it); usei o traçado local sem IA. "</span>
-<span class="lineno"> 608 </span>    }.orEmpty()
-<span class="lineno"> 609 </span>    DrawingPlanFile.write(<span class="keyword">this</span>, strokes)
-<span class="caretline"><span class="lineno"> 610 </span>    <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 611 </span>        .edit()
-<span class="lineno"> 612 </span>        .putString(DrawingAccessibilityService.KEY_TARGET_PACKAGE, target.packageName)
-<span class="lineno"> 613 </span>        .putFloat(DrawingAccessibilityService.KEY_IMAGE_ASPECT, imageAspect)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:708</span>: <span class="message">Use the KTX function <code>createBitmap</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  705 </span>      }
+<span class="lineno">  706 </span>  }
+<span class="lineno">  707 </span>  require(foundForeground) { <span class="string">"A IA não encontrou um objeto conhecido na imagem."</span> }
+<span class="caretline"><span class="lineno">  708 </span>  <span class="keyword">val</span> foreground = <span class="warning">Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)</span></span>
+<span class="lineno">  709 </span>  <span class="keyword">try</span> {
+<span class="lineno">  710 </span>      foreground.setPixels(
+<span class="lineno">  711 </span>          foregroundPixels,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:755</span>: <span class="message">Use the KTX extension function <code>Canvas.withTranslation</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 752 </span>
-<span class="lineno"> 753 </span>          <span class="keyword">val</span> contentWidth = minOf(width.toFloat(), height * previewAspect)
-<span class="lineno"> 754 </span>          <span class="keyword">val</span> contentHeight = contentWidth / previewAspect
-<span class="caretline"><span class="lineno"> 755 </span>          <span class="warning">canvas.save()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 756 </span>          canvas.translate((width - contentWidth) / <span class="number">2f</span>, (height - contentHeight) / <span class="number">2f</span>)
-<span class="lineno"> 757 </span>          canvas.scale(contentWidth, contentHeight)
-<span class="lineno"> 758 </span>          paint.strokeWidth = dp(<span class="number">1.5f</span>) / contentWidth
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:746</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  743 </span>        <span class="string">"A IA não ficou disponível ($it); usei o traçado local sem IA. "</span>
+<span class="lineno">  744 </span>    }.orEmpty()
+<span class="lineno">  745 </span>    DrawingPlanFile.write(<span class="keyword">this</span>, strokes)
+<span class="caretline"><span class="lineno">  746 </span>    <span class="warning">getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  747 </span>        .edit()
+<span class="lineno">  748 </span>        .putString(DrawingAccessibilityService.KEY_TARGET_PACKAGE, target.packageName)
+<span class="lineno">  749 </span>        .putFloat(DrawingAccessibilityService.KEY_IMAGE_ASPECT, imageAspect)
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:965</span>: <span class="message">Use the KTX extension function <code>String.toUri</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  962 </span>            .setPositiveButton(<span class="string">"Abrir configurações"</span>) { _, _ ->
+<span class="lineno">  963 </span>                <span class="keyword">val</span> settingsIntent = Intent(
+<span class="lineno">  964 </span>                    Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+<span class="caretline"><span class="lineno">  965 </span>                    <span class="warning">Uri.parse(<span class="string">"package:$packageName"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  966 </span>                )
+<span class="lineno">  967 </span>                installPermissionLauncher.launch(settingsIntent)
+<span class="lineno">  968 </span>            }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:1124</span>: <span class="message">Use the KTX extension function <code>Canvas.withTranslation</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 1121 </span>
+<span class="lineno"> 1122 </span>          <span class="keyword">val</span> contentWidth = minOf(width.toFloat(), height * previewAspect)
+<span class="lineno"> 1123 </span>          <span class="keyword">val</span> contentHeight = contentWidth / previewAspect
+<span class="caretline"><span class="lineno"> 1124 </span>          <span class="warning">canvas.save()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 1125 </span>          canvas.translate((width - contentWidth) / <span class="number">2f</span>, (height - contentHeight) / <span class="number">2f</span>)
+<span class="lineno"> 1126 </span>          canvas.scale(contentWidth, contentHeight)
+<span class="lineno"> 1127 </span>          paint.strokeWidth = dp(<span class="number">1.5f</span>) / contentWidth
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/tracolivre/automator/TraceProcessor.kt">../../src/main/java/com/tracolivre/automator/TraceProcessor.kt</a>:22</span>: <span class="message">Use the KTX extension function <code>Bitmap.scale</code> instead?</span><br /><pre class="errorlines">
@@ -986,14 +1006,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:369</span>: <span class="message">Custom view <code>AreaSelectionView</code> overrides <code>onTouchEvent</code> but not <code>performClick</code></span><br /><pre class="errorlines">
-<span class="lineno"> 366 </span>            }
-<span class="lineno"> 367 </span>        }
-<span class="lineno"> 368 </span>
-<span class="caretline"><span class="lineno"> 369 </span>        override <span class="keyword">fun</span> <span class="warning">onTouchEvent</span>(event: MotionEvent): Boolean {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 370 </span>            <span class="keyword">if</span> (event.action != MotionEvent.ACTION_UP) <span class="keyword">return</span> <span class="keyword">true</span>
-<span class="lineno"> 371 </span>            <span class="keyword">val</span> point = PointF(event.rawX, event.rawY)
-<span class="lineno"> 372 </span>            <span class="keyword">val</span> first = firstCorner
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:590</span>: <span class="message">Custom view <code>AreaSelectionView</code> overrides <code>onTouchEvent</code> but not <code>performClick</code></span><br /><pre class="errorlines">
+<span class="lineno"> 587 </span>            }
+<span class="lineno"> 588 </span>        }
+<span class="lineno"> 589 </span>
+<span class="caretline"><span class="lineno"> 590 </span>        override <span class="keyword">fun</span> <span class="warning">onTouchEvent</span>(event: MotionEvent): Boolean {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 591 </span>            <span class="keyword">if</span> (event.action != MotionEvent.ACTION_UP) <span class="keyword">return</span> <span class="keyword">true</span>
+<span class="lineno"> 592 </span>            <span class="keyword">val</span> point = PointF(event.rawX, event.rawY)
+<span class="lineno"> 593 </span>            <span class="keyword">val</span> first = firstCorner
 </pre>
 
 </div>
@@ -1033,424 +1053,504 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:561</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 558 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
-<span class="lineno"> 559 </span>            setTextColor(Color.WHITE)
-<span class="lineno"> 560 </span>            textSize = <span class="number">10f</span>
-<span class="caretline"><span class="lineno"> 561 </span>            text = <span class="warning"><span class="string">"Desenhando $nextStroke de ${</span>strokes.size<span class="string">}..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 562 </span>        }
-<span class="lineno"> 563 </span>        panel.addView(progressLabel)
-<span class="lineno"> 564 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:260</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 257 </span>    private <span class="keyword">fun</span> showQuickAccessBubble() {
+<span class="lineno"> 258 </span>        <span class="keyword">if</span> (quickAccessBubble != <span class="keyword">null</span> || !isConnected || !targetIsForeground) <span class="keyword">return</span>
+<span class="lineno"> 259 </span>        <span class="keyword">val</span> bubble = Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno"> 260 </span>            text = <span class="string">"</span><span class="warning"><span class="string">TA</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 261 </span>            textSize = <span class="number">12f</span>
+<span class="lineno"> 262 </span>            isAllCaps = <span class="keyword">false</span>
+<span class="lineno"> 263 </span>            minWidth = dp(<span class="number">48</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:561</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 558 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
-<span class="lineno"> 559 </span>            setTextColor(Color.WHITE)
-<span class="lineno"> 560 </span>            textSize = <span class="number">10f</span>
-<span class="caretline"><span class="lineno"> 561 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Desenhando </span></span><span class="string">$nextStroke de ${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 562 </span>        }
-<span class="lineno"> 563 </span>        panel.addView(progressLabel)
-<span class="lineno"> 564 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:302</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 299 </span>            setBackgroundColor(Color.rgb(<span class="number">36</span>, <span class="number">36</span>, <span class="number">58</span>))
+<span class="lineno"> 300 </span>        }
+<span class="lineno"> 301 </span>        panel.addView(TextView(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno"> 302 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Traço Automático</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 303 </span>            textSize = <span class="number">14f</span>
+<span class="lineno"> 304 </span>            setTextColor(Color.WHITE)
+<span class="lineno"> 305 </span>        })
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:561</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 558 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
-<span class="lineno"> 559 </span>            setTextColor(Color.WHITE)
-<span class="lineno"> 560 </span>            textSize = <span class="number">10f</span>
-<span class="caretline"><span class="lineno"> 561 </span>            text = <span class="string">"Desenhando $nextStroke</span><span class="warning"><span class="string"> de </span></span><span class="string">${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 562 </span>        }
-<span class="lineno"> 563 </span>        panel.addView(progressLabel)
-<span class="lineno"> 564 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:782</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 779 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
+<span class="lineno"> 780 </span>            setTextColor(Color.WHITE)
+<span class="lineno"> 781 </span>            textSize = <span class="number">10f</span>
+<span class="caretline"><span class="lineno"> 782 </span>            text = <span class="warning"><span class="string">"Desenhando $nextStroke de ${</span>strokes.size<span class="string">}..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 783 </span>        }
+<span class="lineno"> 784 </span>        panel.addView(progressLabel)
+<span class="lineno"> 785 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:565</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 562 </span>        }
-<span class="lineno"> 563 </span>        panel.addView(progressLabel)
-<span class="lineno"> 564 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 565 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Pausar</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 566 </span>            textSize = <span class="number">10f</span>
-<span class="lineno"> 567 </span>            minHeight = dp(<span class="number">38</span>)
-<span class="lineno"> 568 </span>            setPadding(dp(<span class="number">2</span>), <span class="number">0</span>, dp(<span class="number">2</span>), <span class="number">0</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:782</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 779 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
+<span class="lineno"> 780 </span>            setTextColor(Color.WHITE)
+<span class="lineno"> 781 </span>            textSize = <span class="number">10f</span>
+<span class="caretline"><span class="lineno"> 782 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Desenhando </span></span><span class="string">$nextStroke de ${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 783 </span>        }
+<span class="lineno"> 784 </span>        panel.addView(progressLabel)
+<span class="lineno"> 785 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:627</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 624 </span>    }
-<span class="lineno"> 625 </span>
-<span class="lineno"> 626 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
-<span class="caretline"><span class="lineno"> 627 </span>        progressLabel?.text = <span class="warning"><span class="string">"Desenhando $nextStroke de ${</span>strokes.size<span class="string">}..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 628 </span>    }
-<span class="lineno"> 629 </span>
-<span class="lineno"> 630 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:782</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 779 </span>        progressLabel = TextView(<span class="keyword">this</span>).apply {
+<span class="lineno"> 780 </span>            setTextColor(Color.WHITE)
+<span class="lineno"> 781 </span>            textSize = <span class="number">10f</span>
+<span class="caretline"><span class="lineno"> 782 </span>            text = <span class="string">"Desenhando $nextStroke</span><span class="warning"><span class="string"> de </span></span><span class="string">${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 783 </span>        }
+<span class="lineno"> 784 </span>        panel.addView(progressLabel)
+<span class="lineno"> 785 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="SetTextI18nDivLink" onclick="reveal('SetTextI18nDiv');" />+ 37 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="SetTextI18nDivLink" onclick="reveal('SetTextI18nDiv');" />+ 51 More Occurrences...</button>
 <div id="SetTextI18nDiv" style="display: none">
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:627</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 624 </span>    }
-<span class="lineno"> 625 </span>
-<span class="lineno"> 626 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
-<span class="caretline"><span class="lineno"> 627 </span>        progressLabel?.text = <span class="string">"</span><span class="warning"><span class="string">Desenhando </span></span><span class="string">$nextStroke de ${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 628 </span>    }
-<span class="lineno"> 629 </span>
-<span class="lineno"> 630 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:786</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 783 </span>        }
+<span class="lineno"> 784 </span>        panel.addView(progressLabel)
+<span class="lineno"> 785 </span>        panel.addView(Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno"> 786 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Pausar</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 787 </span>            textSize = <span class="number">10f</span>
+<span class="lineno"> 788 </span>            minHeight = dp(<span class="number">38</span>)
+<span class="lineno"> 789 </span>            setPadding(dp(<span class="number">2</span>), <span class="number">0</span>, dp(<span class="number">2</span>), <span class="number">0</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:627</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 624 </span>    }
-<span class="lineno"> 625 </span>
-<span class="lineno"> 626 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
-<span class="caretline"><span class="lineno"> 627 </span>        progressLabel?.text = <span class="string">"Desenhando $nextStroke</span><span class="warning"><span class="string"> de </span></span><span class="string">${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 628 </span>    }
-<span class="lineno"> 629 </span>
-<span class="lineno"> 630 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:848</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno"> 845 </span>    }
+<span class="lineno"> 846 </span>
+<span class="lineno"> 847 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
+<span class="caretline"><span class="lineno"> 848 </span>        progressLabel?.text = <span class="warning"><span class="string">"Desenhando $nextStroke de ${</span>strokes.size<span class="string">}..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 849 </span>    }
+<span class="lineno"> 850 </span>
+<span class="lineno"> 851 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:183</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 180 </span>            setBackgroundColor(Color.WHITE)
-<span class="lineno"> 181 </span>        }
-<span class="lineno"> 182 </span>        statusLabel = TextView(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 183 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Escolha uma imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 184 </span>            textSize = <span class="number">13f</span>
-<span class="lineno"> 185 </span>            setTextColor(MUTED)
-<span class="lineno"> 186 </span>            setPadding(<span class="number">0</span>, dp(<span class="number">3</span>), <span class="number">0</span>, dp(<span class="number">8</span>))
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:848</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 845 </span>    }
+<span class="lineno"> 846 </span>
+<span class="lineno"> 847 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
+<span class="caretline"><span class="lineno"> 848 </span>        progressLabel?.text = <span class="string">"</span><span class="warning"><span class="string">Desenhando </span></span><span class="string">$nextStroke de ${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 849 </span>    }
+<span class="lineno"> 850 </span>
+<span class="lineno"> 851 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:191</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 188 </span>        }
-<span class="lineno"> 189 </span>        bar.addView(statusLabel)
-<span class="lineno"> 190 </span>        prepareButton = Button(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 191 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Preparar desenho</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 192 </span>            isAllCaps = <span class="keyword">false</span>
-<span class="lineno"> 193 </span>            textSize = <span class="number">16f</span>
-<span class="lineno"> 194 </span>            minHeight = dp(<span class="number">50</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt">../../src/main/java/com/tracolivre/automator/DrawingAccessibilityService.kt</a>:848</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno"> 845 </span>    }
+<span class="lineno"> 846 </span>
+<span class="lineno"> 847 </span>    private <span class="keyword">fun</span> updateProgressOverlay() {
+<span class="caretline"><span class="lineno"> 848 </span>        progressLabel?.text = <span class="string">"Desenhando $nextStroke</span><span class="warning"><span class="string"> de </span></span><span class="string">${</span>strokes.size<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 849 </span>    }
+<span class="lineno"> 850 </span>
+<span class="lineno"> 851 </span>    private <span class="keyword">fun</span> pauseDrawing(message: String, showPrompt: Boolean) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:227</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 224 </span>            contentDescription = <span class="string">"Prévia da imagem escolhida"</span>
-<span class="lineno"> 225 </span>        }
-<span class="lineno"> 226 </span>        previewPlaceholder = TextView(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 227 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Sua arte aparece aqui</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 228 </span>            textSize = <span class="number">14f</span>
-<span class="lineno"> 229 </span>            gravity = Gravity.CENTER
-<span class="lineno"> 230 </span>            setTextColor(MUTED)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:132</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  129 </span>       <span class="keyword">if</span> (packageManager.canRequestPackageInstalls() &amp;&amp; apk != <span class="keyword">null</span>) {
+<span class="lineno">  130 </span>           installUpdateApk(apk)
+<span class="lineno">  131 </span>       } <span class="keyword">else</span> {
+<span class="caretline"><span class="lineno">  132 </span>           statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Permita a instalação de apps desconhecidos para atualizar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  133 </span>       }
+<span class="lineno">  134 </span>   }
+<span class="lineno">  135 </span>   buildInterface()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:253</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 250 </span>        }
-<span class="lineno"> 251 </span>        card.addView(traceSummaryLabel, spacedParams(top = <span class="number">8</span>))
-<span class="lineno"> 252 </span>        tracePreviewButton = Button(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 253 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 254 </span>            isAllCaps = <span class="keyword">false</span>
-<span class="lineno"> 255 </span>            visibility = View.GONE
-<span class="lineno"> 256 </span>            setOnClickListener {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:224</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  221 </span>            setBackgroundColor(Color.WHITE)
+<span class="lineno">  222 </span>        }
+<span class="lineno">  223 </span>        statusLabel = TextView(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  224 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Escolha uma imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  225 </span>            textSize = <span class="number">13f</span>
+<span class="lineno">  226 </span>            setTextColor(MUTED)
+<span class="lineno">  227 </span>            setPadding(<span class="number">0</span>, dp(<span class="number">3</span>), <span class="number">0</span>, dp(<span class="number">8</span>))
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:265</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 262 </span>        card.addView(tracePreviewButton, spacedParams(top = <span class="number">2</span>))
-<span class="lineno"> 263 </span>
-<span class="lineno"> 264 </span>        chooseImageButton = Button(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 265 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Escolher imagem</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 266 </span>            isAllCaps = <span class="keyword">false</span>
-<span class="lineno"> 267 </span>            setOnClickListener { imagePicker.launch(arrayOf(<span class="string">"image/*"</span>)) }
-<span class="lineno"> 268 </span>        }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:232</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  229 </span>        }
+<span class="lineno">  230 </span>        bar.addView(statusLabel)
+<span class="lineno">  231 </span>        prepareButton = Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  232 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Preparar desenho</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  233 </span>            isAllCaps = <span class="keyword">false</span>
+<span class="lineno">  234 </span>            textSize = <span class="number">16f</span>
+<span class="lineno">  235 </span>            minHeight = dp(<span class="number">50</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:271</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 268 </span>        }
-<span class="lineno"> 269 </span>        card.addView(chooseImageButton, spacedParams(top = <span class="number">8</span>))
-<span class="lineno"> 270 </span>        vectorDrawingButton = Button(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 271 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Criar desenho vetorial offline</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 272 </span>            isAllCaps = <span class="keyword">false</span>
-<span class="lineno"> 273 </span>            setOnClickListener { showVectorDrawingDialog() }
-<span class="lineno"> 274 </span>        }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:272</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  269 </span>            contentDescription = <span class="string">"Prévia da imagem escolhida"</span>
+<span class="lineno">  270 </span>        }
+<span class="lineno">  271 </span>        previewPlaceholder = TextView(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  272 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Sua arte aparece aqui</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  273 </span>            textSize = <span class="number">14f</span>
+<span class="lineno">  274 </span>            gravity = Gravity.CENTER
+<span class="lineno">  275 </span>            setTextColor(MUTED)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:316</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 313 </span>      detailSlider.progress = detail
-<span class="lineno"> 314 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
-<span class="lineno"> 315 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 316 </span>          <span class="warning"><span class="string">"Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."</span></span></span>
-<span class="lineno"> 317 </span>  } catch (error: Exception) {
-<span class="lineno"> 318 </span>      Toast.makeText(<span class="keyword">this</span>, error.message ?: <span class="string">"Não foi possível abrir a imagem."</span>, Toast.LENGTH_LONG).show()
-<span class="lineno"> 319 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:298</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  295 </span>        }
+<span class="lineno">  296 </span>        card.addView(traceSummaryLabel, spacedParams(top = <span class="number">8</span>))
+<span class="lineno">  297 </span>        tracePreviewButton = Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  298 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  299 </span>            isAllCaps = <span class="keyword">false</span>
+<span class="lineno">  300 </span>            visibility = View.GONE
+<span class="lineno">  301 </span>            setOnClickListener {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:316</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 313 </span>      detailSlider.progress = detail
-<span class="lineno"> 314 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
-<span class="lineno"> 315 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 316 </span>          <span class="string">"</span><span class="warning"><span class="string">Imagem carregada. Detalhe sugerido: </span></span><span class="string">$detail%. Você pode ajustar antes de preparar."</span></span>
-<span class="lineno"> 317 </span>  } catch (error: Exception) {
-<span class="lineno"> 318 </span>      Toast.makeText(<span class="keyword">this</span>, error.message ?: <span class="string">"Não foi possível abrir a imagem."</span>, Toast.LENGTH_LONG).show()
-<span class="lineno"> 319 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:310</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  307 </span>        card.addView(tracePreviewButton, spacedParams(top = <span class="number">2</span>))
+<span class="lineno">  308 </span>
+<span class="lineno">  309 </span>        chooseImageButton = Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  310 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Escolher da galeria</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  311 </span>            isAllCaps = <span class="keyword">false</span>
+<span class="lineno">  312 </span>            setOnClickListener {
+<span class="lineno">  313 </span>                imagePicker.launch(
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:316</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 313 </span>      detailSlider.progress = detail
-<span class="lineno"> 314 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
-<span class="lineno"> 315 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 316 </span>          <span class="string">"Imagem carregada. Detalhe sugerido: $detail</span><span class="warning"><span class="string">%. Você pode ajustar antes de preparar.</span></span><span class="string">"</span></span>
-<span class="lineno"> 317 </span>  } catch (error: Exception) {
-<span class="lineno"> 318 </span>      Toast.makeText(<span class="keyword">this</span>, error.message ?: <span class="string">"Não foi possível abrir a imagem."</span>, Toast.LENGTH_LONG).show()
-<span class="lineno"> 319 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:320</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  317 </span>        }
+<span class="lineno">  318 </span>        card.addView(chooseImageButton, spacedParams(top = <span class="number">8</span>))
+<span class="lineno">  319 </span>        internetImageButton = Button(<span class="keyword">this</span>).apply {
+<span class="caretline"><span class="lineno">  320 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Importar imagem da internet</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  321 </span>            isAllCaps = <span class="keyword">false</span>
+<span class="lineno">  322 </span>            setOnClickListener { showInternetImageDialog() }
+<span class="lineno">  323 </span>        }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:332</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 329 </span>        prepareButton.isEnabled = <span class="keyword">false</span>
-<span class="lineno"> 330 </span>        removeImageButton.visibility = View.GONE
-<span class="lineno"> 331 </span>        invalidatePendingPlan(<span class="string">"Imagem removida. Escolha outra imagem para começar."</span>)
-<span class="caretline"><span class="lineno"> 332 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Imagem removida. Escolha outra imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 333 </span>    }
-<span class="lineno"> 334 </span>
-<span class="lineno"> 335 </span>    private <span class="keyword">fun</span> invalidatePendingPlan(message: String) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:393</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  390 </span>        internetImageButton.isEnabled = <span class="keyword">false</span>
+<span class="lineno">  391 </span>        prepareButton.isEnabled = <span class="keyword">false</span>
+<span class="lineno">  392 </span>        removeImageButton.isEnabled = <span class="keyword">false</span>
+<span class="caretline"><span class="lineno">  393 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Baixando imagem...</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  394 </span>        imageDownloadThread = Thread({
+<span class="lineno">  395 </span>            <span class="keyword">val</span> result = <span class="keyword">try</span> {
+<span class="lineno">  396 </span>                Result.success(downloadImage(url))
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:347</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 344 </span>        tracePreviewView.setStrokes(emptyList(), <span class="number">1f</span>)
-<span class="lineno"> 345 </span>        tracePreviewView.visibility = View.GONE
-<span class="lineno"> 346 </span>        tracePreviewButton.visibility = View.GONE
-<span class="caretline"><span class="lineno"> 347 </span>        tracePreviewButton.text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 348 </span>        traceSummaryLabel.visibility = View.GONE
-<span class="lineno"> 349 </span>    }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:509</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  506 </span>      detailSlider.progress = detail
+<span class="lineno">  507 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
+<span class="lineno">  508 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  509 </span>          <span class="warning"><span class="string">"Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  510 </span>  }
+<span class="lineno">  511 </span>
+<span class="lineno">  512 </span>  private <span class="keyword">fun</span> removeSelectedImage() {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:355</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 352 </span>        <span class="keyword">val</span> aspect = selectedBitmap?.let { it.width.toFloat() / it.height } ?: <span class="number">1f</span>
-<span class="lineno"> 353 </span>        tracePreviewView.setStrokes(strokes, aspect)
-<span class="lineno"> 354 </span>        tracePreviewView.visibility = View.GONE
-<span class="caretline"><span class="lineno"> 355 </span>        tracePreviewButton.text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 356 </span>        tracePreviewButton.visibility = <span class="keyword">if</span> (strokes.isEmpty()) View.GONE <span class="keyword">else</span> View.VISIBLE
-<span class="lineno"> 357 </span>        traceSummaryLabel.text = <span class="keyword">if</span> (strokes.isEmpty()) {
-<span class="lineno"> 358 </span>            <span class="string">"Nenhum contorno detectado."</span></pre>
-
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:394</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 391 </span>         .setPositiveButton(<span class="string">"Preparar desenho"</span>) { _, _ ->
-<span class="lineno"> 392 </span>             <span class="keyword">val</span> target = targets.getOrNull(targetSpinner.selectedItemPosition)
-<span class="lineno"> 393 </span>             <span class="keyword">if</span> (target == <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 394 </span>                 statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Nenhum app de desenho compatível foi encontrado.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 395 </span>                 <span class="keyword">return</span><span class="annotation">@setPositiveButton</span>
-<span class="lineno"> 396 </span>             }
-<span class="lineno"> 397 </span>             <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:509</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  506 </span>      detailSlider.progress = detail
+<span class="lineno">  507 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
+<span class="lineno">  508 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  509 </span>          <span class="string">"</span><span class="warning"><span class="string">Imagem carregada. Detalhe sugerido: </span></span><span class="string">$detail%. Você pode ajustar antes de preparar."</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  510 </span>  }
+<span class="lineno">  511 </span>
+<span class="lineno">  512 </span>  private <span class="keyword">fun</span> removeSelectedImage() {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:398</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 395 </span>                    <span class="keyword">return</span><span class="annotation">@setPositiveButton</span>
-<span class="lineno"> 396 </span>                }
-<span class="lineno"> 397 </span>                <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
-<span class="caretline"><span class="lineno"> 398 </span>                    statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Ative a Acessibilidade e tente novamente.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 399 </span>                    startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-<span class="lineno"> 400 </span>                    <span class="keyword">return</span><span class="annotation">@setPositiveButton</span>
-<span class="lineno"> 401 </span>                }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:509</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  506 </span>      detailSlider.progress = detail
+<span class="lineno">  507 </span>      invalidatePendingPlan(<span class="string">"Imagem carregada. Selecione o app de desenho e prepare os traços."</span>)
+<span class="lineno">  508 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  509 </span>          <span class="string">"Imagem carregada. Detalhe sugerido: $detail</span><span class="warning"><span class="string">%. Você pode ajustar antes de preparar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  510 </span>  }
+<span class="lineno">  511 </span>
+<span class="lineno">  512 </span>  private <span class="keyword">fun</span> removeSelectedImage() {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:417</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 414 </span>           tracePreviewView.setStrokes(strokes, <span class="number">1f</span>)
-<span class="lineno"> 415 </span>           tracePreviewView.visibility = View.VISIBLE
-<span class="lineno"> 416 </span>           tracePreviewButton.visibility = View.GONE
-<span class="caretline"><span class="lineno"> 417 </span>           traceSummaryLabel.text = <span class="warning"><span class="string">"$template · ${</span>strokes.size<span class="string">} traços vetoriais"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 418 </span>           traceSummaryLabel.visibility = View.VISIBLE
-<span class="lineno"> 419 </span>           prepareButton.isEnabled = <span class="keyword">false</span>
-<span class="lineno"> 420 </span>           queuePlan(strokes, <span class="number">1f</span>, target, usedAi = <span class="keyword">false</span>, aiFallbackReason = <span class="keyword">null</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:522</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  519 </span>        prepareButton.isEnabled = <span class="keyword">false</span>
+<span class="lineno">  520 </span>        removeImageButton.visibility = View.GONE
+<span class="lineno">  521 </span>        invalidatePendingPlan(<span class="string">"Imagem removida. Escolha outra imagem para começar."</span>)
+<span class="caretline"><span class="lineno">  522 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Imagem removida. Escolha outra imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  523 </span>    }
+<span class="lineno">  524 </span>
+<span class="lineno">  525 </span>    private <span class="keyword">fun</span> invalidatePendingPlan(message: String) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:417</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 414 </span>           tracePreviewView.setStrokes(strokes, <span class="number">1f</span>)
-<span class="lineno"> 415 </span>           tracePreviewView.visibility = View.VISIBLE
-<span class="lineno"> 416 </span>           tracePreviewButton.visibility = View.GONE
-<span class="caretline"><span class="lineno"> 417 </span>           traceSummaryLabel.text = <span class="string">"$template · ${</span>strokes.size<span class="string">}</span><span class="warning"><span class="string"> traços vetoriais</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 418 </span>           traceSummaryLabel.visibility = View.VISIBLE
-<span class="lineno"> 419 </span>           prepareButton.isEnabled = <span class="keyword">false</span>
-<span class="lineno"> 420 </span>           queuePlan(strokes, <span class="number">1f</span>, target, usedAi = <span class="keyword">false</span>, aiFallbackReason = <span class="keyword">null</span>)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:537</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  534 </span>        tracePreviewView.setStrokes(emptyList(), <span class="number">1f</span>)
+<span class="lineno">  535 </span>        tracePreviewView.visibility = View.GONE
+<span class="lineno">  536 </span>        tracePreviewButton.visibility = View.GONE
+<span class="caretline"><span class="lineno">  537 </span>        tracePreviewButton.text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  538 </span>        traceSummaryLabel.visibility = View.GONE
+<span class="lineno">  539 </span>    }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:428</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 425 </span>    private <span class="keyword">fun</span> prepareDrawing() {
-<span class="lineno"> 426 </span>        <span class="keyword">val</span> target = targets.getOrNull(targetSpinner.selectedItemPosition)
-<span class="lineno"> 427 </span>        <span class="keyword">if</span> (target == <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 428 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Nenhum app de desenho compatível foi encontrado.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 429 </span>            <span class="keyword">return</span>
-<span class="lineno"> 430 </span>        }
-<span class="lineno"> 431 </span>        <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:545</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  542 </span>        <span class="keyword">val</span> aspect = selectedBitmap?.let { it.width.toFloat() / it.height } ?: <span class="number">1f</span>
+<span class="lineno">  543 </span>        tracePreviewView.setStrokes(strokes, aspect)
+<span class="lineno">  544 </span>        tracePreviewView.visibility = View.GONE
+<span class="caretline"><span class="lineno">  545 </span>        tracePreviewButton.text = <span class="string">"</span><span class="warning"><span class="string">Ver contornos</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  546 </span>        tracePreviewButton.visibility = <span class="keyword">if</span> (strokes.isEmpty()) View.GONE <span class="keyword">else</span> View.VISIBLE
+<span class="lineno">  547 </span>        traceSummaryLabel.text = <span class="keyword">if</span> (strokes.isEmpty()) {
+<span class="lineno">  548 </span>            <span class="string">"Nenhum contorno detectado."</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:558</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  555 </span>    private <span class="keyword">fun</span> prepareDrawing() {
+<span class="lineno">  556 </span>        <span class="keyword">val</span> target = targets.getOrNull(targetSpinner.selectedItemPosition)
+<span class="lineno">  557 </span>        <span class="keyword">if</span> (target == <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno">  558 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Nenhum app de desenho compatível foi encontrado.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  559 </span>            <span class="keyword">return</span>
+<span class="lineno">  560 </span>        }
+<span class="lineno">  561 </span>        <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:432</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 429 </span>        <span class="keyword">return</span>
-<span class="lineno"> 430 </span>    }
-<span class="lineno"> 431 </span>    <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
-<span class="caretline"><span class="lineno"> 432 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Ative a Acessibilidade e toque novamente em Preparar desenho.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 433 </span>        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-<span class="lineno"> 434 </span>        <span class="keyword">return</span>
-<span class="lineno"> 435 </span>    }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:562</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  559 </span>        <span class="keyword">return</span>
+<span class="lineno">  560 </span>    }
+<span class="lineno">  561 </span>    <span class="keyword">if</span> (!isAccessibilityServiceEnabled()) {
+<span class="caretline"><span class="lineno">  562 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Ative a Acessibilidade e toque novamente em Preparar desenho.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  563 </span>        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+<span class="lineno">  564 </span>        <span class="keyword">return</span>
+<span class="lineno">  565 </span>    }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:439</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 436 </span>
-<span class="lineno"> 437 </span>        <span class="keyword">val</span> bitmap = selectedBitmap
-<span class="lineno"> 438 </span>        <span class="keyword">if</span> (bitmap == <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 439 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Escolha uma imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 440 </span>            <span class="keyword">return</span>
-<span class="lineno"> 441 </span>        }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:568</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  565 </span>  }
+<span class="lineno">  566 </span>  <span class="keyword">if</span> (!DrawingAccessibilityService.isConnected) {
+<span class="lineno">  567 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  568 </span>          <span class="string">"</span><span class="warning"><span class="string">A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações.</span></span><span class="string">"</span></span>
+<span class="lineno">  569 </span>      startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+<span class="lineno">  570 </span>      <span class="keyword">return</span>
+<span class="lineno">  571 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:462</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 459 </span>            chooseImageButton.isEnabled = <span class="keyword">true</span>
-<span class="lineno"> 460 </span>            removeImageButton.isEnabled = <span class="keyword">true</span>
-<span class="lineno"> 461 </span>            vectorDrawingButton.isEnabled = <span class="keyword">true</span>
-<span class="caretline"><span class="lineno"> 462 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar uma cópia da imagem.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 463 </span>            <span class="keyword">return</span>
-<span class="lineno"> 464 </span>        }
-<span class="lineno"> 465 </span>        <span class="keyword">val</span> selectedDetail = detail
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:575</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  572 </span>
+<span class="lineno">  573 </span>        <span class="keyword">val</span> bitmap = selectedBitmap
+<span class="lineno">  574 </span>        <span class="keyword">if</span> (bitmap == <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno">  575 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Escolha uma imagem para começar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  576 </span>            <span class="keyword">return</span>
+<span class="lineno">  577 </span>        }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:511</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 508 </span>  <span class="keyword">val</span> strokes = preparation.strokes
-<span class="lineno"> 509 </span>  showTracePreview(strokes, selectedDetail)
-<span class="lineno"> 510 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 511 </span>      statusLabel.text = <span class="warning"><span class="string">"A IA não ficou disponível (${</span>preparation.aiFallbackReason<span class="string">}); vou usar o traçado local sem IA."</span></span></span>
-<span class="lineno"> 512 </span>  }
-<span class="lineno"> 513 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
-<span class="lineno"> 514 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:598</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  595 </span>            chooseImageButton.isEnabled = <span class="keyword">true</span>
+<span class="lineno">  596 </span>            internetImageButton.isEnabled = <span class="keyword">true</span>
+<span class="lineno">  597 </span>            removeImageButton.isEnabled = <span class="keyword">true</span>
+<span class="caretline"><span class="lineno">  598 </span>            statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar uma cópia da imagem.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  599 </span>            <span class="keyword">return</span>
+<span class="lineno">  600 </span>        }
+<span class="lineno">  601 </span>        <span class="keyword">val</span> selectedDetail = detail
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:511</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 508 </span>  <span class="keyword">val</span> strokes = preparation.strokes
-<span class="lineno"> 509 </span>  showTracePreview(strokes, selectedDetail)
-<span class="lineno"> 510 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 511 </span>      statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">A IA não ficou disponível (</span></span><span class="string">${</span>preparation.aiFallbackReason<span class="string">}); vou usar o traçado local sem IA."</span></span>
-<span class="lineno"> 512 </span>  }
-<span class="lineno"> 513 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
-<span class="lineno"> 514 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:647</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  644 </span>  <span class="keyword">val</span> strokes = preparation.strokes
+<span class="lineno">  645 </span>  showTracePreview(strokes, selectedDetail)
+<span class="lineno">  646 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno">  647 </span>      statusLabel.text = <span class="warning"><span class="string">"A IA não ficou disponível (${</span>preparation.aiFallbackReason<span class="string">}); vou usar o traçado local sem IA."</span></span></span>
+<span class="lineno">  648 </span>  }
+<span class="lineno">  649 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
+<span class="lineno">  650 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:511</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 508 </span>  <span class="keyword">val</span> strokes = preparation.strokes
-<span class="lineno"> 509 </span>  showTracePreview(strokes, selectedDetail)
-<span class="lineno"> 510 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
-<span class="caretline"><span class="lineno"> 511 </span>      statusLabel.text = <span class="string">"A IA não ficou disponível (${</span>preparation.aiFallbackReason<span class="string">}</span><span class="warning"><span class="string">); vou usar o traçado local sem IA.</span></span><span class="string">"</span></span>
-<span class="lineno"> 512 </span>  }
-<span class="lineno"> 513 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
-<span class="lineno"> 514 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:647</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  644 </span>  <span class="keyword">val</span> strokes = preparation.strokes
+<span class="lineno">  645 </span>  showTracePreview(strokes, selectedDetail)
+<span class="lineno">  646 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno">  647 </span>      statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">A IA não ficou disponível (</span></span><span class="string">${</span>preparation.aiFallbackReason<span class="string">}); vou usar o traçado local sem IA."</span></span>
+<span class="lineno">  648 </span>  }
+<span class="lineno">  649 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
+<span class="lineno">  650 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:529</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 526 </span>                  preparation.aiFallbackReason
-<span class="lineno"> 527 </span>              )
-<span class="lineno"> 528 </span>          }.onFailure { error ->
-<span class="caretline"><span class="lineno"> 529 </span>              statusLabel.text = <span class="warning"><span class="string">"Não foi possível preparar o desenho: ${</span>error.cause?.message ?: error.message<span class="string">}"</span></span></span>
-<span class="lineno"> 530 </span>          }
-<span class="lineno"> 531 </span>      }
-<span class="lineno"> 532 </span>  }.start()
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:647</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  644 </span>  <span class="keyword">val</span> strokes = preparation.strokes
+<span class="lineno">  645 </span>  showTracePreview(strokes, selectedDetail)
+<span class="lineno">  646 </span>  <span class="keyword">if</span> (preparation.aiFallbackReason != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno">  647 </span>      statusLabel.text = <span class="string">"A IA não ficou disponível (${</span>preparation.aiFallbackReason<span class="string">}</span><span class="warning"><span class="string">); vou usar o traçado local sem IA.</span></span><span class="string">"</span></span>
+<span class="lineno">  648 </span>  }
+<span class="lineno">  649 </span>  <span class="keyword">if</span> (strokes.isEmpty()) {
+<span class="lineno">  650 </span>      statusLabel.text = <span class="keyword">if</span> (useAiEnhancement &amp;&amp; preparation.aiFallbackReason == <span class="keyword">null</span>) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:529</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 526 </span>                  preparation.aiFallbackReason
-<span class="lineno"> 527 </span>              )
-<span class="lineno"> 528 </span>          }.onFailure { error ->
-<span class="caretline"><span class="lineno"> 529 </span>              statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar o desenho: </span></span><span class="string">${</span>error.cause?.message ?: error.message<span class="string">}"</span></span>
-<span class="lineno"> 530 </span>          }
-<span class="lineno"> 531 </span>      }
-<span class="lineno"> 532 </span>  }.start()
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:665</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  662 </span>                  preparation.aiFallbackReason
+<span class="lineno">  663 </span>              )
+<span class="lineno">  664 </span>          }.onFailure { error ->
+<span class="caretline"><span class="lineno">  665 </span>              statusLabel.text = <span class="warning"><span class="string">"Não foi possível preparar o desenho: ${</span>error.cause?.message ?: error.message<span class="string">}"</span></span></span>
+<span class="lineno">  666 </span>          }
+<span class="lineno">  667 </span>      }
+<span class="lineno">  668 </span>  }.start()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:628</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 625 </span>          )
-<span class="lineno"> 626 </span>          .apply()
-<span class="lineno"> 627 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 628 </span>          <span class="warning"><span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span></span>
-<span class="lineno"> 629 </span>  } catch (error: Exception) {
-<span class="lineno"> 630 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
-<span class="lineno"> 631 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:665</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  662 </span>                  preparation.aiFallbackReason
+<span class="lineno">  663 </span>              )
+<span class="lineno">  664 </span>          }.onFailure { error ->
+<span class="caretline"><span class="lineno">  665 </span>              statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar o desenho: </span></span><span class="string">${</span>error.cause?.message ?: error.message<span class="string">}"</span></span>
+<span class="lineno">  666 </span>          }
+<span class="lineno">  667 </span>      }
+<span class="lineno">  668 </span>  }.start()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:628</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 625 </span>          )
-<span class="lineno"> 626 </span>          .apply()
-<span class="lineno"> 627 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 628 </span>          <span class="string">"${</span>warning<span class="string">}</span><span class="warning"><span class="string">Tudo pronto: </span></span><span class="string">${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span>
-<span class="lineno"> 629 </span>  } catch (error: Exception) {
-<span class="lineno"> 630 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
-<span class="lineno"> 631 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:764</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  761 </span>          )
+<span class="lineno">  762 </span>          .apply()
+<span class="lineno">  763 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  764 </span>          <span class="warning"><span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span></span>
+<span class="lineno">  765 </span>  } catch (error: Exception) {
+<span class="lineno">  766 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
+<span class="lineno">  767 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:628</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 625 </span>          )
-<span class="lineno"> 626 </span>          .apply()
-<span class="lineno"> 627 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 628 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">}</span><span class="warning"><span class="string"> traços</span></span><span class="string">$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span>
-<span class="lineno"> 629 </span>  } catch (error: Exception) {
-<span class="lineno"> 630 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
-<span class="lineno"> 631 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:764</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  761 </span>          )
+<span class="lineno">  762 </span>          .apply()
+<span class="lineno">  763 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  764 </span>          <span class="string">"${</span>warning<span class="string">}</span><span class="warning"><span class="string">Tudo pronto: </span></span><span class="string">${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span>
+<span class="lineno">  765 </span>  } catch (error: Exception) {
+<span class="lineno">  766 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
+<span class="lineno">  767 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:628</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 625 </span>          )
-<span class="lineno"> 626 </span>          .apply()
-<span class="lineno"> 627 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 628 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode</span><span class="warning"><span class="string">. Abra “</span></span><span class="string">${</span>target.label<span class="string">}” para desenhar."</span></span>
-<span class="lineno"> 629 </span>  } catch (error: Exception) {
-<span class="lineno"> 630 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
-<span class="lineno"> 631 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:764</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  761 </span>          )
+<span class="lineno">  762 </span>          .apply()
+<span class="lineno">  763 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  764 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">}</span><span class="warning"><span class="string"> traços</span></span><span class="string">$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span></span>
+<span class="lineno">  765 </span>  } catch (error: Exception) {
+<span class="lineno">  766 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
+<span class="lineno">  767 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:628</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 625 </span>          )
-<span class="lineno"> 626 </span>          .apply()
-<span class="lineno"> 627 </span>      statusLabel.text =
-<span class="caretline"><span class="lineno"> 628 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}</span><span class="warning"><span class="string">” para desenhar.</span></span><span class="string">"</span></span>
-<span class="lineno"> 629 </span>  } catch (error: Exception) {
-<span class="lineno"> 630 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
-<span class="lineno"> 631 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:764</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  761 </span>          )
+<span class="lineno">  762 </span>          .apply()
+<span class="lineno">  763 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  764 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode</span><span class="warning"><span class="string">. Abra “</span></span><span class="string">${</span>target.label<span class="string">}” para desenhar."</span></span>
+<span class="lineno">  765 </span>  } catch (error: Exception) {
+<span class="lineno">  766 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
+<span class="lineno">  767 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:630</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 627 </span>          statusLabel.text =
-<span class="lineno"> 628 </span>              <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span>
-<span class="lineno"> 629 </span>      } catch (error: Exception) {
-<span class="caretline"><span class="lineno"> 630 </span>          statusLabel.text = <span class="warning"><span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 631 </span>      }
-<span class="lineno"> 632 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:764</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  761 </span>          )
+<span class="lineno">  762 </span>          .apply()
+<span class="lineno">  763 </span>      statusLabel.text =
+<span class="caretline"><span class="lineno">  764 </span>          <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}</span><span class="warning"><span class="string">” para desenhar.</span></span><span class="string">"</span></span>
+<span class="lineno">  765 </span>  } catch (error: Exception) {
+<span class="lineno">  766 </span>      statusLabel.text = <span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span>
+<span class="lineno">  767 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:630</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 627 </span>          statusLabel.text =
-<span class="lineno"> 628 </span>              <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span>
-<span class="lineno"> 629 </span>      } catch (error: Exception) {
-<span class="caretline"><span class="lineno"> 630 </span>          statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar o desenho: </span></span><span class="string">${</span>error.message<span class="string">}"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 631 </span>      }
-<span class="lineno"> 632 </span>  }
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:766</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  763 </span>          statusLabel.text =
+<span class="lineno">  764 </span>              <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span>
+<span class="lineno">  765 </span>      } catch (error: Exception) {
+<span class="caretline"><span class="lineno">  766 </span>          statusLabel.text = <span class="warning"><span class="string">"Não foi possível preparar o desenho: ${</span>error.message<span class="string">}"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  767 </span>      }
+<span class="lineno">  768 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:698</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 695 </span>            spacedParams(bottom = <span class="number">14</span>))
-<span class="lineno"> 696 </span>
-<span class="lineno"> 697 </span>        aiEnhancement = CheckBox(<span class="keyword">this</span>).apply {
-<span class="caretline"><span class="lineno"> 698 </span>            text = <span class="string">"</span><span class="warning"><span class="string">Separar o assunto com IA local</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 699 </span>            textSize = <span class="number">14f</span>
-<span class="lineno"> 700 </span>            setTextColor(INK)
-<span class="lineno"> 701 </span>            buttonTintList = android.content.res.ColorStateList.valueOf(PURPLE)
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:766</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  763 </span>          statusLabel.text =
+<span class="lineno">  764 </span>              <span class="string">"${</span>warning<span class="string">}Tudo pronto: ${</span>strokes.size<span class="string">} traços$mode. Abra “${</span>target.label<span class="string">}” para desenhar."</span>
+<span class="lineno">  765 </span>      } catch (error: Exception) {
+<span class="caretline"><span class="lineno">  766 </span>          statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Não foi possível preparar o desenho: </span></span><span class="string">${</span>error.message<span class="string">}"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  767 </span>      }
+<span class="lineno">  768 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:721</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
-<span class="lineno"> 718 </span>  setOnSeekBarChangeListener(<span class="keyword">object</span> : SeekBar.OnSeekBarChangeListener {
-<span class="lineno"> 719 </span>      override <span class="keyword">fun</span> onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-<span class="lineno"> 720 </span>          detail = progress
-<span class="caretline"><span class="lineno"> 721 </span>          detailLabel.text = <span class="warning"><span class="string">"Detalhe  ·  $detail%"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 722 </span>      }
-<span class="lineno"> 723 </span>
-<span class="lineno"> 724 </span>      override <span class="keyword">fun</span> onStartTrackingTouch(seekBar: SeekBar?) = Unit
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:784</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  781 </span>    private <span class="keyword">fun</span> checkForUpdates() {
+<span class="lineno">  782 </span>        <span class="keyword">if</span> (updateThread?.isAlive == <span class="keyword">true</span>) <span class="keyword">return</span>
+<span class="lineno">  783 </span>        updateButton.isEnabled = <span class="keyword">false</span>
+<span class="caretline"><span class="lineno">  784 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Verificando atualizações...</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  785 </span>        updateThread = Thread({
+<span class="lineno">  786 </span>            <span class="keyword">val</span> result = <span class="keyword">try</span> {
+<span class="lineno">  787 </span>                Result.success(fetchLatestRelease())
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:721</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 718 </span>  setOnSeekBarChangeListener(<span class="keyword">object</span> : SeekBar.OnSeekBarChangeListener {
-<span class="lineno"> 719 </span>      override <span class="keyword">fun</span> onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-<span class="lineno"> 720 </span>          detail = progress
-<span class="caretline"><span class="lineno"> 721 </span>          detailLabel.text = <span class="string">"</span><span class="warning"><span class="string">Detalhe  ·  </span></span><span class="string">$detail%"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 722 </span>      }
-<span class="lineno"> 723 </span>
-<span class="lineno"> 724 </span>      override <span class="keyword">fun</span> onStartTrackingTouch(seekBar: SeekBar?) = Unit
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:798</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  795 </span>  result.onSuccess { release ->
+<span class="lineno">  796 </span>      <span class="keyword">val</span> currentVersion = currentVersionName()
+<span class="lineno">  797 </span>      <span class="keyword">if</span> (compareVersions(release.versionName, currentVersion) &lt;= <span class="number">0</span>) {
+<span class="caretline"><span class="lineno">  798 </span>          statusLabel.text = <span class="warning"><span class="string">"O Traço Automático já está atualizado ($currentVersion)."</span></span></span>
+<span class="lineno">  799 </span>      } <span class="keyword">else</span> {
+<span class="lineno">  800 </span>          downloadAndInstallUpdate(release)
+<span class="lineno">  801 </span>      }
 </pre>
 
-</div>
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:798</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  795 </span>  result.onSuccess { release ->
+<span class="lineno">  796 </span>      <span class="keyword">val</span> currentVersion = currentVersionName()
+<span class="lineno">  797 </span>      <span class="keyword">if</span> (compareVersions(release.versionName, currentVersion) &lt;= <span class="number">0</span>) {
+<span class="caretline"><span class="lineno">  798 </span>          statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">O Traço Automático já está atualizado (</span></span><span class="string">$currentVersion)."</span></span>
+<span class="lineno">  799 </span>      } <span class="keyword">else</span> {
+<span class="lineno">  800 </span>          downloadAndInstallUpdate(release)
+<span class="lineno">  801 </span>      }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:858</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  855 </span>
+<span class="lineno">  856 </span>    private <span class="keyword">fun</span> downloadAndInstallUpdate(release: UpdateRelease) {
+<span class="lineno">  857 </span>        updateButton.isEnabled = <span class="keyword">false</span>
+<span class="caretline"><span class="lineno">  858 </span>        statusLabel.text = <span class="warning"><span class="string">"Baixando ${</span>release.title<span class="string">}..."</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  859 </span>        updateThread = Thread({
+<span class="lineno">  860 </span>            <span class="keyword">val</span> result = <span class="keyword">try</span> {
+<span class="lineno">  861 </span>                Result.success(downloadUpdateApk(release))
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:858</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  855 </span>
+<span class="lineno">  856 </span>    private <span class="keyword">fun</span> downloadAndInstallUpdate(release: UpdateRelease) {
+<span class="lineno">  857 </span>        updateButton.isEnabled = <span class="keyword">false</span>
+<span class="caretline"><span class="lineno">  858 </span>        statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Baixando </span></span><span class="string">${</span>release.title<span class="string">}..."</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  859 </span>        updateThread = Thread({
+<span class="lineno">  860 </span>            <span class="keyword">val</span> result = <span class="keyword">try</span> {
+<span class="lineno">  861 </span>                Result.success(downloadUpdateApk(release))
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:870</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  867 </span>           updateThread = <span class="keyword">null</span>
+<span class="lineno">  868 </span>           updateButton.isEnabled = <span class="keyword">true</span>
+<span class="lineno">  869 </span>           result.onSuccess { apk ->
+<span class="caretline"><span class="lineno">  870 </span>               statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Download concluído. Preparando a instalação...</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  871 </span>               <span class="keyword">if</span> (packageManager.canRequestPackageInstalls()) {
+<span class="lineno">  872 </span>                   installUpdateApk(apk)
+<span class="lineno">  873 </span>               } <span class="keyword">else</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:878</span>: <span class="message">Do not concatenate text displayed with <code>setText</code>. Use resource string with placeholders.</span><br /><pre class="errorlines">
+<span class="lineno">  875 </span>              }
+<span class="lineno">  876 </span>          }.onFailure { error ->
+<span class="lineno">  877 </span>              statusLabel.text =
+<span class="caretline"><span class="lineno">  878 </span>                  <span class="warning"><span class="string">"Não foi possível baixar a atualização: ${</span>error.message ?: error.javaClass.simpleName<span class="string">}"</span></span></span>
+<span class="lineno">  879 </span>          }
+<span class="lineno">  880 </span>      }
+<span class="lineno">  881 </span>  }, <span class="string">"update-download"</span>).apply {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:878</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  875 </span>              }
+<span class="lineno">  876 </span>          }.onFailure { error ->
+<span class="lineno">  877 </span>              statusLabel.text =
+<span class="caretline"><span class="lineno">  878 </span>                  <span class="string">"</span><span class="warning"><span class="string">Não foi possível baixar a atualização: </span></span><span class="string">${</span>error.message ?: error.javaClass.simpleName<span class="string">}"</span></span>
+<span class="lineno">  879 </span>          }
+<span class="lineno">  880 </span>      }
+<span class="lineno">  881 </span>  }, <span class="string">"update-download"</span>).apply {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:960</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  957 </span>  .setMessage(<span class="string">"O Android precisa permitir que o Traço Automático instale APKs baixados."</span>)
+<span class="lineno">  958 </span>  .setNegativeButton(<span class="string">"Agora não"</span>) { _, _ ->
+<span class="lineno">  959 </span>      pendingUpdateApk = <span class="keyword">null</span>
+<span class="caretline"><span class="lineno">  960 </span>      statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Atualização baixada. Permita a instalação para continuar.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  961 </span>  }
+<span class="lineno">  962 </span>  .setPositiveButton(<span class="string">"Abrir configurações"</span>) { _, _ ->
+<span class="lineno">  963 </span>      <span class="keyword">val</span> settingsIntent = Intent(
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/tracolivre/automator/MainActivity.kt">../../src/main/java/com/tracolivre/automator/MainActivity.kt</a>:980</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
+<span class="lineno">  977 </span>          .setDataAndType(apkUri, <span class="string">"application/vnd.android.package-archive"</span>)
+<span class="lineno">  978 </span>          .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+<span class="lineno">  979 </span>      startActivity(installIntent)
+<span class="caretline"><span class="lineno">  980 </span>      statusLabel.text = <span class="string">"</span><span class="warning"><span class="string">Confirme a instalação na tela do Android.</span></span><span class="string">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  981 </span>  } catch (error: Exception) {
+<span class="lineno">  982 </span>      statusLabel.text = <span class="string">"Não foi possível abrir o instalador: ${</span>error.message ?: error.javaClass.simpleName<span class="string">}"</span>
+<span class="lineno">  983 </span>  }
+</pre>
+
+<br/><b>NOTE: 6 results omitted.</b><br/><br/></div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationSetTextI18n" style="display: none;">
 When calling <code>TextView#setText</code><br/>

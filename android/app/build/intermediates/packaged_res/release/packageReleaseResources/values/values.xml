@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_purple">#6858E8</color>
+    <string name="accessibility_description">Analisa a tela para reconhecer a lousa escolhida e envia gestos de desenho somente na área confirmada pelo usuário.</string>
+    <string name="accessibility_service_name">Traço Automático</string>
+    <string name="app_name">Traço Automático</string>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#6B5CE7</item>
+        <item name="android:statusBarColor">#F5F6FA</item>
+        <item name="android:navigationBarColor">#303044</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">#F6F5FB</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
