@@ -4,7 +4,7 @@ O app transforma uma imagem escolhida pelo usuário em traços de contorno e os 
 
 ## Atualizar pelo GitHub
 
-O botão **Verificar atualização** consulta o último GitHub Release em `deusasuprema/Tra-o-Automatico`. Para publicar esta versão, crie um release com a tag `v1.25` e anexe `app-release.apk` renomeado para `traco-automatico.apk`. O `versionName` do APK precisa corresponder à tag. Ainda não há release publicado; até criar o primeiro, o app avisará que não há versão disponível.
+O botão **Verificar atualização** consulta o último GitHub Release em `deusasuprema/Traco-Automatico`. Para publicar esta versão, crie um release com a tag `v1.26` e anexe `app-release.apk` renomeado para `traco-automatico.apk`. O `versionName` do APK precisa corresponder à tag. A versão 1.26 corrige também o endereço usado pelo atualizador.
 
 O APK publicado deve usar a mesma chave de assinatura das versões instaladas. Não troque a chave de depuração usada para os APKs atuais; o Android não aceita atualizar um app com um APK assinado por outra chave. Depois do download, o Android exige que o usuário permita a instalação dessa fonte e confirme a instalação; apps comuns não podem instalar atualizações silenciosamente.
 

@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
     companion object {
         private const val DRAWING_APP_PACKAGE = "com.newlang.weelife.sa"
         private const val UPDATE_API_URL =
-            "https://api.github.com/repos/deusasuprema/Tra-o-Automatico/releases/latest"
+            "https://api.github.com/repos/deusasuprema/Traco-Automatico/releases/latest"
         private const val UPDATE_DOWNLOAD_HOST = "github.com"
         private const val UPDATE_ASSET_NAME = "traco-automatico.apk"
         private const val MAX_UPDATE_SIZE = 100L * 1024L * 1024L
@@ -836,7 +836,7 @@ class MainActivity : ComponentActivity() {
             require(
                 downloadUri.scheme.equals("https", ignoreCase = true) &&
                     downloadUri.host.equals(UPDATE_DOWNLOAD_HOST, ignoreCase = true) &&
-                    downloadUri.path.startsWith("/deusasuprema/Tra-o-Automatico/releases/download/")
+                    downloadUri.path.startsWith("/deusasuprema/Traco-Automatico/releases/download/")
             ) {
                 "O endereço do APK não pertence ao release configurado."
             }
