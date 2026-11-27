@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.tracolivre.automator.app-mergeDebugResources-20:/values-v27/values-v27.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Administrator\\Documents\\GitHub\\Criador de Desenhos\\android\\app\\src\\main\\res\\values-v27\\styles.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "10",
+                        "endColumns": "12",
+                        "endOffsets": "603"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "632"
+                    }
+                }
+            ]
+        }
+    ]
+}

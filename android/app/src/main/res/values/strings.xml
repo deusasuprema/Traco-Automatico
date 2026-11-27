@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Traço Automático</string>
+    <string name="accessibility_service_name">Traço Automático</string>
+    <string name="accessibility_description">Analisa a tela para reconhecer a lousa escolhida e envia gestos de desenho somente na área confirmada pelo usuário.</string>
+</resources>

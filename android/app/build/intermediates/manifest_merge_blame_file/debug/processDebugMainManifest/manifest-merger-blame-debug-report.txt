@@ -1,0 +1,184 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tracolivre.automator"
+4    android:versionCode="22"
+5    android:versionName="1.21" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <queries>
+11-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:5:5-10:15
+12        <intent>
+12-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:6:9-9:18
+13            <action android:name="android.intent.action.MAIN" />
+13-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:13-65
+13-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:21-62
+14
+15            <category android:name="android.intent.category.LAUNCHER" />
+15-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:13-73
+15-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:23-70
+16        </intent>
+17    </queries>
+18
+19    <permission
+19-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+20        android:name="com.tracolivre.automator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+20-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+21        android:protectionLevel="signature" />
+21-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+22
+23    <uses-permission android:name="com.tracolivre.automator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+23-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+23-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+24
+25    <application
+25-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:12:5-41:19
+26        android:allowBackup="false"
+26-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:13:9-36
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.15.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\43338be908b30fb098de977eb8592cb8\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:icon="@mipmap/ic_launcher"
+30-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:14:9-43
+31        android:label="@string/app_name"
+31-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:15:9-41
+32        android:roundIcon="@mipmap/ic_launcher"
+32-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:16:9-48
+33        android:supportsRtl="true"
+33-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:17:9-35
+34        android:theme="@style/AppTheme" >
+34-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:18:9-40
+35        <activity
+35-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:19:9-26:20
+36            android:name="com.tracolivre.automator.MainActivity"
+36-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:20:13-41
+37            android:exported="true" >
+37-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:21:13-36
+38            <intent-filter>
+38-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:22:13-25:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:13-65
+39-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:7:21-62
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:13-73
+41-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:8:23-70
+42            </intent-filter>
+43        </activity>
+44
+45        <service
+45-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:28:9-40:19
+46            android:name="com.tracolivre.automator.DrawingAccessibilityService"
+46-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:29:13-56
+47            android:description="@string/accessibility_description"
+47-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:30:13-68
+48            android:exported="true"
+48-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:31:13-36
+49            android:label="@string/accessibility_service_name"
+49-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:32:13-63
+50            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+50-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:33:13-79
+51            <intent-filter>
+51-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:34:13-36:29
+52                <action android:name="android.accessibilityservice.AccessibilityService" />
+52-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:35:17-92
+52-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:35:25-89
+53            </intent-filter>
+54
+55            <meta-data
+55-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:37:13-39:73
+56                android:name="android.accessibilityservice"
+56-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:38:17-60
+57                android:resource="@xml/drawing_accessibility_service" />
+57-->C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml:39:17-70
+58        </service>
+59
+60        <provider
+60-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:25:13-67
+62            android:authorities="com.tracolivre.automator.androidx-startup"
+62-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:27:13-37
+64            <meta-data
+64-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+65-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+66                android:value="androidx.startup" />
+66-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+67        </provider>
+68
+69        <receiver
+69-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+70            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+70-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+71            android:directBootAware="false"
+71-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+72            android:enabled="true"
+72-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+73            android:exported="true"
+73-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+74            android:permission="android.permission.DUMP" >
+74-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+75            <intent-filter>
+75-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+76                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+76-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+76-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+77            </intent-filter>
+78            <intent-filter>
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+79                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+80            </intent-filter>
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+82                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+85                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e27198bbd7eea89dd9b8d0a2d316bf4f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+86            </intent-filter>
+87        </receiver>
+88
+89        <service
+89-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
+90            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+90-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:30:13-103
+91            android:exported="false" >
+91-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:31:13-37
+92            <meta-data
+92-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:32:13-34:39
+93                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+93-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:33:17-94
+94                android:value="cct" />
+94-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\950588c0b47684ec8db05c6b2362a721\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:34:17-36
+95        </service>
+96        <service
+96-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:26:9-30:19
+97            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+97-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:27:13-117
+98            android:exported="false"
+98-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:28:13-37
+99            android:permission="android.permission.BIND_JOB_SERVICE" >
+99-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:29:13-69
+100        </service>
+101
+102        <receiver
+102-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:32:9-34:40
+103            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+103-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:33:13-132
+104            android:exported="false" />
+104-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Administrator\.gradle\caches\8.11.1\transforms\e55dd41f0422c72eec60b1ef597c44ea\transformed\transport-runtime-3.1.0\AndroidManifest.xml:34:13-37
+105    </application>
+106
+107</manifest>

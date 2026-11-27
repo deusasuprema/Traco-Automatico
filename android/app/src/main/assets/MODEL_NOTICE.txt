@@ -1,0 +1,9 @@
+Bundled image segmentation model
+
+Model: MediaPipe DeepLab-v3 Image Segmenter
+File: deeplab_v3.tflite
+Source: https://huggingface.co/litert-community/MediaPipe-ImageSegmenter-DeepLab-V3
+License: Apache License 2.0 (see APACHE-2.0.txt)
+SHA-256: ff36e24d40547fe9e645e2f4e8745d1876d6e38b332d39a82f0bf0f5d1d561b3
+
+The model segments 21 Pascal VOC categories. It may not identify every subject or drawing.

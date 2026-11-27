@@ -1,0 +1,17 @@
+{
+  "name": "Traço Livre — seu espaço de desenho",
+  "short_name": "Traço Livre",
+  "description": "Um espaço simples e gratuito para desenhar no celular ou computador.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f6fa",
+  "theme_color": "#f5f6fa",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

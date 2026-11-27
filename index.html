@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f6fa">
+    <meta name="description" content="Um espaço simples e gratuito para desenhar no celular ou computador.">
+    <title>Traço Livre — seu espaço de desenho</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Traço Livre, início">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>Traço Livre</span>
+      </a>
+      <p class="topbar-hint">Sua ideia começa com um traço.</p>
+      <div class="top-actions">
+        <button id="undo-button" class="icon-button" type="button" aria-label="Desfazer" title="Desfazer (Ctrl+Z)" disabled>↶</button>
+        <button id="redo-button" class="icon-button" type="button" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)" disabled>↷</button>
+        <button id="clear-button" class="text-button" type="button">Limpar</button>
+        <button id="install-button" class="text-button install-button" type="button" hidden>Instalar app</button>
+        <button id="save-button" class="save-button" type="button">
+          <span aria-hidden="true">↓</span> Salvar desenho
+        </button>
+      </div>
+    </header>
+
+    <main class="app-layout">
+      <aside class="tool-panel" aria-label="Ferramentas de desenho">
+        <p class="panel-label">Ferramentas</p>
+        <div class="tool-grid" role="group" aria-label="Escolha uma ferramenta">
+          <button class="tool-button is-active" type="button" data-tool="brush" aria-pressed="true" title="Lápis">
+            <span class="tool-icon" aria-hidden="true">✎</span><span>Lápis</span>
+          </button>
+          <button class="tool-button" type="button" data-tool="eraser" aria-pressed="false" title="Borracha">
+            <span class="tool-icon" aria-hidden="true">▱</span><span>Borracha</span>
+          </button>
+          <button class="tool-button" type="button" data-tool="line" aria-pressed="false" title="Linha">
+            <span class="tool-icon" aria-hidden="true">／</span><span>Linha</span>
+          </button>
+          <button class="tool-button" type="button" data-tool="rectangle" aria-pressed="false" title="Retângulo">
+            <span class="tool-icon" aria-hidden="true">□</span><span>Retângulo</span>
+          </button>
+          <button class="tool-button" type="button" data-tool="ellipse" aria-pressed="false" title="Elipse">
+            <span class="tool-icon" aria-hidden="true">○</span><span>Elipse</span>
+          </button>
+        </div>
+
+        <div class="control-section">
+          <label class="control-label" for="color-picker">Cor</label>
+          <div class="color-control">
+            <input id="color-picker" type="color" value="#24243a" aria-label="Escolher cor">
+            <span id="color-value">#24243A</span>
+          </div>
+          <div class="swatches" role="group" aria-label="Cores rápidas">
+            <button type="button" class="swatch is-selected" data-color="#24243a" aria-label="Grafite" title="Grafite"></button>
+            <button type="button" class="swatch" data-color="#ef476f" aria-label="Rosa" title="Rosa"></button>
+            <button type="button" class="swatch" data-color="#f4a261" aria-label="Laranja" title="Laranja"></button>
+            <button type="button" class="swatch" data-color="#2a9d8f" aria-label="Verde" title="Verde"></button>
+            <button type="button" class="swatch" data-color="#4381f5" aria-label="Azul" title="Azul"></button>
+            <button type="button" class="swatch" data-color="#8b5cf6" aria-label="Roxo" title="Roxo"></button>
+          </div>
+        </div>
+
+        <div class="control-section size-section">
+          <label class="control-label" for="brush-size">
+            Tamanho <output id="size-value" for="brush-size">6 px</output>
+          </label>
+          <input id="brush-size" type="range" min="1" max="48" value="6">
+          <div class="size-endpoints" aria-hidden="true"><span>Fino</span><span>Grosso</span></div>
+        </div>
+
+        <p class="panel-tip">Dica: desenhe com o dedo, mouse ou caneta.</p>
+      </aside>
+
+      <section class="drawing-area" aria-label="Área de desenho">
+        <div class="canvas-heading">
+          <div>
+            <h1>Meu desenho</h1>
+            <p>Um papel em branco, infinitas possibilidades.</p>
+          </div>
+          <span class="canvas-badge"><span aria-hidden="true">●</span> Área de desenho</span>
+        </div>
+        <div class="canvas-frame">
+          <canvas id="drawing-canvas" aria-label="Tela para desenhar" role="img"></canvas>
+        </div>
+        <p class="canvas-footer">O desenho não é salvo automaticamente. Use “Salvar desenho” para guardá-lo em PNG.</p>
+      </section>
+    </main>
+    <div id="live-message" class="visually-hidden" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

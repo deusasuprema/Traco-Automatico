@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="partial_results">
+    <map id="UnsafeImplicitIntentLaunch">
+            <map id="actionsSent">
+                    <map id="android.settings.ACCESSIBILITY_SETTINGS (used to start an activity)">
+                        <location id="0"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                            line="205"
+                            column="27"
+                            startOffset="7803"
+                            endLine="205"
+                            endColumn="73"
+                            endOffset="7849"/>
+                        <location id="1"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                            line="399"
+                            column="35"
+                            startOffset="16387"
+                            endLine="399"
+                            endColumn="81"
+                            endOffset="16433"/>
+                        <location id="2"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                            line="433"
+                            column="27"
+                            startOffset="18050"
+                            endLine="433"
+                            endColumn="73"
+                            endOffset="18096"/>
+                    </map>
+            </map>
+    </map>
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.tracolivre.automator.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.color.brand_purple"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="2"
+            column="12"
+            startOffset="24"
+            endLine="2"
+            endColumn="31"
+            endOffset="43"/>
+        <entry
+            name="model"
+            string="color[brand_purple(D)],drawable[ic_launcher_background(U),ic_launcher_foreground(U)],mipmap[ic_launcher(U)],string[app_name(U),accessibility_description(U),accessibility_service_name(U)],style[AppTheme(U)],xml[drawing_accessibility_service(U)];3^2^1,8^5;;;"/>
+    </map>
+
+</incidents>
