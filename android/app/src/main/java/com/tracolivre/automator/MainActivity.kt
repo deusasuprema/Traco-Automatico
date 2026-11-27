@@ -11,6 +11,7 @@ import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.text.InputType
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,8 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.core.content.FileProvider
 import androidx.core.view.WindowCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -38,6 +41,14 @@ import com.google.mediapipe.framework.image.ByteBufferExtractor
 import com.google.mediapipe.tasks.core.BaseOptions
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.imagesegmenter.ImageSegmenter
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.net.URI
+import java.net.URL
+import org.json.JSONObject
+import javax.net.ssl.HttpsURLConnection
 import kotlin.math.max
 
 private data class TargetApp(val label: String, val packageName: String)
@@ -46,10 +57,22 @@ private data class TracePreparationResult(
     val usedAi: Boolean,
     val aiFallbackReason: String? = null
 )
+private data class UpdateRelease(
+    val versionName: String,
+    val title: String,
+    val downloadUrl: String,
+    val assetSize: Long
+)
+private class NoPublishedUpdateException : IOException("Ainda não há uma versão publicada no GitHub.")
 
 class MainActivity : ComponentActivity() {
     companion object {
         private const val DRAWING_APP_PACKAGE = "com.newlang.weelife.sa"
+        private const val UPDATE_API_URL =
+            "https://api.github.com/repos/deusasuprema/Tra-o-Automatico/releases/latest"
+        private const val UPDATE_DOWNLOAD_HOST = "github.com"
+        private const val UPDATE_ASSET_NAME = "traco-automatico.apk"
+        private const val MAX_UPDATE_SIZE = 100L * 1024L * 1024L
         private val BRUSH_SIZES = listOf(
             "Muito fino",
             "Fino",
@@ -65,7 +88,7 @@ class MainActivity : ComponentActivity() {
         private const val BORDER = 0xffe9e7f2.toInt()
     }
 
-    private lateinit var imagePicker: ActivityResultLauncher<Array<String>>
+    private lateinit var imagePicker: ActivityResultLauncher<PickVisualMediaRequest>
     private lateinit var previewFrame: FrameLayout
     private lateinit var previewImage: ImageView
     private lateinit var previewPlaceholder: TextView
@@ -80,18 +103,34 @@ class MainActivity : ComponentActivity() {
     private lateinit var statusLabel: TextView
     private lateinit var prepareButton: View
     private lateinit var chooseImageButton: View
+    private lateinit var internetImageButton: View
     private lateinit var removeImageButton: View
-    private lateinit var vectorDrawingButton: View
+    private lateinit var updateButton: View
     private lateinit var targets: List<TargetApp>
     private var selectedBitmap: Bitmap? = null
+    private var imageDownloadThread: Thread? = null
+    private var updateThread: Thread? = null
+    private var pendingUpdateApk: File? = null
+    private lateinit var installPermissionLauncher: ActivityResultLauncher<Intent>
     private var selectedBrushSize = 2
     private var detail = 55
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        imagePicker = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        imagePicker = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
             if (uri != null) loadImage(uri)
+        }
+        installPermissionLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            val apk = pendingUpdateApk
+            pendingUpdateApk = null
+            if (packageManager.canRequestPackageInstalls() && apk != null) {
+                installUpdateApk(apk)
+            } else {
+                statusLabel.text = "Permita a instalação de apps desconhecidos para atualizar."
+            }
         }
         buildInterface()
         loadTargetApps()
@@ -104,6 +143,8 @@ class MainActivity : ComponentActivity() {
     }
 
     override fun onDestroy() {
+        imageDownloadThread?.interrupt()
+        updateThread?.interrupt()
         selectedBitmap?.recycle()
         super.onDestroy()
     }
@@ -205,6 +246,10 @@ class MainActivity : ComponentActivity() {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
         }
         bar.addView(accessibilityButton)
+        updateButton = quietButton("Verificar atualização") {
+            checkForUpdates()
+        }
+        bar.addView(updateButton)
         return bar
     }
 
@@ -262,17 +307,21 @@ class MainActivity : ComponentActivity() {
         card.addView(tracePreviewButton, spacedParams(top = 2))
 
         chooseImageButton = Button(this).apply {
-            text = "Escolher imagem"
+            text = "Escolher da galeria"
             isAllCaps = false
-            setOnClickListener { imagePicker.launch(arrayOf("image/*")) }
+            setOnClickListener {
+                imagePicker.launch(
+                    PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                )
+            }
         }
         card.addView(chooseImageButton, spacedParams(top = 8))
-        vectorDrawingButton = Button(this).apply {
-            text = "Criar desenho vetorial offline"
+        internetImageButton = Button(this).apply {
+            text = "Importar imagem da internet"
             isAllCaps = false
-            setOnClickListener { showVectorDrawingDialog() }
+            setOnClickListener { showInternetImageDialog() }
         }
-        card.addView(vectorDrawingButton, spacedParams(top = 4))
+        card.addView(internetImageButton, spacedParams(top = 4))
         removeImageButton = quietButton("Remover imagem") {
             removeSelectedImage()
         }.apply {
@@ -300,23 +349,164 @@ class MainActivity : ComponentActivity() {
             val bitmap = contentResolver.openInputStream(uri).use { stream ->
                 BitmapFactory.decodeStream(stream, null, options)
             } ?: error("Não foi possível abrir essa imagem.")
-
-            selectedBitmap?.recycle()
-            selectedBitmap = bitmap
-            previewPlaceholder.visibility = View.GONE
-            previewImage.setImageBitmap(bitmap)
-            previewImage.visibility = View.VISIBLE
-            clearTracePreview()
-            prepareButton.isEnabled = true
-            removeImageButton.visibility = View.VISIBLE
-            detail = TraceProcessor.recommendDetail(bitmap)
-            detailSlider.progress = detail
-            invalidatePendingPlan("Imagem carregada. Selecione o app de desenho e prepare os traços.")
-            statusLabel.text =
-                "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
+            setSelectedImage(bitmap)
         } catch (error: Exception) {
             Toast.makeText(this, error.message ?: "Não foi possível abrir a imagem.", Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun showInternetImageDialog() {
+        val urlInput = EditText(this).apply {
+            hint = "https://exemplo.com/imagem.jpg"
+            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI
+            isSingleLine = true
+        }
+        AlertDialog.Builder(this)
+            .setTitle("Importar imagem da internet")
+            .setMessage("Cole o link direto de uma imagem HTTPS. Links de páginas de sites não funcionam.")
+            .setView(urlInput)
+            .setNegativeButton("Cancelar", null)
+            .setPositiveButton("Importar") { _, _ ->
+                importImageFromInternet(urlInput.text.toString())
+            }
+            .show()
+    }
+
+    private fun importImageFromInternet(rawUrl: String) {
+        val url = try {
+            URI(rawUrl.trim()).also {
+                require(it.scheme.equals("https", ignoreCase = true) && !it.host.isNullOrBlank()) {
+                    "Use um link direto começando com https://."
+                }
+                require(it.userInfo == null) { "O link não pode conter usuário ou senha." }
+            }.toASCIIString()
+        } catch (error: Exception) {
+            statusLabel.text = error.message ?: "Link de imagem inválido."
+            Toast.makeText(this, statusLabel.text, Toast.LENGTH_LONG).show()
+            return
+        }
+
+        chooseImageButton.isEnabled = false
+        internetImageButton.isEnabled = false
+        prepareButton.isEnabled = false
+        removeImageButton.isEnabled = false
+        statusLabel.text = "Baixando imagem..."
+        imageDownloadThread = Thread({
+            val result = try {
+                Result.success(downloadImage(url))
+            } catch (error: Exception) {
+                Result.failure(error)
+            }
+            runOnUiThread {
+                if (isFinishing || isDestroyed) {
+                    result.getOrNull()?.recycle()
+                    return@runOnUiThread
+                }
+                imageDownloadThread = null
+                chooseImageButton.isEnabled = true
+                internetImageButton.isEnabled = true
+                prepareButton.isEnabled = selectedBitmap != null
+                removeImageButton.isEnabled = selectedBitmap != null
+                result.onSuccess(::setSelectedImage).onFailure { error ->
+                    val message = "Não foi possível baixar a imagem: ${error.message ?: error.javaClass.simpleName}"
+                    statusLabel.text = message
+                    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }, "image-download").apply {
+            isDaemon = true
+            start()
+        }
+    }
+
+    private fun downloadImage(rawUrl: String): Bitmap {
+        var url = URL(rawUrl)
+        repeat(6) { redirect ->
+            require(url.protocol.equals("https", ignoreCase = true)) {
+                "O endereço ou redirecionamento precisa usar HTTPS."
+            }
+            val connection = url.openConnection() as? HttpsURLConnection
+                ?: error("Não foi possível abrir uma conexão HTTPS.")
+            connection.connectTimeout = 10_000
+            connection.readTimeout = 15_000
+            connection.instanceFollowRedirects = false
+            try {
+                val responseCode = connection.responseCode
+                if (responseCode in 300..399) {
+                    require(redirect < 5) { "O link redirecionou muitas vezes." }
+                    val location = connection.getHeaderField("Location")
+                        ?: error("O servidor enviou um redirecionamento inválido.")
+                    url = URL(url, location)
+                } else {
+                    require(responseCode in 200..299) { "O servidor respondeu com erro HTTP $responseCode." }
+                    val contentType = connection.contentType
+                        ?.substringBefore(';')
+                        ?.trim()
+                        ?.lowercase()
+                    require(contentType?.startsWith("image/") == true) {
+                        "Esse link não parece ser uma imagem. Use o link direto do arquivo."
+                    }
+                    val maxBytes = 15 * 1024 * 1024
+                    require(connection.contentLengthLong <= 0L || connection.contentLengthLong <= maxBytes) {
+                        "A imagem é maior que o limite de 15 MB."
+                    }
+                    val bytes = ByteArrayOutputStream().use { output ->
+                        connection.inputStream.use { input ->
+                            val buffer = ByteArray(8192)
+                            var total = 0
+                            while (true) {
+                                val count = input.read(buffer)
+                                if (count < 0) break
+                                total += count
+                                require(total <= maxBytes) { "A imagem é maior que o limite de 15 MB." }
+                                output.write(buffer, 0, count)
+                            }
+                        }
+                        output.toByteArray()
+                    }
+                    return decodeImageBytes(bytes)
+                }
+            } finally {
+                connection.disconnect()
+            }
+        }
+        error("Não foi possível seguir o redirecionamento da imagem.")
+    }
+
+    private fun decodeImageBytes(bytes: ByteArray): Bitmap {
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        BitmapFactory.decodeByteArray(bytes, 0, bytes.size, bounds)
+        require(bounds.outWidth > 0 && bounds.outHeight > 0) { "O arquivo recebido não é uma imagem compatível." }
+        require(bounds.outWidth <= 30_000 && bounds.outHeight <= 30_000) {
+            "A resolução da imagem é alta demais para importar."
+        }
+        var sampleSize = 1
+        while (max(bounds.outWidth / sampleSize, bounds.outHeight / sampleSize) > 900) {
+            sampleSize *= 2
+        }
+        return BitmapFactory.decodeByteArray(
+            bytes,
+            0,
+            bytes.size,
+            BitmapFactory.Options().apply { inSampleSize = sampleSize }
+        ) ?: error("Não foi possível abrir a imagem baixada.")
+    }
+
+    private fun setSelectedImage(bitmap: Bitmap) {
+        selectedBitmap?.recycle()
+        selectedBitmap = bitmap
+        previewPlaceholder.visibility = View.GONE
+        previewImage.setImageBitmap(bitmap)
+        previewImage.visibility = View.VISIBLE
+        clearTracePreview()
+        prepareButton.isEnabled = true
+        removeImageButton.visibility = View.VISIBLE
+        removeImageButton.isEnabled = true
+        detail = TraceProcessor.recommendDetail(bitmap)
+        detailSlider.progress = detail
+        invalidatePendingPlan("Imagem carregada. Selecione o app de desenho e prepare os traços.")
+        statusLabel.text =
+            "Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar."
     }
 
     private fun removeSelectedImage() {
@@ -362,66 +552,6 @@ class MainActivity : ComponentActivity() {
         traceSummaryLabel.visibility = View.VISIBLE
     }
 
-    private fun showVectorDrawingDialog() {
-        val dialogContent = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(dp(24), dp(8), dp(24), 0)
-        }
-        val templateSpinner = Spinner(this).apply {
-            adapter = ArrayAdapter(
-                this@MainActivity,
-                android.R.layout.simple_spinner_item,
-                VectorDrawingFactory.templates
-            ).also { it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) }
-        }
-        dialogContent.addView(makeText("Escolha um desenho", 14f, INK, bold = true))
-        dialogContent.addView(templateSpinner)
-        val nameInput = EditText(this).apply {
-            hint = "Nome ou palavra (opcional)"
-            isSingleLine = true
-            filters = arrayOf(android.text.InputFilter.LengthFilter(12))
-        }
-        dialogContent.addView(nameInput)
-
-        AlertDialog.Builder(this)
-            .setTitle("Desenho vetorial offline")
-            .setMessage("Escolha uma forma pronta e, se quiser, acrescente um nome. Não usa IA nem internet.")
-            .setView(dialogContent)
-            .setNegativeButton("Cancelar", null)
-            .setPositiveButton("Preparar desenho") { _, _ ->
-                val target = targets.getOrNull(targetSpinner.selectedItemPosition)
-                if (target == null) {
-                    statusLabel.text = "Nenhum app de desenho compatível foi encontrado."
-                    return@setPositiveButton
-                }
-                if (!isAccessibilityServiceEnabled()) {
-                    statusLabel.text = "Ative a Acessibilidade e tente novamente."
-                    startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-                    return@setPositiveButton
-                }
-
-                val template = templateSpinner.selectedItem?.toString()
-                    ?: VectorDrawingFactory.templates.first()
-                val strokes = try {
-                    VectorDrawingFactory.create(template, nameInput.text.toString())
-                } catch (error: IllegalArgumentException) {
-                    statusLabel.text = error.message ?: "Não foi possível criar o desenho."
-                    return@setPositiveButton
-                }
-                previewImage.setImageDrawable(null)
-                previewImage.visibility = View.GONE
-                previewPlaceholder.visibility = View.GONE
-                tracePreviewView.setStrokes(strokes, 1f)
-                tracePreviewView.visibility = View.VISIBLE
-                tracePreviewButton.visibility = View.GONE
-                traceSummaryLabel.text = "$template · ${strokes.size} traços vetoriais"
-                traceSummaryLabel.visibility = View.VISIBLE
-                prepareButton.isEnabled = false
-                queuePlan(strokes, 1f, target, usedAi = false, aiFallbackReason = null)
-            }
-            .show()
-    }
-
     private fun prepareDrawing() {
         val target = targets.getOrNull(targetSpinner.selectedItemPosition)
         if (target == null) {
@@ -430,6 +560,12 @@ class MainActivity : ComponentActivity() {
         }
         if (!isAccessibilityServiceEnabled()) {
             statusLabel.text = "Ative a Acessibilidade e toque novamente em Preparar desenho."
+            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+            return
+        }
+        if (!DrawingAccessibilityService.isConnected) {
+            statusLabel.text =
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
             return
         }
@@ -447,8 +583,8 @@ class MainActivity : ComponentActivity() {
             .apply()
         prepareButton.isEnabled = false
         chooseImageButton.isEnabled = false
+        internetImageButton.isEnabled = false
         removeImageButton.isEnabled = false
-        vectorDrawingButton.isEnabled = false
         statusLabel.text = if (aiEnhancement.isChecked) {
             "Preparando com IA local. Na primeira vez, o modelo pode levar um pouco para carregar..."
         } else {
@@ -457,8 +593,8 @@ class MainActivity : ComponentActivity() {
         val imageForProcessing = bitmap.copy(Bitmap.Config.ARGB_8888, false) ?: run {
             prepareButton.isEnabled = true
             chooseImageButton.isEnabled = true
+            internetImageButton.isEnabled = true
             removeImageButton.isEnabled = true
-            vectorDrawingButton.isEnabled = true
             statusLabel.text = "Não foi possível preparar uma cópia da imagem."
             return
         }
@@ -502,8 +638,8 @@ class MainActivity : ComponentActivity() {
             runOnUiThread {
                 prepareButton.isEnabled = true
                 chooseImageButton.isEnabled = true
+                internetImageButton.isEnabled = true
                 removeImageButton.isEnabled = true
-                vectorDrawingButton.isEnabled = true
                 result.onSuccess { preparation ->
                     val strokes = preparation.strokes
                     showTracePreview(strokes, selectedDetail)
@@ -642,6 +778,234 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private fun checkForUpdates() {
+        if (updateThread?.isAlive == true) return
+        updateButton.isEnabled = false
+        statusLabel.text = "Verificando atualizações..."
+        updateThread = Thread({
+            val result = try {
+                Result.success(fetchLatestRelease())
+            } catch (error: Exception) {
+                Result.failure(error)
+            }
+            runOnUiThread {
+                if (isFinishing || isDestroyed) return@runOnUiThread
+                updateThread = null
+                updateButton.isEnabled = true
+                result.onSuccess { release ->
+                    val currentVersion = currentVersionName()
+                    if (compareVersions(release.versionName, currentVersion) <= 0) {
+                        statusLabel.text = "O Traço Automático já está atualizado ($currentVersion)."
+                    } else {
+                        downloadAndInstallUpdate(release)
+                    }
+                }.onFailure { error ->
+                    statusLabel.text = if (error is NoPublishedUpdateException) {
+                        error.message ?: "Ainda não há uma versão publicada no GitHub."
+                    } else {
+                        "Não foi possível verificar atualizações: ${error.message ?: error.javaClass.simpleName}"
+                    }
+                }
+            }
+        }, "update-check").apply {
+            isDaemon = true
+            start()
+        }
+    }
+
+    private fun fetchLatestRelease(): UpdateRelease {
+        val connection = URL(UPDATE_API_URL).openConnection() as HttpsURLConnection
+        connection.connectTimeout = 10_000
+        connection.readTimeout = 15_000
+        connection.setRequestProperty("Accept", "application/vnd.github+json")
+        connection.setRequestProperty("User-Agent", "TracoAutomatico-Android")
+        try {
+            val responseCode = connection.responseCode
+            if (responseCode == 404) throw NoPublishedUpdateException()
+            require(responseCode in 200..299) { "O GitHub respondeu com erro HTTP $responseCode." }
+            val release = JSONObject(connection.inputStream.bufferedReader().use { it.readText() })
+            val tag = release.getString("tag_name")
+            val version = tag.removePrefix("v").removePrefix("V")
+            versionParts(version)
+            val assets = release.getJSONArray("assets")
+            val asset = (0 until assets.length())
+                .map(assets::getJSONObject)
+                .firstOrNull { it.optString("name") == UPDATE_ASSET_NAME }
+                ?: error("O release não contém o arquivo $UPDATE_ASSET_NAME.")
+            val downloadUri = URI(asset.getString("browser_download_url"))
+            require(
+                downloadUri.scheme.equals("https", ignoreCase = true) &&
+                    downloadUri.host.equals(UPDATE_DOWNLOAD_HOST, ignoreCase = true) &&
+                    downloadUri.path.startsWith("/deusasuprema/Tra-o-Automatico/releases/download/")
+            ) {
+                "O endereço do APK não pertence ao release configurado."
+            }
+            val assetSize = asset.optLong("size", 0L)
+            require(assetSize <= MAX_UPDATE_SIZE) { "O APK publicado excede o limite de 100 MB." }
+            return UpdateRelease(
+                versionName = version,
+                title = release.optString("name").ifBlank { tag },
+                downloadUrl = downloadUri.toASCIIString(),
+                assetSize = assetSize
+            )
+        } finally {
+            connection.disconnect()
+        }
+    }
+
+    private fun downloadAndInstallUpdate(release: UpdateRelease) {
+        updateButton.isEnabled = false
+        statusLabel.text = "Baixando ${release.title}..."
+        updateThread = Thread({
+            val result = try {
+                Result.success(downloadUpdateApk(release))
+            } catch (error: Exception) {
+                Result.failure(error)
+            }
+            runOnUiThread {
+                if (isFinishing || isDestroyed) return@runOnUiThread
+                updateThread = null
+                updateButton.isEnabled = true
+                result.onSuccess { apk ->
+                    statusLabel.text = "Download concluído. Preparando a instalação..."
+                    if (packageManager.canRequestPackageInstalls()) {
+                        installUpdateApk(apk)
+                    } else {
+                        requestInstallPermission(apk)
+                    }
+                }.onFailure { error ->
+                    statusLabel.text =
+                        "Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}"
+                }
+            }
+        }, "update-download").apply {
+            isDaemon = true
+            start()
+        }
+    }
+
+    private fun downloadUpdateApk(release: UpdateRelease): File {
+        val updateDirectory = File(cacheDir, "updates")
+        require(updateDirectory.isDirectory || updateDirectory.mkdirs()) {
+            "Não foi possível criar a pasta temporária da atualização."
+        }
+        val temporaryApk = File(updateDirectory, "$UPDATE_ASSET_NAME.part")
+        val downloadedApk = File(updateDirectory, UPDATE_ASSET_NAME)
+        val connection = URL(release.downloadUrl).openConnection() as HttpsURLConnection
+        connection.connectTimeout = 15_000
+        connection.readTimeout = 30_000
+        connection.instanceFollowRedirects = true
+        try {
+            val responseCode = connection.responseCode
+            require(responseCode in 200..299) { "O servidor respondeu com erro HTTP $responseCode." }
+            require(connection.url.protocol.equals("https", ignoreCase = true)) {
+                "O download foi redirecionado para uma conexão não segura."
+            }
+            val contentLength = connection.contentLengthLong
+            require(contentLength in 1..MAX_UPDATE_SIZE) { "O tamanho do APK é inválido ou excede 100 MB." }
+            temporaryApk.delete()
+            connection.inputStream.use { input ->
+                FileOutputStream(temporaryApk).use { output ->
+                    val buffer = ByteArray(16 * 1024)
+                    var totalBytes = 0L
+                    while (true) {
+                        val count = input.read(buffer)
+                        if (count < 0) break
+                        totalBytes += count
+                        require(totalBytes <= MAX_UPDATE_SIZE) { "O APK excede o limite de 100 MB." }
+                        output.write(buffer, 0, count)
+                    }
+                    require(totalBytes == contentLength) { "O download do APK ficou incompleto." }
+                }
+            }
+            require(release.assetSize == 0L || temporaryApk.length() == release.assetSize) {
+                "O arquivo baixado não corresponde ao tamanho publicado."
+            }
+            val archiveInfo = packageManager.getPackageArchiveInfo(temporaryApk.absolutePath, 0)
+                ?: error("O arquivo baixado não é um APK válido.")
+            require(archiveInfo.packageName == packageName) {
+                "O APK baixado não pertence ao Traço Automático."
+            }
+            val apkVersion = archiveInfo.versionName
+                ?: error("O APK baixado não informa uma versão.")
+            require(compareVersions(apkVersion, release.versionName) == 0) {
+                "A versão do APK não corresponde à versão publicada."
+            }
+            require(compareVersions(apkVersion, currentVersionName()) > 0) {
+                "O APK publicado não é mais recente que esta instalação."
+            }
+            if (downloadedApk.exists() && !downloadedApk.delete()) {
+                error("Não foi possível substituir o APK temporário anterior.")
+            }
+            if (!temporaryApk.renameTo(downloadedApk)) {
+                temporaryApk.copyTo(downloadedApk, overwrite = true)
+                temporaryApk.delete()
+            }
+            return downloadedApk
+        } catch (error: Exception) {
+            temporaryApk.delete()
+            throw error
+        } finally {
+            connection.disconnect()
+        }
+    }
+
+    private fun requestInstallPermission(apk: File) {
+        pendingUpdateApk = apk
+        AlertDialog.Builder(this)
+            .setTitle("Permitir instalar a atualização")
+            .setMessage("O Android precisa permitir que o Traço Automático instale APKs baixados.")
+            .setNegativeButton("Agora não") { _, _ ->
+                pendingUpdateApk = null
+                statusLabel.text = "Atualização baixada. Permita a instalação para continuar."
+            }
+            .setPositiveButton("Abrir configurações") { _, _ ->
+                val settingsIntent = Intent(
+                    Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+                    Uri.parse("package:$packageName")
+                )
+                installPermissionLauncher.launch(settingsIntent)
+            }
+            .show()
+    }
+
+    private fun installUpdateApk(apk: File) {
+        try {
+            require(apk.isFile) { "O arquivo temporário da atualização não existe." }
+            val apkUri = FileProvider.getUriForFile(this, "$packageName.updates", apk)
+            val installIntent = Intent(Intent.ACTION_VIEW)
+                .setDataAndType(apkUri, "application/vnd.android.package-archive")
+                .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            startActivity(installIntent)
+            statusLabel.text = "Confirme a instalação na tela do Android."
+        } catch (error: Exception) {
+            statusLabel.text = "Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}"
+        }
+    }
+
+    private fun currentVersionName(): String =
+        packageManager.getPackageInfo(packageName, 0).versionName
+            ?: error("O app não informa a versão instalada.")
+
+    private fun compareVersions(left: String, right: String): Int {
+        val leftParts = versionParts(left)
+        val rightParts = versionParts(right)
+        for (index in 0 until maxOf(leftParts.size, rightParts.size)) {
+            val leftPart = leftParts.getOrElse(index) { 0 }
+            val rightPart = rightParts.getOrElse(index) { 0 }
+            if (leftPart != rightPart) return leftPart.compareTo(rightPart)
+        }
+        return 0
+    }
+
+    private fun versionParts(value: String): List<Int> {
+        val normalized = value.trim().removePrefix("v").removePrefix("V")
+        require(Regex("""\d+(\.\d+)*""").matches(normalized)) {
+            "A versão publicada deve usar números separados por pontos, como 1.24."
+        }
+        return normalized.split('.').map { it.toInt() }
+    }
+
     private fun loadTargetApps() {
         val launcherIntent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
         targets = packageManager.queryIntentActivities(launcherIntent, 0)
@@ -664,6 +1028,11 @@ class MainActivity : ComponentActivity() {
 
     private fun updateStatus() {
         if (!::statusLabel.isInitialized) return
+        if (isAccessibilityServiceEnabled() && !DrawingAccessibilityService.isConnected) {
+            statusLabel.text =
+                "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações."
+            return
+        }
         val status = getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)
             .getString(DrawingAccessibilityService.KEY_STATUS, null)
         if (!status.isNullOrBlank()) statusLabel.text = status

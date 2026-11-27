@@ -3,6 +3,7 @@ package com.tracolivre.automator
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.annotation.TargetApi
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -16,6 +17,7 @@ import android.graphics.PorterDuffXfermode
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.Display
 import android.view.Gravity
 import android.view.MotionEvent
@@ -44,6 +46,11 @@ class DrawingAccessibilityService : AccessibilityService() {
         private const val DRAWING_APP_PACKAGE = "com.newlang.weelife.sa"
         private const val DRAWING_SPEED_PIXELS_PER_SECOND = 1000f
         private const val MAX_STROKE_DURATION_MS = 2200L
+        private const val TAG = "DrawingAccessibility"
+
+        @Volatile
+        var isConnected = false
+            private set
     }
 
     private val mainHandler = Handler(Looper.getMainLooper())
@@ -52,6 +59,8 @@ class DrawingAccessibilityService : AccessibilityService() {
     private var promptView: View? = null
     private var progressView: View? = null
     private var progressLabel: TextView? = null
+    private var quickAccessBubble: View? = null
+    private var quickAccessPanel: View? = null
     private var selectionView: AreaSelectionView? = null
     private var previewView: BoardPreviewView? = null
     private var targetPackage: String? = null
@@ -70,9 +79,23 @@ class DrawingAccessibilityService : AccessibilityService() {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
+        isConnected = true
+        publishStatus("Acessibilidade ativa.")
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
+        try {
+            handleAccessibilityEvent(event)
+        } catch (error: RuntimeException) {
+            Log.e(TAG, "Falha ao processar evento de acessibilidade.", error)
+            stopDrawing(
+                "O serviço encontrou um erro ao acompanhar o app. Desative e ative a Acessibilidade novamente. " +
+                    (error.message ?: error.javaClass.simpleName)
+            )
+        }
+    }
+
+    private fun handleAccessibilityEvent(event: AccessibilityEvent?) {
         val eventType = event?.eventType ?: return
         if (eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED &&
             eventType != AccessibilityEvent.TYPE_WINDOWS_CHANGED
@@ -82,6 +105,11 @@ class DrawingAccessibilityService : AccessibilityService() {
         if (packageName == this.packageName) {
             if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
                 targetIsForeground = false
+                removeQuickAccessPanel()
+                removeQuickAccessBubble()
+                if (isDrawing) {
+                    pauseDrawing("Desenho pausado para abrir o Traço Automático.", false)
+                }
             }
             return
         }
@@ -94,6 +122,13 @@ class DrawingAccessibilityService : AccessibilityService() {
             targetIsForeground = true
         } else {
             return
+        }
+        if (isTargetApp) {
+            targetPackage = wantedPackage
+            showQuickAccessBubble()
+        } else if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+            removeQuickAccessPanel()
+            removeQuickAccessBubble()
         }
 
         val returnedToTarget = isTargetApp && !wasTargetForeground && targetIsForeground
@@ -119,8 +154,16 @@ class DrawingAccessibilityService : AccessibilityService() {
     }
 
     override fun onDestroy() {
+        isConnected = false
+        isDrawing = false
+        isPaused = false
+        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
+            .putBoolean(KEY_IS_DRAWING, false)
+            .apply()
         removePrompt()
         removeProgressOverlay()
+        removeQuickAccessPanel()
+        removeQuickAccessBubble()
         removeSelectionView()
         removePreviewView()
         screenshotExecutor.shutdown()
@@ -172,6 +215,7 @@ class DrawingAccessibilityService : AccessibilityService() {
             setPadding(dp(13), dp(10), dp(13), dp(8))
             setBackgroundColor(Color.rgb(36, 36, 58))
         }
+
         panel.addView(TextView(this).apply {
             text = title
             textSize = 14f
@@ -210,6 +254,159 @@ class DrawingAccessibilityService : AccessibilityService() {
         }
     }
 
+    private fun showQuickAccessBubble() {
+        if (quickAccessBubble != null || !isConnected || !targetIsForeground) return
+        val bubble = Button(this).apply {
+            text = "TA"
+            textSize = 12f
+            isAllCaps = false
+            minWidth = dp(48)
+            minHeight = dp(48)
+            setPadding(dp(4), 0, dp(4), 0)
+            contentDescription = "Abrir controles do Traço Automático"
+            setOnClickListener {
+                if (quickAccessPanel == null) showQuickAccessPanel() else removeQuickAccessPanel()
+            }
+        }
+        quickAccessBubble = bubble
+        try {
+            windowManager.addView(
+                bubble,
+                WindowManager.LayoutParams(
+                    dp(56),
+                    dp(48),
+                    WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                    PixelFormat.TRANSLUCENT
+                ).apply {
+                    gravity = Gravity.TOP or Gravity.END
+                    x = dp(8)
+                    y = dp(72)
+                }
+            )
+        } catch (error: RuntimeException) {
+            quickAccessBubble = null
+            publishStatus("Não consegui mostrar o atalho flutuante: ${error.message}")
+        }
+    }
+
+    private fun showQuickAccessPanel() {
+        removeQuickAccessPanel()
+        val panel = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(12), dp(10), dp(12), dp(8))
+            setBackgroundColor(Color.rgb(36, 36, 58))
+        }
+        panel.addView(TextView(this).apply {
+            text = "Traço Automático"
+            textSize = 14f
+            setTextColor(Color.WHITE)
+        })
+        val status = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+            .getString(KEY_STATUS, null)
+            .orEmpty()
+        panel.addView(TextView(this).apply {
+            text = status
+            textSize = 11f
+            setTextColor(Color.rgb(225, 225, 240))
+            setPadding(0, dp(4), 0, dp(5))
+            maxLines = 3
+        })
+
+        when {
+            isDrawing -> addQuickAction(panel, "Pausar desenho") {
+                pauseDrawing("Desenho pausado pelo usuário.", false)
+                showQuickAccessPanel()
+            }
+            isPaused -> addQuickAction(panel, "Continuar desenho") {
+                removeQuickAccessPanel()
+                continueDrawing()
+            }
+        }
+        if (isDrawing || isPaused) {
+            addQuickAction(panel, "Parar desenho") {
+                stopDrawing("Desenho interrompido pelo usuário.")
+                showQuickAccessPanel()
+            }
+        }
+        if (getSharedPreferences(PREFERENCES, MODE_PRIVATE).getBoolean(KEY_PLAN_READY, false)) {
+            addQuickAction(panel, "Preparação e área de desenho") {
+                removeQuickAccessPanel()
+                showDrawingPrompt()
+            }
+        }
+        addQuickAction(panel, "Trocar imagem / opções") {
+            openMainActivityForConfiguration()
+        }
+        addQuickAction(panel, "Fechar painel") {
+            removeQuickAccessPanel()
+        }
+
+        quickAccessPanel = panel
+        try {
+            windowManager.addView(
+                panel,
+                WindowManager.LayoutParams(
+                    minOf(dp(280), resources.displayMetrics.widthPixels - dp(24)),
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                    PixelFormat.TRANSLUCENT
+                ).apply {
+                    gravity = Gravity.TOP or Gravity.END
+                    x = dp(8)
+                    y = dp(124)
+                }
+            )
+        } catch (error: RuntimeException) {
+            quickAccessPanel = null
+            publishStatus("Não consegui abrir os controles flutuantes: ${error.message}")
+        }
+    }
+
+    private fun addQuickAction(panel: LinearLayout, label: String, action: () -> Unit) {
+        panel.addView(Button(this).apply {
+            text = label
+            isAllCaps = false
+            setOnClickListener { action() }
+        })
+    }
+
+    private fun openMainActivityForConfiguration() {
+        removeQuickAccessPanel()
+        removeQuickAccessBubble()
+        removePrompt()
+        removeSelectionView()
+        removePreviewView()
+        if (isDrawing || isPaused) {
+            stopDrawing("Desenho interrompido para alterar a imagem ou as opções.")
+        }
+        try {
+            startActivity(
+                Intent(this, MainActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            )
+        } catch (error: RuntimeException) {
+            publishStatus("Não consegui abrir o Traço Automático: ${error.message}")
+        }
+    }
+
+    private fun removeQuickAccessBubble() {
+        quickAccessBubble?.let { view ->
+            runCatching { windowManager.removeView(view) }
+        }
+        quickAccessBubble = null
+    }
+
+    private fun removeQuickAccessPanel() {
+        quickAccessPanel?.let { view ->
+            runCatching { windowManager.removeView(view) }
+        }
+        quickAccessPanel = null
+    }
+
     @TargetApi(Build.VERSION_CODES.R)
     private fun recognizeCanvas() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
@@ -218,39 +415,63 @@ class DrawingAccessibilityService : AccessibilityService() {
             return
         }
         publishStatus("Analisando a tela para encontrar a lousa...")
-        takeScreenshot(Display.DEFAULT_DISPLAY, screenshotExecutor, object : TakeScreenshotCallback {
-            override fun onSuccess(screenshot: ScreenshotResult) {
-                val hardwareBuffer = screenshot.hardwareBuffer
-                val bounds = try {
-                    val captured = Bitmap.wrapHardwareBuffer(hardwareBuffer, screenshot.colorSpace)
-                        ?.copy(Bitmap.Config.ARGB_8888, false)
-                    captured?.let { bitmap ->
+        try {
+            takeScreenshot(Display.DEFAULT_DISPLAY, screenshotExecutor, object : TakeScreenshotCallback {
+                override fun onSuccess(screenshot: ScreenshotResult) {
+                    var failure: Exception? = null
+                    val bounds = try {
+                        val hardwareBuffer = screenshot.hardwareBuffer
                         try {
-                            CanvasDetector.find(bitmap)
+                            val captured = Bitmap.wrapHardwareBuffer(hardwareBuffer, screenshot.colorSpace)
+                                ?.copy(Bitmap.Config.ARGB_8888, false)
+                                ?: error("A captura da tela ficou vazia.")
+                            try {
+                                CanvasDetector.find(captured)
+                            } finally {
+                                captured.recycle()
+                            }
                         } finally {
-                            bitmap.recycle()
+                            hardwareBuffer.close()
+                        }
+                    } catch (error: Exception) {
+                        Log.e(TAG, "Falha ao reconhecer a lousa.", error)
+                        failure = error
+                        null
+                    }
+                    mainHandler.post {
+                        if (!isConnected) return@post
+                        if (failure != null) {
+                            val reason = failure?.let { it.message ?: it.javaClass.simpleName }
+                            publishStatus(
+                                "Falha no reconhecimento da lousa ($reason). Tente marcar a área manualmente."
+                            )
+                            showDrawingPrompt()
+                        } else if (bounds == null) {
+                            publishStatus("Não encontrei uma lousa nítida. Ajuste a tela e tente marcar a área manualmente.")
+                            showDrawingPrompt()
+                        } else {
+                            showRecognizedBounds(bounds, automatic = true)
                         }
                     }
-                } finally {
-                    hardwareBuffer.close()
                 }
-                mainHandler.post {
-                    if (bounds == null) {
-                        publishStatus("Não encontrei uma lousa nítida. Ajuste a tela e tente marcar a área manualmente.")
+
+                override fun onFailure(errorCode: Int) {
+                    mainHandler.post {
+                        if (!isConnected) return@post
+                        publishStatus("Não consegui analisar a tela (código $errorCode). Tente marcar a área manualmente.")
                         showDrawingPrompt()
-                    } else {
-                        showRecognizedBounds(bounds, automatic = true)
                     }
                 }
-            }
-
-            override fun onFailure(errorCode: Int) {
-                mainHandler.post {
-                    publishStatus("Não consegui analisar a tela (código $errorCode). Tente marcar a área manualmente.")
-                    showDrawingPrompt()
-                }
-            }
-        })
+            })
+        } catch (error: RuntimeException) {
+            Log.e(TAG, "Não foi possível iniciar a captura da tela.", error)
+            publishStatus(
+                "Não foi possível iniciar o reconhecimento (" +
+                    (error.message ?: error.javaClass.simpleName) +
+                    "). Tente marcar a área manualmente."
+            )
+            showDrawingPrompt()
+        }
     }
 
     private fun showRecognizedBounds(bounds: RectF, automatic: Boolean) {
@@ -643,15 +864,20 @@ class DrawingAccessibilityService : AccessibilityService() {
             listOf(
                 "Continuar" to {
                     removePrompt()
-                    isPaused = false
-                    isDrawing = true
-                    publishStatus("Continuando em $nextStroke de ${strokes.size} traços...")
-                    showProgressOverlay()
-                    if (isDrawing) dispatchNextBatch()
+                    continueDrawing()
                 },
                 "Parar" to { stopDrawing("Desenho cancelado pelo usuário.") }
             )
         )
+    }
+
+    private fun continueDrawing() {
+        if (!isPaused) return
+        isPaused = false
+        isDrawing = true
+        publishStatus("Continuando em $nextStroke de ${strokes.size} traços...")
+        showProgressOverlay()
+        if (isDrawing) dispatchNextBatch()
     }
 
     private fun cancelFlow(message: String) {

@@ -11,8 +11,8 @@ android {
         applicationId = "com.tracolivre.automator"
         minSdk = 26
         targetSdk = 35
-        versionCode = 22
-        versionName = "1.21"
+        versionCode = 26
+        versionName = "1.25"
         ndk {
             abiFilters += listOf("arm64-v8a", "armeabi-v7a")
         }
@@ -25,6 +25,12 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
     }
 
     androidResources {
