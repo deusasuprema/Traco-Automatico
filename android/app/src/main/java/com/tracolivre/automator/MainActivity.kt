@@ -763,7 +763,8 @@ class MainActivity : ComponentActivity() {
         traceSummaryLabel.text = if (strokes.isEmpty()) {
             "Nenhum contorno detectado."
         } else {
-            "${strokes.size} traços detectados · detalhe $selectedDetail%"
+            val colorCount = strokes.map { it.color }.distinct().size
+            "${strokes.size} traços · $colorCount cores detectadas · detalhe $selectedDetail%"
         }
         traceSummaryLabel.visibility = View.VISIBLE
     }
@@ -955,10 +956,12 @@ class MainActivity : ComponentActivity() {
                 aiFallbackReason != null -> " no modo local sem IA"
                 else -> ""
             }
+            val colorCount = strokes.map { it.color }.distinct().size
+            val orderedStrokes = strokes.groupBy { it.color }.values.flatten()
             val warning = aiFallbackReason?.let {
                 "A IA não ficou disponível ($it); usei o traçado local sem IA. "
             }.orEmpty()
-            DrawingPlanFile.write(this, strokes)
+            DrawingPlanFile.write(this, orderedStrokes)
             getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)
                 .edit()
                 .putString(DrawingAccessibilityService.KEY_TARGET_PACKAGE, target.packageName)
@@ -969,11 +972,11 @@ class MainActivity : ComponentActivity() {
                 .putBoolean(DrawingAccessibilityService.KEY_IS_DRAWING, false)
                 .putString(
                     DrawingAccessibilityService.KEY_STATUS,
-                    "$warning Plano pronto: ${strokes.size} traços$mode."
+                    "$warning Plano pronto: ${strokes.size} traços e $colorCount cores$mode."
                 )
                 .apply()
             statusLabel.text =
-                "${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar."
+                "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
         } catch (error: Exception) {
             statusLabel.text = "Não foi possível preparar o desenho: ${error.message}"
         }
@@ -1233,7 +1236,7 @@ class MainActivity : ComponentActivity() {
                     result.activityInfo.packageName
                 )
             }
-            .filter { it.packageName != packageName }
+            .filter { it.packageName == DRAWING_APP_PACKAGE }
             .distinctBy { it.packageName }
             .sortedWith(compareBy<TargetApp> { it.packageName != DRAWING_APP_PACKAGE }.thenBy { it.label.lowercase() })
 
@@ -1349,6 +1352,7 @@ class MainActivity : ComponentActivity() {
             paint.strokeWidth = dp(1.5f) / contentWidth
             strokes.forEach { stroke ->
                 if (stroke.points.size >= 2) {
+                    paint.color = stroke.color
                     val path = android.graphics.Path()
                     path.moveTo(stroke.points.first().x, stroke.points.first().y)
                     for (pointIndex in 1 until stroke.points.size) {

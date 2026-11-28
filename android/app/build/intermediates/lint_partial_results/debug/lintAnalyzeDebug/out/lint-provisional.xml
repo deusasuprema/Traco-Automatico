@@ -55,12 +55,12 @@
         message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1011"
+            line="1232"
             column="34"
-            startOffset="44491"
-            endLine="1011"
+            startOffset="53620"
+            endLine="1232"
             endColumn="55"
-            endOffset="44512"/>
+            endOffset="53641"/>
         <map>
             <entry
                 name="queryAll"
@@ -78,17 +78,43 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                startOffset="14915"
-                endOffset="14948"/>
+                startOffset="15228"
+                endOffset="15261"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="410"
+            line="419"
             column="5"
-            startOffset="14915"
-            endLine="410"
+            startOffset="15228"
+            endLine="419"
             endColumn="38"
-            endOffset="14948"/>
+            endOffset="15261"/>
+        <map>
+            <condition minGE="30-∞"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `SDK_INT` is always >= 30">
+        <fix-replace
+            description="Delete @TargetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+                startOffset="21372"
+                endOffset="21405"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="556"
+            column="5"
+            startOffset="21372"
+            endLine="556"
+            endColumn="38"
+            endOffset="21405"/>
         <map>
             <condition minGE="30-∞"/>
         </map>

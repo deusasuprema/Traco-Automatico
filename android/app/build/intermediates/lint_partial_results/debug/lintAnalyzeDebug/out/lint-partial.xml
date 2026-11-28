@@ -5,38 +5,38 @@
                     <map id="android.intent.action.VIEW (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="976"
+                            line="1197"
                             column="33"
-                            startOffset="42879"
-                            endLine="976"
+                            startOffset="52008"
+                            endLine="1197"
                             endColumn="59"
-                            endOffset="42905"/>
+                            endOffset="52034"/>
                     </map>
                     <map id="android.settings.ACCESSIBILITY_SETTINGS (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="246"
+                            line="264"
                             column="27"
-                            startOffset="9550"
-                            endLine="246"
+                            startOffset="10233"
+                            endLine="264"
                             endColumn="73"
-                            endOffset="9596"/>
+                            endOffset="10279"/>
                         <location id="1"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="563"
+                            line="780"
                             column="27"
-                            startOffset="23452"
-                            endLine="563"
+                            startOffset="32312"
+                            endLine="780"
                             endColumn="73"
-                            endOffset="23498"/>
+                            endOffset="32358"/>
                         <location id="2"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                            line="569"
+                            line="786"
                             column="27"
-                            startOffset="23785"
-                            endLine="569"
+                            startOffset="32645"
+                            endLine="786"
                             endColumn="73"
-                            endOffset="23831"/>
+                            endOffset="32691"/>
                     </map>
             </map>
     </map>
@@ -58,7 +58,7 @@
             endOffset="43"/>
         <entry
             name="model"
-            string="color[brand_purple(D)],drawable[ic_launcher_background(U),ic_launcher_foreground(U)],mipmap[ic_launcher(U)],string[app_name(U),accessibility_description(U),accessibility_service_name(U)],style[AppTheme(U)],xml[update_file_paths(U),drawing_accessibility_service(U)];3^2^1,9^5;;;"/>
+            string="color[brand_purple(D)],drawable[ic_launcher_background(U),weelife_icon_foreground(U)],mipmap[ic_launcher(U)],string[app_name(U),accessibility_description(U),accessibility_service_name(U)],style[AppTheme(U)],xml[update_file_paths(U),drawing_accessibility_service(U)];3^1^2,9^5;;;"/>
     </map>
 
 </incidents>

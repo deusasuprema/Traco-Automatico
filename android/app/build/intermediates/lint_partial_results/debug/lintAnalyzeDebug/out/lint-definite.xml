@@ -13,12 +13,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="36"
+            line="49"
             column="20"
-            startOffset="703"
-            endLine="36"
+            startOffset="1107"
+            endLine="49"
             endColumn="59"
-            endOffset="742"/>
+            endOffset="1146"/>
     </incident>
 
     <incident
@@ -33,12 +33,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="37"
+            line="50"
             column="20"
-            startOffset="763"
-            endLine="37"
+            startOffset="1167"
+            endLine="50"
             endColumn="51"
-            endOffset="794"/>
+            endOffset="1198"/>
     </incident>
 
     <incident
@@ -53,12 +53,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="38"
+            line="51"
             column="20"
-            startOffset="815"
-            endLine="38"
+            startOffset="1219"
+            endLine="51"
             endColumn="63"
-            endOffset="858"/>
+            endOffset="1262"/>
     </incident>
 
     <incident
@@ -75,12 +75,34 @@
             priority="0"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="410"
+            line="419"
             column="5"
-            startOffset="14915"
-            endLine="410"
+            startOffset="15228"
+            endLine="419"
             endColumn="38"
-            endOffset="14948"/>
+            endOffset="15261"/>
+    </incident>
+
+    <incident
+        id="UseRequiresApi"
+        severity="warning"
+        message="Use `@RequiresApi(Build.VERSION_CODES.R) instead of `@TargetApi` to propagate the requirement to callers of `detectColorPicker`">
+        <fix-replace
+            description="Replace with `@RequiresApi`"
+            robot="true"
+            independent="true"
+            oldPattern="(TargetApi)"
+            replacement="androidx.annotation.RequiresApi"
+            shortenNames="true"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="556"
+            column="5"
+            startOffset="21372"
+            endLine="556"
+            endColumn="38"
+            endOffset="21405"/>
     </incident>
 
     <incident
@@ -98,17 +120,17 @@
     </incident>
 
     <incident
-        id="DrawAllocation"
+        id="SetJavaScriptEnabled"
         severity="warning"
-        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
+        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="528"
-            column="28"
-            startOffset="20388"
-            endLine="528"
-            endColumn="39"
-            endOffset="20399"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="395"
+            column="13"
+            startOffset="15601"
+            endLine="395"
+            endColumn="46"
+            endOffset="15634"/>
     </incident>
 
     <incident
@@ -117,12 +139,26 @@
         message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="530"
+            line="625"
+            column="28"
+            startOffset="24864"
+            endLine="625"
+            endColumn="39"
+            endOffset="24875"/>
+    </incident>
+
+    <incident
+        id="DrawAllocation"
+        severity="warning"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="627"
             column="31"
-            startOffset="20472"
-            endLine="535"
+            startOffset="24948"
+            endLine="632"
             endColumn="14"
-            endOffset="20665"/>
+            endOffset="25141"/>
     </incident>
 
     <incident
@@ -131,12 +167,12 @@
         message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1130"
+            line="1356"
             column="32"
-            startOffset="50179"
-            endLine="1130"
+            startOffset="59424"
+            endLine="1356"
             endColumn="55"
-            endOffset="50202"/>
+            endOffset="59447"/>
     </incident>
 
     <incident
@@ -146,12 +182,27 @@
         <fix-data conditional="false"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="412"
+            line="421"
             column="13"
-            startOffset="14997"
-            endLine="412"
+            startOffset="15310"
+            endLine="421"
             endColumn="58"
-            endOffset="15042"/>
+            endOffset="15355"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R` is never true here">
+        <fix-data conditional="false"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
+            line="558"
+            column="13"
+            startOffset="21469"
+            endLine="558"
+            endColumn="58"
+            endOffset="21514"/>
     </incident>
 
     <incident
@@ -161,6 +212,46 @@
         <fix-data file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26" folderName="mipmap-anydpi" requiresApi="26"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher.png"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_launcher.png"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xhdpi/ic_launcher.png"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxhdpi/ic_launcher.png"/>
+    </incident>
+
+    <incident
+        id="IconLauncherShape"
+        severity="warning"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_launcher.png"/>
     </incident>
 
     <incident
@@ -174,7 +265,7 @@
             startOffset="0"
             endLine="4"
             endColumn="17"
-            endOffset="236"/>
+            endOffset="237"/>
     </incident>
 
     <incident
@@ -209,6 +300,180 @@
     <incident
         id="UseKtx"
         severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(x, y)"
+            replacement="bitmap[x, y]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="1406"
+                endOffset="1427"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="51"
+            column="34"
+            startOffset="1406"
+            endLine="51"
+            endColumn="55"
+            endOffset="1427"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(x, y)"
+            replacement="bitmap[x, y]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="4123"
+                endOffset="4144"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="119"
+            column="30"
+            startOffset="4123"
+            endLine="119"
+            endColumn="51"
+            endOffset="4144"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel((bounds.left + insetX).toInt(), (bounds.top + insetY).toInt())"
+            replacement="bitmap[(bounds.left + insetX).toInt(), (bounds.top + insetY).toInt()]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="4501"
+                endOffset="4579"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="129"
+            column="23"
+            startOffset="4501"
+            endLine="129"
+            endColumn="101"
+            endOffset="4579"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(&#xA;            (bounds.left + insetX).toInt(),&#xA;            (bounds.bottom - insetY).toInt()&#xA;        )"
+            replacement="bitmap[(bounds.left + insetX).toInt(), (bounds.bottom - insetY).toInt()]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="4605"
+                endOffset="4720"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="130"
+            column="26"
+            startOffset="4605"
+            endLine="133"
+            endColumn="10"
+            endOffset="4720"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(&#xA;            (bounds.right - insetX).toInt(),&#xA;            (bounds.top + insetY).toInt()&#xA;        )"
+            replacement="bitmap[(bounds.right - insetX).toInt(), (bounds.top + insetY).toInt()]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="4744"
+                endOffset="4857"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="134"
+            column="24"
+            startOffset="4744"
+            endLine="137"
+            endColumn="10"
+            endOffset="4857"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(x, y)"
+            replacement="bitmap[x, y]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+                startOffset="5744"
+                endOffset="5765"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/ColorPickerDetector.kt"
+            line="157"
+            column="30"
+            startOffset="5744"
+            endLine="157"
+            endColumn="51"
+            endOffset="5765"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
         message="Use the KTX extension function `SharedPreferences.edit` instead?">
         <fix-composite
             description="Replace with the edit extension function"
@@ -226,8 +491,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5436"
-                    endOffset="5440"/>
+                    startOffset="5713"
+                    endOffset="5717"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -238,8 +503,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5441"
-                    endOffset="5442"/>
+                    startOffset="5718"
+                    endOffset="5719"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -250,8 +515,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5613"
-                    endOffset="5621"/>
+                    startOffset="5890"
+                    endOffset="5898"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -262,8 +527,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5459"
-                    endOffset="5460"/>
+                    startOffset="5736"
+                    endOffset="5737"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -274,8 +539,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5443"
-                    endOffset="5443"/>
+                    startOffset="5720"
+                    endOffset="5720"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -286,18 +551,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="5499"
-                    endOffset="5499"/>
+                    startOffset="5776"
+                    endOffset="5776"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="140"
+            line="149"
             column="13"
-            startOffset="5424"
-            endLine="140"
+            startOffset="5701"
+            endLine="149"
             endColumn="31"
-            endOffset="5442"/>
+            endOffset="5719"/>
     </incident>
 
     <incident
@@ -320,8 +585,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="6200"
-                    endOffset="6204"/>
+                    startOffset="6477"
+                    endOffset="6481"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -332,8 +597,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="6205"
-                    endOffset="6206"/>
+                    startOffset="6482"
+                    endOffset="6483"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -344,8 +609,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="6266"
-                    endOffset="6274"/>
+                    startOffset="6543"
+                    endOffset="6551"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -356,8 +621,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="6219"
-                    endOffset="6220"/>
+                    startOffset="6496"
+                    endOffset="6497"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -368,18 +633,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="6207"
-                    endOffset="6207"/>
+                    startOffset="6484"
+                    endOffset="6484"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="160"
+            line="169"
             column="9"
-            startOffset="6152"
-            endLine="160"
+            startOffset="6429"
+            endLine="169"
             endColumn="63"
-            endOffset="6206"/>
+            endOffset="6483"/>
     </incident>
 
     <incident
@@ -402,8 +667,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="28104"
-                    endOffset="28108"/>
+                    startOffset="30293"
+                    endOffset="30297"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -414,8 +679,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="28109"
-                    endOffset="28110"/>
+                    startOffset="30298"
+                    endOffset="30299"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -426,8 +691,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="28178"
-                    endOffset="28186"/>
+                    startOffset="30367"
+                    endOffset="30375"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -438,8 +703,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="28127"
-                    endOffset="28128"/>
+                    startOffset="30316"
+                    endOffset="30317"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -450,18 +715,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="28111"
-                    endOffset="28111"/>
+                    startOffset="30300"
+                    endOffset="30300"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="714"
+            line="758"
             column="13"
-            startOffset="28056"
-            endLine="714"
+            startOffset="30245"
+            endLine="758"
             endColumn="67"
-            endOffset="28110"/>
+            endOffset="30299"/>
     </incident>
 
     <incident
@@ -484,8 +749,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="34918"
-                    endOffset="34922"/>
+                    startOffset="39300"
+                    endOffset="39304"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -496,8 +761,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="34923"
-                    endOffset="34924"/>
+                    startOffset="39305"
+                    endOffset="39306"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -508,8 +773,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="34989"
-                    endOffset="34997"/>
+                    startOffset="39371"
+                    endOffset="39379"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -520,8 +785,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="34937"
-                    endOffset="34938"/>
+                    startOffset="39319"
+                    endOffset="39320"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -532,18 +797,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="34925"
-                    endOffset="34925"/>
+                    startOffset="39307"
+                    endOffset="39307"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="887"
+            line="986"
             column="9"
-            startOffset="34870"
-            endLine="887"
+            startOffset="39252"
+            endLine="986"
             endColumn="63"
-            endOffset="34924"/>
+            endOffset="39306"/>
     </incident>
 
     <incident
@@ -566,8 +831,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35214"
-                    endOffset="35218"/>
+                    startOffset="39596"
+                    endOffset="39600"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -578,8 +843,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35219"
-                    endOffset="35220"/>
+                    startOffset="39601"
+                    endOffset="39602"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -590,8 +855,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35280"
-                    endOffset="35288"/>
+                    startOffset="39662"
+                    endOffset="39670"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -602,8 +867,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35233"
-                    endOffset="35234"/>
+                    startOffset="39615"
+                    endOffset="39616"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -614,18 +879,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35221"
-                    endOffset="35221"/>
+                    startOffset="39603"
+                    endOffset="39603"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="897"
+            line="996"
             column="9"
-            startOffset="35166"
-            endLine="897"
+            startOffset="39548"
+            endLine="996"
             endColumn="63"
-            endOffset="35220"/>
+            endOffset="39602"/>
     </incident>
 
     <incident
@@ -648,8 +913,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35432"
-                    endOffset="35436"/>
+                    startOffset="39814"
+                    endOffset="39818"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -660,8 +925,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35437"
-                    endOffset="35438"/>
+                    startOffset="39819"
+                    endOffset="39820"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -672,8 +937,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35546"
-                    endOffset="35554"/>
+                    startOffset="39928"
+                    endOffset="39936"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -684,8 +949,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35451"
-                    endOffset="35452"/>
+                    startOffset="39833"
+                    endOffset="39834"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -696,8 +961,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35439"
-                    endOffset="35439"/>
+                    startOffset="39821"
+                    endOffset="39821"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -708,18 +973,134 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                    startOffset="35490"
-                    endOffset="35490"/>
+                    startOffset="39872"
+                    endOffset="39872"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="904"
+            line="1003"
             column="9"
-            startOffset="35384"
-            endLine="904"
+            startOffset="39766"
+            endLine="1003"
             endColumn="63"
-            endOffset="35438"/>
+            endOffset="39820"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toUri` instead?">
+        <fix-replace
+            description="Replace with the toUri extension function"
+            family="Replace with the toUri extension function"
+            robot="true"
+            independent="true"
+            oldString="Uri.parse(&quot;https://www.google.com/search&quot;)"
+            replacement="&quot;https://www.google.com/search&quot;.toUri()"
+            reformat="value"
+            imports="androidx.core.net.toUri"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="17996"
+                endOffset="18038"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="452"
+            column="33"
+            startOffset="17996"
+            endLine="452"
+            endColumn="75"
+            endOffset="18038"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Int.toDrawable` instead?">
+        <fix-replace
+            description="Replace with the toDrawable extension function"
+            family="Replace with the toDrawable extension function"
+            robot="true"
+            independent="true"
+            oldString="ColorDrawable(Color.WHITE)"
+            replacement="Color.WHITE.toDrawable()"
+            reformat="value"
+            imports="androidx.core.graphics.drawable.toDrawable"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="21653"
+                endOffset="21679"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="543"
+            column="35"
+            startOffset="21653"
+            endLine="543"
+            endColumn="61"
+            endOffset="21679"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toUri` instead?">
+        <fix-replace
+            description="Replace with the toUri extension function"
+            family="Replace with the toUri extension function"
+            robot="true"
+            independent="true"
+            oldString="Uri.parse(candidate)"
+            replacement="candidate.toUri()"
+            reformat="value"
+            imports="androidx.core.net.toUri"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="22442"
+                endOffset="22462"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="562"
+            column="19"
+            startOffset="22442"
+            endLine="562"
+            endColumn="39"
+            endOffset="22462"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toUri` instead?">
+        <fix-replace
+            description="Replace with the toUri extension function"
+            family="Replace with the toUri extension function"
+            robot="true"
+            independent="true"
+            oldString="Uri.parse(imageUrl)"
+            replacement="imageUrl.toUri()"
+            reformat="value"
+            imports="androidx.core.net.toUri"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                startOffset="22823"
+                endOffset="22842"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="571"
+            column="24"
+            startOffset="22823"
+            endLine="571"
+            endColumn="43"
+            endOffset="22842"/>
     </incident>
 
     <incident
@@ -742,8 +1123,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21807"
-                    endOffset="21811"/>
+                    startOffset="30577"
+                    endOffset="30581"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -754,8 +1135,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21812"
-                    endOffset="21813"/>
+                    startOffset="30582"
+                    endOffset="30583"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -766,8 +1147,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="22053"
-                    endOffset="22061"/>
+                    startOffset="30823"
+                    endOffset="30831"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -778,8 +1159,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21826"
-                    endOffset="21827"/>
+                    startOffset="30596"
+                    endOffset="30597"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -790,8 +1171,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21814"
-                    endOffset="21814"/>
+                    startOffset="30584"
+                    endOffset="30584"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -802,8 +1183,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21894"
-                    endOffset="21894"/>
+                    startOffset="30664"
+                    endOffset="30664"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -814,18 +1195,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="21969"
-                    endOffset="21969"/>
+                    startOffset="30739"
+                    endOffset="30739"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="526"
+            line="742"
             column="9"
-            startOffset="21731"
-            endLine="526"
+            startOffset="30501"
+            endLine="742"
             endColumn="91"
-            endOffset="21813"/>
+            endOffset="30583"/>
     </incident>
 
     <incident
@@ -848,8 +1229,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24137"
-                    endOffset="24141"/>
+                    startOffset="32997"
+                    endOffset="33001"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -860,8 +1241,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24142"
-                    endOffset="24143"/>
+                    startOffset="33002"
+                    endOffset="33003"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -872,8 +1253,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24311"
-                    endOffset="24319"/>
+                    startOffset="33171"
+                    endOffset="33179"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -884,8 +1265,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24156"
-                    endOffset="24157"/>
+                    startOffset="33016"
+                    endOffset="33017"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -896,8 +1277,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24144"
-                    endOffset="24144"/>
+                    startOffset="33004"
+                    endOffset="33004"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -908,18 +1289,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="24224"
-                    endOffset="24224"/>
+                    startOffset="33084"
+                    endOffset="33084"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="580"
+            line="797"
             column="9"
-            startOffset="24061"
-            endLine="580"
+            startOffset="32921"
+            endLine="797"
             endColumn="91"
-            endOffset="24143"/>
+            endOffset="33003"/>
     </incident>
 
     <incident
@@ -938,17 +1319,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                startOffset="30635"
-                endOffset="30708"/>
+                startOffset="39495"
+                endOffset="39568"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="708"
+            line="925"
             column="30"
-            startOffset="30635"
-            endLine="708"
+            startOffset="39495"
+            endLine="925"
             endColumn="103"
-            endOffset="30708"/>
+            endOffset="39568"/>
     </incident>
 
     <incident
@@ -971,8 +1352,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="31965"
-                    endOffset="31969"/>
+                    startOffset="40981"
+                    endOffset="40985"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -983,8 +1364,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="31970"
-                    endOffset="31971"/>
+                    startOffset="40986"
+                    endOffset="40987"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -995,8 +1376,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32857"
-                    endOffset="32865"/>
+                    startOffset="41711"
+                    endOffset="41719"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -1007,8 +1388,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="31988"
-                    endOffset="31989"/>
+                    startOffset="41004"
+                    endOffset="41005"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1019,8 +1400,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="31972"
-                    endOffset="31972"/>
+                    startOffset="40988"
+                    endOffset="40988"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1031,8 +1412,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32067"
-                    endOffset="32067"/>
+                    startOffset="41083"
+                    endOffset="41083"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1043,8 +1424,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32152"
-                    endOffset="32152"/>
+                    startOffset="41168"
+                    endOffset="41168"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1055,8 +1436,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32239"
-                    endOffset="32239"/>
+                    startOffset="41255"
+                    endOffset="41255"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1067,8 +1448,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32268"
-                    endOffset="32268"/>
+                    startOffset="41338"
+                    endOffset="41338"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1079,8 +1460,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32341"
-                    endOffset="32341"/>
+                    startOffset="41416"
+                    endOffset="41416"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1091,8 +1472,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32403"
-                    endOffset="32403"/>
+                    startOffset="41495"
+                    endOffset="41495"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1103,8 +1484,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32421"
-                    endOffset="32421"/>
+                    startOffset="41523"
+                    endOffset="41523"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1115,8 +1496,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32504"
-                    endOffset="32504"/>
+                    startOffset="41583"
+                    endOffset="41583"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1127,66 +1508,18 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32582"
-                    endOffset="32582"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with     "
-                robot="true"
-                independent="true"
-                oldString=""
-                replacement="    "
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32661"
-                    endOffset="32661"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with     "
-                robot="true"
-                independent="true"
-                oldString=""
-                replacement="    "
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32689"
-                    endOffset="32689"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with     "
-                robot="true"
-                independent="true"
-                oldString=""
-                replacement="    "
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32749"
-                    endOffset="32749"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with     "
-                robot="true"
-                independent="true"
-                oldString=""
-                replacement="    "
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="32823"
-                    endOffset="32823"/>
+                    startOffset="41677"
+                    endOffset="41677"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="746"
+            line="965"
             column="13"
-            startOffset="31872"
-            endLine="747"
+            startOffset="40888"
+            endLine="966"
             endColumn="24"
-            endOffset="31971"/>
+            endOffset="40987"/>
     </incident>
 
     <incident
@@ -1205,17 +1538,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                startOffset="42456"
-                endOffset="42489"/>
+                startOffset="51585"
+                endOffset="51618"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="965"
+            line="1186"
             column="21"
-            startOffset="42456"
-            endLine="965"
+            startOffset="51585"
+            endLine="1186"
             endColumn="54"
-            endOffset="42489"/>
+            endOffset="51618"/>
     </incident>
 
     <incident
@@ -1238,8 +1571,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="49855"
-                    endOffset="49860"/>
+                    startOffset="59053"
+                    endOffset="59058"/>
             </fix-replace>
             <fix-replace
                 description="Replace with ) {"
@@ -1250,8 +1583,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="49860"
-                    endOffset="49861"/>
+                    startOffset="59058"
+                    endOffset="59059"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -1262,8 +1595,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50585"
-                    endOffset="50601"/>
+                    startOffset="59830"
+                    endOffset="59846"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;canvas.&quot;"
@@ -1274,8 +1607,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="49963"
-                    endOffset="49970"/>
+                    startOffset="59161"
+                    endOffset="59168"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;canvas.&quot;"
@@ -1286,8 +1619,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50512"
-                    endOffset="50519"/>
+                    startOffset="59757"
+                    endOffset="59764"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;            canvas.translate((width - contentWidth) / 2f, (height - contentHeight) / 2f)&#xA;&quot;"
@@ -1298,8 +1631,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="49862"
-                    endOffset="49951"/>
+                    startOffset="59060"
+                    endOffset="59149"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1310,8 +1643,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="49951"
-                    endOffset="49951"/>
+                    startOffset="59149"
+                    endOffset="59149"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1322,8 +1655,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50005"
-                    endOffset="50005"/>
+                    startOffset="59203"
+                    endOffset="59203"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1334,8 +1667,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50061"
-                    endOffset="50061"/>
+                    startOffset="59259"
+                    endOffset="59259"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1346,8 +1679,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50101"
-                    endOffset="50101"/>
+                    startOffset="59299"
+                    endOffset="59299"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1358,8 +1691,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50148"
-                    endOffset="50148"/>
+                    startOffset="59346"
+                    endOffset="59346"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1370,8 +1703,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50203"
-                    endOffset="50203"/>
+                    startOffset="59393"
+                    endOffset="59393"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1382,8 +1715,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50285"
-                    endOffset="50285"/>
+                    startOffset="59448"
+                    endOffset="59448"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1394,8 +1727,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50354"
-                    endOffset="50354"/>
+                    startOffset="59530"
+                    endOffset="59530"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1406,8 +1739,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50416"
-                    endOffset="50416"/>
+                    startOffset="59599"
+                    endOffset="59599"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1418,8 +1751,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50470"
-                    endOffset="50470"/>
+                    startOffset="59661"
+                    endOffset="59661"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1430,8 +1763,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50492"
-                    endOffset="50492"/>
+                    startOffset="59715"
+                    endOffset="59715"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1442,8 +1775,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50541"
-                    endOffset="50541"/>
+                    startOffset="59737"
+                    endOffset="59737"/>
             </fix-replace>
             <fix-replace
                 description="Replace with     "
@@ -1454,18 +1787,30 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-                    startOffset="50559"
-                    endOffset="50559"/>
+                    startOffset="59786"
+                    endOffset="59786"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with     "
+                robot="true"
+                independent="true"
+                oldString=""
+                replacement="    "
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+                    startOffset="59804"
+                    endOffset="59804"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1124"
+            line="1349"
             column="13"
-            startOffset="49848"
-            endLine="1124"
+            startOffset="59046"
+            endLine="1349"
             endColumn="26"
-            endOffset="49861"/>
+            endOffset="59059"/>
     </incident>
 
     <incident
@@ -1484,17 +1829,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
-                startOffset="727"
-                endOffset="781"/>
+                startOffset="811"
+                endOffset="865"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
-            line="22"
+            line="23"
             column="22"
-            startOffset="727"
-            endLine="22"
+            startOffset="811"
+            endLine="23"
             endColumn="76"
-            endOffset="781"/>
+            endOffset="865"/>
     </incident>
 
     <incident
@@ -1513,17 +1858,75 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
-                startOffset="3835"
-                endOffset="3889"/>
+                startOffset="3919"
+                endOffset="3973"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
-            line="87"
+            line="88"
             column="22"
-            startOffset="3835"
-            endLine="87"
+            startOffset="3919"
+            endLine="88"
             endColumn="76"
-            endOffset="3889"/>
+            endOffset="3973"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(x, y)"
+            replacement="bitmap[x, y]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+                startOffset="9743"
+                endOffset="9764"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+            line="220"
+            column="29"
+            startOffset="9743"
+            endLine="220"
+            endColumn="50"
+            endOffset="9764"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `Bitmap.get` instead?">
+        <fix-replace
+            description="Replace with the get extension function"
+            family="Replace with the get extension function"
+            robot="true"
+            independent="true"
+            oldString="bitmap.getPixel(sampleX, sampleY)"
+            replacement="bitmap[sampleX, sampleY]"
+            reformat="value"
+            imports="androidx.core.graphics.get"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+                startOffset="13291"
+                endOffset="13324"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/TraceProcessor.kt"
+            line="295"
+            column="33"
+            startOffset="13291"
+            endLine="295"
+            endColumn="66"
+            endOffset="13324"/>
     </incident>
 
     <incident
@@ -1532,12 +1935,12 @@
         message="Custom view `AreaSelectionView` overrides `onTouchEvent` but not `performClick`">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="590"
+            line="687"
             column="22"
-            startOffset="22869"
-            endLine="590"
+            startOffset="27345"
+            endLine="687"
             endColumn="34"
-            endOffset="22881"/>
+            endOffset="27357"/>
     </incident>
 
     <incident
@@ -1546,12 +1949,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="260"
+            line="269"
             column="21"
-            startOffset="9574"
-            endLine="260"
+            startOffset="9887"
+            endLine="269"
             endColumn="23"
-            endOffset="9576"/>
+            endOffset="9889"/>
     </incident>
 
     <incident
@@ -1560,12 +1963,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="302"
+            line="311"
             column="21"
-            startOffset="11149"
-            endLine="302"
+            startOffset="11462"
+            endLine="311"
             endColumn="37"
-            endOffset="11165"/>
+            endOffset="11478"/>
     </incident>
 
     <incident
@@ -1574,12 +1977,12 @@
         message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="782"
+            line="881"
             column="20"
-            startOffset="30759"
-            endLine="782"
+            startOffset="35141"
+            endLine="881"
             endColumn="66"
-            endOffset="30805"/>
+            endOffset="35187"/>
     </incident>
 
     <incident
@@ -1588,12 +1991,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="782"
+            line="881"
             column="21"
-            startOffset="30760"
-            endLine="782"
+            startOffset="35142"
+            endLine="881"
             endColumn="32"
-            endOffset="30771"/>
+            endOffset="35153"/>
     </incident>
 
     <incident
@@ -1602,12 +2005,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="782"
+            line="881"
             column="43"
-            startOffset="30782"
-            endLine="782"
+            startOffset="35164"
+            endLine="881"
             endColumn="47"
-            endOffset="30786"/>
+            endOffset="35168"/>
     </incident>
 
     <incident
@@ -1616,12 +2019,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="786"
+            line="885"
             column="21"
-            startOffset="30916"
-            endLine="786"
+            startOffset="35298"
+            endLine="885"
             endColumn="27"
-            endOffset="30922"/>
+            endOffset="35304"/>
     </incident>
 
     <incident
@@ -1630,12 +2033,12 @@
         message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="848"
+            line="947"
             column="31"
-            startOffset="33608"
-            endLine="848"
+            startOffset="37990"
+            endLine="947"
             endColumn="77"
-            endOffset="33654"/>
+            endOffset="38036"/>
     </incident>
 
     <incident
@@ -1644,12 +2047,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="848"
+            line="947"
             column="32"
-            startOffset="33609"
-            endLine="848"
+            startOffset="37991"
+            endLine="947"
             endColumn="43"
-            endOffset="33620"/>
+            endOffset="38002"/>
     </incident>
 
     <incident
@@ -1658,12 +2061,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="848"
+            line="947"
             column="54"
-            startOffset="33631"
-            endLine="848"
+            startOffset="38013"
+            endLine="947"
             endColumn="58"
-            endOffset="33635"/>
+            endOffset="38017"/>
     </incident>
 
     <incident
@@ -1672,12 +2075,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="132"
+            line="143"
             column="37"
-            startOffset="5280"
-            endLine="132"
+            startOffset="5805"
+            endLine="143"
             endColumn="95"
-            endOffset="5338"/>
+            endOffset="5863"/>
     </incident>
 
     <incident
@@ -1686,12 +2089,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="224"
+            line="242"
             column="21"
-            startOffset="8637"
-            endLine="224"
+            startOffset="9320"
+            endLine="242"
             endColumn="53"
-            endOffset="8669"/>
+            endOffset="9352"/>
     </incident>
 
     <incident
@@ -1700,12 +2103,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="232"
+            line="250"
             column="21"
-            startOffset="8957"
-            endLine="232"
+            startOffset="9640"
+            endLine="250"
             endColumn="37"
-            endOffset="8973"/>
+            endOffset="9656"/>
     </incident>
 
     <incident
@@ -1714,12 +2117,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="272"
+            line="290"
             column="21"
-            startOffset="10528"
-            endLine="272"
+            startOffset="11211"
+            endLine="290"
             endColumn="42"
-            endOffset="10549"/>
+            endOffset="11232"/>
     </incident>
 
     <incident
@@ -1728,12 +2131,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="298"
+            line="316"
             column="21"
-            startOffset="11605"
-            endLine="298"
+            startOffset="12288"
+            endLine="316"
             endColumn="34"
-            endOffset="11618"/>
+            endOffset="12301"/>
     </incident>
 
     <incident
@@ -1742,12 +2145,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="310"
+            line="328"
             column="21"
-            startOffset="12131"
-            endLine="310"
+            startOffset="12814"
+            endLine="328"
             endColumn="40"
-            endOffset="12150"/>
+            endOffset="12833"/>
     </incident>
 
     <incident
@@ -1756,12 +2159,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="320"
+            line="338"
             column="21"
-            startOffset="12521"
-            endLine="320"
+            startOffset="13204"
+            endLine="338"
             endColumn="48"
-            endOffset="12548"/>
+            endOffset="13231"/>
     </incident>
 
     <incident
@@ -1770,544 +2173,12 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="393"
-            column="29"
-            startOffset="15674"
-            endLine="393"
-            endColumn="47"
-            endOffset="15692"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="509"
-            column="13"
-            startOffset="21039"
-            endLine="509"
-            endColumn="97"
-            endOffset="21123"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="509"
-            column="14"
-            startOffset="21040"
-            endLine="509"
-            endColumn="50"
-            endOffset="21076"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="509"
-            column="57"
-            startOffset="21083"
-            endLine="509"
-            endColumn="96"
-            endOffset="21122"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="522"
-            column="29"
-            startOffset="21606"
-            endLine="522"
-            endColumn="80"
-            endOffset="21657"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="537"
-            column="36"
-            startOffset="22293"
-            endLine="537"
-            endColumn="49"
-            endOffset="22306"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="545"
-            column="36"
-            startOffset="22666"
-            endLine="545"
-            endColumn="49"
-            endOffset="22679"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="558"
-            column="33"
-            startOffset="23204"
-            endLine="558"
-            endColumn="81"
-            endOffset="23252"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="562"
-            column="33"
-            startOffset="23363"
-            endLine="562"
-            endColumn="94"
-            endOffset="23424"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="568"
-            column="18"
-            startOffset="23633"
-            endLine="568"
-            endColumn="142"
-            endOffset="23757"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="575"
-            column="33"
-            startOffset="23961"
-            endLine="575"
-            endColumn="65"
-            endOffset="23993"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="598"
-            column="33"
-            startOffset="25024"
-            endLine="598"
-            endColumn="79"
-            endOffset="25070"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="647"
-            column="44"
-            startOffset="27412"
-            endLine="647"
-            endColumn="139"
-            endOffset="27507"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="647"
-            column="45"
-            startOffset="27413"
-            endLine="647"
-            endColumn="72"
-            endOffset="27440"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="647"
-            column="103"
-            startOffset="27471"
-            endLine="647"
-            endColumn="138"
-            endOffset="27506"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="665"
-            column="40"
-            startOffset="28346"
-            endLine="665"
-            endColumn="119"
-            endOffset="28425"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="665"
-            column="41"
-            startOffset="28347"
-            endLine="665"
-            endColumn="78"
-            endOffset="28384"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="764"
-            column="17"
-            startOffset="32913"
-            endLine="764"
-            endColumn="108"
-            endOffset="33004"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="764"
-            column="28"
-            startOffset="32924"
-            endLine="764"
-            endColumn="41"
-            endOffset="32937"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="764"
-            column="56"
-            startOffset="32952"
-            endLine="764"
-            endColumn="63"
-            endOffset="32959"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="764"
-            column="68"
-            startOffset="32964"
-            endLine="764"
-            endColumn="76"
-            endOffset="32972"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="764"
-            column="91"
-            startOffset="32987"
-            endLine="764"
-            endColumn="107"
-            endOffset="33003"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="766"
-            column="32"
-            startOffset="33073"
-            endLine="766"
-            endColumn="87"
-            endOffset="33128"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="766"
-            column="33"
-            startOffset="33074"
-            endLine="766"
-            endColumn="70"
-            endOffset="33111"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="784"
-            column="29"
-            startOffset="33746"
-            endLine="784"
-            endColumn="56"
-            endOffset="33773"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="798"
-            column="44"
-            startOffset="34399"
-            endLine="798"
-            endColumn="102"
-            endOffset="34457"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="798"
-            column="45"
-            startOffset="34400"
-            endLine="798"
-            endColumn="84"
-            endOffset="34439"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="858"
-            column="28"
-            startOffset="37320"
-            endLine="858"
-            endColumn="58"
-            endOffset="37350"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="858"
-            column="29"
-            startOffset="37321"
-            endLine="858"
-            endColumn="38"
-            endOffset="37330"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="870"
-            column="41"
-            startOffset="37827"
-            endLine="870"
-            endColumn="87"
-            endOffset="37873"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="878"
-            column="25"
-            startOffset="38198"
-            endLine="878"
-            endColumn="112"
-            endOffset="38285"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="878"
-            column="26"
-            startOffset="38199"
-            endLine="878"
-            endColumn="65"
-            endOffset="38238"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="960"
-            column="37"
-            startOffset="42190"
-            endLine="960"
-            endColumn="94"
-            endOffset="42247"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="980"
-            column="33"
-            startOffset="43127"
-            endLine="980"
-            endColumn="74"
-            endOffset="43168"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="982"
-            column="32"
-            startOffset="43238"
-            endLine="982"
-            endColumn="117"
-            endOffset="43323"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="982"
-            column="33"
-            startOffset="43239"
-            endLine="982"
-            endColumn="70"
-            endOffset="43276"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1033"
-            column="18"
-            startOffset="45555"
-            endLine="1033"
-            endColumn="142"
-            endOffset="45679"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1067"
+            line="381"
             column="21"
-            startOffset="47373"
-            endLine="1067"
-            endColumn="51"
-            endOffset="47403"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1090"
-            column="40"
-            startOffset="48549"
-            endLine="1090"
-            endColumn="62"
-            endOffset="48571"/>
+            startOffset="15024"
+            endLine="381"
+            endColumn="69"
+            endOffset="15072"/>
     </incident>
 
     <incident
@@ -2316,12 +2187,698 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1090"
+            line="415"
+            column="26"
+            startOffset="16590"
+            endLine="415"
+            endColumn="106"
+            endOffset="16670"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="415"
+            column="26"
+            startOffset="16590"
+            endLine="415"
+            endColumn="106"
+            endOffset="16670"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="425"
+            column="30"
+            startOffset="17009"
+            endLine="425"
+            endColumn="102"
+            endOffset="17081"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="425"
+            column="30"
+            startOffset="17009"
+            endLine="425"
+            endColumn="102"
+            endOffset="17081"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="442"
+            column="21"
+            startOffset="17575"
+            endLine="442"
+            endColumn="30"
+            endOffset="17584"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="449"
+            column="39"
+            startOffset="17850"
+            endLine="449"
+            endColumn="69"
+            endOffset="17880"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="451"
+            column="39"
+            startOffset="17941"
+            endLine="451"
+            endColumn="60"
+            endOffset="17962"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="475"
+            column="21"
+            startOffset="18952"
+            endLine="475"
+            endColumn="27"
+            endOffset="18958"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="499"
+            column="21"
+            startOffset="19979"
+            endLine="499"
+            endColumn="113"
+            endOffset="20071"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="609"
+            column="29"
+            startOffset="24428"
+            endLine="609"
+            endColumn="47"
+            endOffset="24446"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="725"
+            column="13"
+            startOffset="29809"
+            endLine="725"
+            endColumn="97"
+            endOffset="29893"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="725"
+            column="14"
+            startOffset="29810"
+            endLine="725"
+            endColumn="50"
+            endOffset="29846"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="725"
+            column="57"
+            startOffset="29853"
+            endLine="725"
+            endColumn="96"
+            endOffset="29892"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="738"
+            column="29"
+            startOffset="30376"
+            endLine="738"
+            endColumn="80"
+            endOffset="30427"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="753"
+            column="36"
+            startOffset="31063"
+            endLine="753"
+            endColumn="49"
+            endOffset="31076"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="761"
+            column="36"
+            startOffset="31436"
+            endLine="761"
+            endColumn="49"
+            endOffset="31449"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="775"
+            column="33"
+            startOffset="32064"
+            endLine="775"
+            endColumn="81"
+            endOffset="32112"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="779"
+            column="33"
+            startOffset="32223"
+            endLine="779"
+            endColumn="94"
+            endOffset="32284"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="785"
+            column="18"
+            startOffset="32493"
+            endLine="785"
+            endColumn="142"
+            endOffset="32617"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="792"
+            column="33"
+            startOffset="32821"
+            endLine="792"
+            endColumn="65"
+            endOffset="32853"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="815"
+            column="33"
+            startOffset="33884"
+            endLine="815"
+            endColumn="79"
+            endOffset="33930"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="864"
+            column="44"
+            startOffset="36272"
+            endLine="864"
+            endColumn="139"
+            endOffset="36367"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="864"
+            column="45"
+            startOffset="36273"
+            endLine="864"
+            endColumn="72"
+            endOffset="36300"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="864"
+            column="103"
+            startOffset="36331"
+            endLine="864"
+            endColumn="138"
+            endOffset="36366"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="882"
+            column="40"
+            startOffset="37206"
+            endLine="882"
+            endColumn="119"
+            endOffset="37285"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="882"
             column="41"
-            startOffset="48550"
-            endLine="1090"
+            startOffset="37207"
+            endLine="882"
+            endColumn="78"
+            endOffset="37244"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="17"
+            startOffset="41767"
+            endLine="979"
+            endColumn="127"
+            endOffset="41877"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="28"
+            startOffset="41778"
+            endLine="979"
+            endColumn="41"
+            endOffset="41791"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="56"
+            startOffset="41806"
+            endLine="979"
+            endColumn="65"
+            endOffset="41815"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="76"
+            startOffset="41826"
+            endLine="979"
+            endColumn="82"
+            endOffset="41832"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="87"
+            startOffset="41837"
+            endLine="979"
+            endColumn="95"
+            endOffset="41845"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="979"
+            column="110"
+            startOffset="41860"
+            endLine="979"
+            endColumn="126"
+            endOffset="41876"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="981"
+            column="32"
+            startOffset="41946"
+            endLine="981"
+            endColumn="87"
+            endOffset="42001"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="981"
+            column="33"
+            startOffset="41947"
+            endLine="981"
+            endColumn="70"
+            endOffset="41984"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="999"
+            column="29"
+            startOffset="42619"
+            endLine="999"
+            endColumn="56"
+            endOffset="42646"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1013"
+            column="44"
+            startOffset="43272"
+            endLine="1013"
+            endColumn="102"
+            endOffset="43330"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1013"
+            column="45"
+            startOffset="43273"
+            endLine="1013"
+            endColumn="84"
+            endOffset="43312"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1079"
+            column="28"
+            startOffset="46447"
+            endLine="1079"
+            endColumn="58"
+            endOffset="46477"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1079"
+            column="29"
+            startOffset="46448"
+            endLine="1079"
+            endColumn="38"
+            endOffset="46457"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1091"
+            column="41"
+            startOffset="46954"
+            endLine="1091"
+            endColumn="87"
+            endOffset="47000"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1099"
+            column="25"
+            startOffset="47325"
+            endLine="1099"
+            endColumn="112"
+            endOffset="47412"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1099"
+            column="26"
+            startOffset="47326"
+            endLine="1099"
+            endColumn="65"
+            endOffset="47365"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1181"
+            column="37"
+            startOffset="51319"
+            endLine="1181"
+            endColumn="94"
+            endOffset="51376"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1201"
+            column="33"
+            startOffset="52256"
+            endLine="1201"
+            endColumn="74"
+            endOffset="52297"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1203"
+            column="32"
+            startOffset="52367"
+            endLine="1203"
+            endColumn="117"
+            endOffset="52452"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1203"
+            column="33"
+            startOffset="52368"
+            endLine="1203"
+            endColumn="70"
+            endOffset="52405"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1254"
+            column="18"
+            startOffset="54692"
+            endLine="1254"
+            endColumn="142"
+            endOffset="54816"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1292"
+            column="21"
+            startOffset="56606"
+            endLine="1292"
+            endColumn="51"
+            endOffset="56636"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1315"
+            column="40"
+            startOffset="57747"
+            endLine="1315"
+            endColumn="62"
+            endOffset="57769"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
+            line="1315"
+            column="41"
+            startOffset="57748"
+            endLine="1315"
             endColumn="53"
-            endOffset="48562"/>
+            endOffset="57760"/>
     </incident>
 
 </incidents>

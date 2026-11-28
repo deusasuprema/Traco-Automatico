@@ -12,7 +12,7 @@
         errorLine1="    android:canTakeScreenshot=&quot;true&quot;"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\xml\drawing_accessibility_service.xml"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\xml\drawing_accessibility_service.xml"
             line="6"
             column="5"/>
     </issue>
@@ -28,7 +28,7 @@
         errorLine1="    android:isAccessibilityTool=&quot;false&quot;"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\xml\drawing_accessibility_service.xml"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\xml\drawing_accessibility_service.xml"
             line="8"
             column="5"/>
     </issue>
@@ -44,8 +44,8 @@
         errorLine1="    implementation(&quot;androidx.activity:activity-ktx:1.10.1&quot;)"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gradle.kts"
-            line="36"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build.gradle.kts"
+            line="49"
             column="20"/>
     </issue>
 
@@ -60,8 +60,8 @@
         errorLine1="    implementation(&quot;androidx.core:core-ktx:1.15.0&quot;)"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gradle.kts"
-            line="37"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build.gradle.kts"
+            line="50"
             column="20"/>
     </issue>
 
@@ -76,8 +76,8 @@
         errorLine1="    implementation(&quot;com.google.mediapipe:tasks-vision:0.10.35&quot;)"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gradle.kts"
-            line="38"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build.gradle.kts"
+            line="51"
             column="20"/>
     </issue>
 
@@ -92,8 +92,24 @@
         errorLine1="    @TargetApi(Build.VERSION_CODES.R)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="410"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="419"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UseRequiresApi"
+        severity="Warning"
+        message="Use `@RequiresApi(Build.VERSION_CODES.R) instead of `@TargetApi` to propagate the requirement to callers of `detectColorPicker`"
+        category="Correctness"
+        priority="2"
+        summary="Use `@RequiresApi` instead of `@TargetApi`"
+        explanation="The `@TargetApi` annotation only *suppresses* API warnings locally. `@RequiresApi` on the other hand will propagate the requirement out to any *callers* of this API, making sure that they either perform API level checks (using for example `SDK_INT`), or defining `@RequiresApi` annotations themselves.&#xA;&#xA;(The `@TargetApi` annotation predates `@RequiresApi`, and was introduced as an early way to *suppress* lint API warnings for a particular API level. Accidentally using `@TargetApi` can lead to crashes since there is no check that other calls to this method actually check that the call is safe.)"
+        errorLine1="    @TargetApi(Build.VERSION_CODES.R)"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="556"
             column="5"/>
     </issue>
 
@@ -110,9 +126,27 @@
         errorLine1="            abiFilters += listOf(&quot;arm64-v8a&quot;, &quot;armeabi-v7a&quot;)"
         errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\build.gradle.kts"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build.gradle.kts"
             line="17"
             column="27"/>
+    </issue>
+
+    <issue
+        id="SetJavaScriptEnabled"
+        severity="Warning"
+        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully"
+        category="Security"
+        priority="6"
+        summary="Using `setJavaScriptEnabled`"
+        explanation="Your code should not invoke `setJavaScriptEnabled` if you are not sure that your app really requires JavaScript support."
+        url="https://goo.gle/SetJavaScriptEnabled"
+        urls="https://goo.gle/SetJavaScriptEnabled,https://developer.android.com/training/articles/security-tips"
+        errorLine1="            settings.javaScriptEnabled = true"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="395"
+            column="13"/>
     </issue>
 
     <issue
@@ -128,7 +162,7 @@
         errorLine1="        android:allowBackup=&quot;false&quot;"
         errorLine2="                             ~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\AndroidManifest.xml"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\AndroidManifest.xml"
             line="12"
             column="30"/>
     </issue>
@@ -144,8 +178,8 @@
         errorLine1="            val location = IntArray(2)"
         errorLine2="                           ~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="528"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="625"
             column="28"/>
     </issue>
 
@@ -160,8 +194,8 @@
         errorLine1="            val localBounds = RectF("
         errorLine2="                              ^">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="530"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="627"
             column="31"/>
     </issue>
 
@@ -176,8 +210,8 @@
         errorLine1="                    val path = android.graphics.Path()"
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1130"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1356"
             column="32"/>
     </issue>
 
@@ -192,8 +226,24 @@
         errorLine1="        if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="412"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="421"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        severity="Warning"
+        message="Unnecessary; `Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R` is never true here"
+        category="Performance"
+        priority="6"
+        summary="Obsolete SDK_INT Version Check"
+        explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for.&#xA;&#xA;Similarly, it also looks for resources in `-vNN` folders, such as `values-v14` where the version qualifier is less than or equal to the `minSdkVersion`, where the contents should be merged into the best folder."
+        errorLine1="        if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.R) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="558"
             column="13"/>
     </issue>
 
@@ -206,7 +256,7 @@
         summary="Obsolete SDK_INT Version Check"
         explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for.&#xA;&#xA;Similarly, it also looks for resources in `-vNN` folders, such as `values-v14` where the version qualifier is less than or equal to the `minSdkVersion`, where the contents should be merged into the best folder.">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\mipmap-anydpi-v26"/>
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-anydpi-v26"/>
     </issue>
 
     <issue
@@ -220,9 +270,69 @@
         errorLine1="    &lt;color name=&quot;brand_purple&quot;>#6858E8&lt;/color>"
         errorLine2="           ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\values\colors.xml"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\values\colors.xml"
             line="2"
             column="12"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-hdpi\ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-mdpi\ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-xhdpi\ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-xxhdpi\ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png"/>
     </issue>
 
     <issue
@@ -236,7 +346,7 @@
         errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
         errorLine2="^">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml"
             line="1"
             column="1"/>
     </issue>
@@ -252,9 +362,105 @@
         errorLine1="                if (isBoardPixel(bitmap.getPixel(x, y))) {"
         errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\CanvasDetector.kt"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\CanvasDetector.kt"
             line="28"
             column="34"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                Color.colorToHSV(bitmap.getPixel(x, y), hsv)"
+        errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="51"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            Color.colorToHSV(bitmap.getPixel(x, y), hsv)"
+        errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="119"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val leftTop = bitmap.getPixel((bounds.left + insetX).toInt(), (bounds.top + insetY).toInt())"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="129"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val leftBottom = bitmap.getPixel("
+        errorLine2="                         ^">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="130"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val rightTop = bitmap.getPixel("
+        errorLine2="                       ^">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="134"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            Color.colorToHSV(bitmap.getPixel(x, y), hsv)"
+        errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
+            line="157"
+            column="30"/>
     </issue>
 
     <issue
@@ -268,8 +474,8 @@
         errorLine1="            preferences.edit()"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="140"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="149"
             column="13"/>
     </issue>
 
@@ -284,8 +490,8 @@
         errorLine1="        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="160"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="169"
             column="9"/>
     </issue>
 
@@ -300,8 +506,8 @@
         errorLine1="            getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="714"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="758"
             column="13"/>
     </issue>
 
@@ -316,8 +522,8 @@
         errorLine1="        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="887"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="986"
             column="9"/>
     </issue>
 
@@ -332,8 +538,8 @@
         errorLine1="        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="897"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="996"
             column="9"/>
     </issue>
 
@@ -348,8 +554,88 @@
         errorLine1="        getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="904"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="1003"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                val searchUri = Uri.parse(&quot;https://www.google.com/search&quot;)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="452"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Int.toDrawable` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            setBackgroundDrawable(ColorDrawable(Color.WHITE))"
+        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="543"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val uri = Uri.parse(candidate)"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="562"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        val imageUri = Uri.parse(imageUrl)"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="571"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="742"
             column="9"/>
     </issue>
 
@@ -364,24 +650,8 @@
         errorLine1="        getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="526"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="UseKtx"
-        severity="Warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?"
-        category="Productivity"
-        priority="6"
-        summary="Use KTX extension function"
-        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="        getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="580"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="797"
             column="9"/>
     </issue>
 
@@ -396,8 +666,8 @@
         errorLine1="            val foreground = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)"
         errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="708"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="925"
             column="30"/>
     </issue>
 
@@ -412,8 +682,8 @@
         errorLine1="            getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)"
         errorLine2="            ^">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="746"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="965"
             column="13"/>
     </issue>
 
@@ -428,8 +698,8 @@
         errorLine1="                    Uri.parse(&quot;package:$packageName&quot;)"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="965"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1186"
             column="21"/>
     </issue>
 
@@ -444,8 +714,8 @@
         errorLine1="            canvas.save()"
         errorLine2="            ~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1124"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1349"
             column="13"/>
     </issue>
 
@@ -460,8 +730,8 @@
         errorLine1="        val scaled = Bitmap.createScaledBitmap(bitmap, width, height, true)"
         errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="22"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
+            line="23"
             column="22"/>
     </issue>
 
@@ -476,9 +746,41 @@
         errorLine1="        val scaled = Bitmap.createScaledBitmap(bitmap, width, height, true)"
         errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="87"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
+            line="88"
             column="22"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                val color = bitmap.getPixel(x, y)"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
+            line="220"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                    val color = bitmap.getPixel(sampleX, sampleY)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
+            line="295"
+            column="33"/>
     </issue>
 
     <issue
@@ -492,8 +794,8 @@
         errorLine1="        override fun onTouchEvent(event: MotionEvent): Boolean {"
         errorLine2="                     ~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="590"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="687"
             column="22"/>
     </issue>
 
@@ -507,11 +809,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            text = &quot;TA&quot;"
+        errorLine1="            text = &quot;WL&quot;"
         errorLine2="                    ~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="260"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="269"
             column="21"/>
     </issue>
 
@@ -525,11 +827,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            text = &quot;Traço Automático&quot;"
+        errorLine1="            text = &quot;WeeLife Line Art&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="302"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="311"
             column="21"/>
     </issue>
 
@@ -546,8 +848,8 @@
         errorLine1="            text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="782"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="881"
             column="20"/>
     </issue>
 
@@ -564,8 +866,8 @@
         errorLine1="            text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                    ~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="782"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="881"
             column="21"/>
     </issue>
 
@@ -582,8 +884,8 @@
         errorLine1="            text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                                          ~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="782"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="881"
             column="43"/>
     </issue>
 
@@ -600,8 +902,8 @@
         errorLine1="            text = &quot;Pausar&quot;"
         errorLine2="                    ~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="786"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="885"
             column="21"/>
     </issue>
 
@@ -618,8 +920,8 @@
         errorLine1="        progressLabel?.text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="848"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="947"
             column="31"/>
     </issue>
 
@@ -636,8 +938,8 @@
         errorLine1="        progressLabel?.text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                               ~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="848"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="947"
             column="32"/>
     </issue>
 
@@ -654,8 +956,8 @@
         errorLine1="        progressLabel?.text = &quot;Desenhando $nextStroke de ${strokes.size}...&quot;"
         errorLine2="                                                     ~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="848"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
+            line="947"
             column="54"/>
     </issue>
 
@@ -672,8 +974,8 @@
         errorLine1="                statusLabel.text = &quot;Permita a instalação de apps desconhecidos para atualizar.&quot;"
         errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="132"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="143"
             column="37"/>
     </issue>
 
@@ -690,8 +992,8 @@
         errorLine1="            text = &quot;Escolha uma imagem para começar.&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="224"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="242"
             column="21"/>
     </issue>
 
@@ -708,8 +1010,8 @@
         errorLine1="            text = &quot;Preparar desenho&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="232"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="250"
             column="21"/>
     </issue>
 
@@ -726,8 +1028,8 @@
         errorLine1="            text = &quot;Sua arte aparece aqui&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="272"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="290"
             column="21"/>
     </issue>
 
@@ -744,8 +1046,8 @@
         errorLine1="            text = &quot;Ver contornos&quot;"
         errorLine2="                    ~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="298"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="316"
             column="21"/>
     </issue>
 
@@ -762,8 +1064,8 @@
         errorLine1="            text = &quot;Escolher da galeria&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="310"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="328"
             column="21"/>
     </issue>
 
@@ -777,11 +1079,191 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            text = &quot;Importar imagem da internet&quot;"
+        errorLine1="            text = &quot;Pesquisar imagens no Google&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="320"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="338"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;Pesquise um termo, por exemplo: Art line Animes.&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="381"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        &quot;Toque numa imagem para ampliar; depois mantenha-a pressionada para selecioná-la.&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="415"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                        &quot;Toque numa imagem para ampliar; depois mantenha-a pressionada para selecioná-la.&quot;"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="415"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                            &quot;Não foi possível carregar a busca. Verifique sua conexão com a internet.&quot;"
+        errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="425"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                            &quot;Não foi possível carregar a busca. Verifique sua conexão com a internet.&quot;"
+        errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="425"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;Pesquisar&quot;"
+        errorLine2="                    ~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="442"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                browserStatus.text = &quot;Digite o que deseja pesquisar.&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="449"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                browserStatus.text = &quot;Carregando imagens...&quot;"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="451"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;Fechar&quot;"
+        errorLine2="                    ~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="475"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            text = &quot;Mantenha uma imagem pressionada para usá-la. Verifique se você tem direito de usar a imagem.&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="499"
             column="21"/>
     </issue>
 
@@ -798,8 +1280,8 @@
         errorLine1="        statusLabel.text = &quot;Baixando imagem...&quot;"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="393"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="609"
             column="29"/>
     </issue>
 
@@ -816,8 +1298,8 @@
         errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="509"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="725"
             column="13"/>
     </issue>
 
@@ -834,8 +1316,8 @@
         errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
         errorLine2="             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="509"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="725"
             column="14"/>
     </issue>
 
@@ -852,8 +1334,8 @@
         errorLine1="            &quot;Imagem carregada. Detalhe sugerido: $detail%. Você pode ajustar antes de preparar.&quot;"
         errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="509"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="725"
             column="57"/>
     </issue>
 
@@ -870,8 +1352,8 @@
         errorLine1="        statusLabel.text = &quot;Imagem removida. Escolha outra imagem para começar.&quot;"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="522"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="738"
             column="29"/>
     </issue>
 
@@ -888,8 +1370,8 @@
         errorLine1="        tracePreviewButton.text = &quot;Ver contornos&quot;"
         errorLine2="                                   ~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="537"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="753"
             column="36"/>
     </issue>
 
@@ -906,8 +1388,8 @@
         errorLine1="        tracePreviewButton.text = &quot;Ver contornos&quot;"
         errorLine2="                                   ~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="545"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="761"
             column="36"/>
     </issue>
 
@@ -924,8 +1406,8 @@
         errorLine1="            statusLabel.text = &quot;Nenhum app de desenho compatível foi encontrado.&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="558"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="775"
             column="33"/>
     </issue>
 
@@ -942,8 +1424,8 @@
         errorLine1="            statusLabel.text = &quot;Ative a Acessibilidade e toque novamente em Preparar desenho.&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="562"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="779"
             column="33"/>
     </issue>
 
@@ -957,11 +1439,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações.&quot;"
+        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “WeeLife Line Art” nas configurações.&quot;"
         errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="568"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="785"
             column="18"/>
     </issue>
 
@@ -978,8 +1460,8 @@
         errorLine1="            statusLabel.text = &quot;Escolha uma imagem para começar.&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="575"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="792"
             column="33"/>
     </issue>
 
@@ -996,8 +1478,8 @@
         errorLine1="            statusLabel.text = &quot;Não foi possível preparar uma cópia da imagem.&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="598"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="815"
             column="33"/>
     </issue>
 
@@ -1014,8 +1496,8 @@
         errorLine1="                        statusLabel.text = &quot;A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA.&quot;"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="647"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="864"
             column="44"/>
     </issue>
 
@@ -1032,8 +1514,8 @@
         errorLine1="                        statusLabel.text = &quot;A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA.&quot;"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="647"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="864"
             column="45"/>
     </issue>
 
@@ -1050,8 +1532,8 @@
         errorLine1="                        statusLabel.text = &quot;A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA.&quot;"
         errorLine2="                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="647"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="864"
             column="103"/>
     </issue>
 
@@ -1068,8 +1550,8 @@
         errorLine1="                    statusLabel.text = &quot;Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}&quot;"
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="665"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="882"
             column="40"/>
     </issue>
 
@@ -1086,8 +1568,8 @@
         errorLine1="                    statusLabel.text = &quot;Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}&quot;"
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="665"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="882"
             column="41"/>
     </issue>
 
@@ -1101,11 +1583,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar.&quot;"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="764"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
             column="17"/>
     </issue>
 
@@ -1119,11 +1601,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
         errorLine2="                           ~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="764"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
             column="28"/>
     </issue>
 
@@ -1137,11 +1619,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar.&quot;"
-        errorLine2="                                                       ~~~~~~~">
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine2="                                                       ~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="764"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
             column="56"/>
     </issue>
 
@@ -1155,12 +1637,12 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar.&quot;"
-        errorLine2="                                                                   ~~~~~~~~">
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine2="                                                                           ~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="764"
-            column="68"/>
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
+            column="76"/>
     </issue>
 
     <issue
@@ -1173,12 +1655,30 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços$mode. Abra “${target.label}” para desenhar.&quot;"
-        errorLine2="                                                                                          ~~~~~~~~~~~~~~~~">
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine2="                                                                                      ~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="764"
-            column="91"/>
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
+            column="87"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                &quot;${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar.&quot;"
+        errorLine2="                                                                                                             ~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="979"
+            column="110"/>
     </issue>
 
     <issue
@@ -1194,8 +1694,8 @@
         errorLine1="            statusLabel.text = &quot;Não foi possível preparar o desenho: ${error.message}&quot;"
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="766"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="981"
             column="32"/>
     </issue>
 
@@ -1212,8 +1712,8 @@
         errorLine1="            statusLabel.text = &quot;Não foi possível preparar o desenho: ${error.message}&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="766"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="981"
             column="33"/>
     </issue>
 
@@ -1230,8 +1730,8 @@
         errorLine1="        statusLabel.text = &quot;Verificando atualizações...&quot;"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="784"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="999"
             column="29"/>
     </issue>
 
@@ -1245,11 +1745,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                        statusLabel.text = &quot;O Traço Automático já está atualizado ($currentVersion).&quot;"
+        errorLine1="                        statusLabel.text = &quot;O WeeLife Line Art já está atualizado ($currentVersion).&quot;"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="798"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1013"
             column="44"/>
     </issue>
 
@@ -1263,11 +1763,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                        statusLabel.text = &quot;O Traço Automático já está atualizado ($currentVersion).&quot;"
+        errorLine1="                        statusLabel.text = &quot;O WeeLife Line Art já está atualizado ($currentVersion).&quot;"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="798"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1013"
             column="45"/>
     </issue>
 
@@ -1284,8 +1784,8 @@
         errorLine1="        statusLabel.text = &quot;Baixando ${release.title}...&quot;"
         errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="858"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1079"
             column="28"/>
     </issue>
 
@@ -1302,8 +1802,8 @@
         errorLine1="        statusLabel.text = &quot;Baixando ${release.title}...&quot;"
         errorLine2="                            ~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="858"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1079"
             column="29"/>
     </issue>
 
@@ -1320,8 +1820,8 @@
         errorLine1="                    statusLabel.text = &quot;Download concluído. Preparando a instalação...&quot;"
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="870"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1091"
             column="41"/>
     </issue>
 
@@ -1338,8 +1838,8 @@
         errorLine1="                        &quot;Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}&quot;"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="878"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1099"
             column="25"/>
     </issue>
 
@@ -1356,8 +1856,8 @@
         errorLine1="                        &quot;Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}&quot;"
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="878"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1099"
             column="26"/>
     </issue>
 
@@ -1374,8 +1874,8 @@
         errorLine1="                statusLabel.text = &quot;Atualização baixada. Permita a instalação para continuar.&quot;"
         errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="960"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1181"
             column="37"/>
     </issue>
 
@@ -1392,8 +1892,8 @@
         errorLine1="            statusLabel.text = &quot;Confirme a instalação na tela do Android.&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="980"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1201"
             column="33"/>
     </issue>
 
@@ -1410,8 +1910,8 @@
         errorLine1="            statusLabel.text = &quot;Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}&quot;"
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="982"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1203"
             column="32"/>
     </issue>
 
@@ -1428,8 +1928,8 @@
         errorLine1="            statusLabel.text = &quot;Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}&quot;"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="982"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1203"
             column="33"/>
     </issue>
 
@@ -1443,11 +1943,11 @@
         explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
         url="https://developer.android.com/guide/topics/resources/localization.html"
         urls="https://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “Traço Automático” nas configurações.&quot;"
+        errorLine1="                &quot;A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “WeeLife Line Art” nas configurações.&quot;"
         errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1033"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1254"
             column="18"/>
     </issue>
 
@@ -1464,8 +1964,8 @@
         errorLine1="            text = &quot;Separar o assunto com IA local&quot;"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1067"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1292"
             column="21"/>
     </issue>
 
@@ -1482,8 +1982,8 @@
         errorLine1="                    detailLabel.text = &quot;Detalhe  ·  $detail%&quot;"
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1090"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1315"
             column="40"/>
     </issue>
 
@@ -1500,8 +2000,8 @@
         errorLine1="                    detailLabel.text = &quot;Detalhe  ·  $detail%&quot;"
         errorLine2="                                        ~~~~~~~~~~~~">
         <location
-            file="C:\Users\Administrator\Documents\GitHub\Criador de Desenhos\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1090"
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
+            line="1315"
             column="41"/>
     </issue>
 

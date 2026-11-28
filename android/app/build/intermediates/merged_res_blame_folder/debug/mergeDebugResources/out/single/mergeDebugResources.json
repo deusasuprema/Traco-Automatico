@@ -1,22 +1,70 @@
 [
     {
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable-xxhdpi_weelife_icon_foreground.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable-xxhdpi/weelife_icon_foreground.png"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\xml_update_file_paths.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\xml\\update_file_paths.xml"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable-xhdpi_weelife_icon_foreground.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable-xhdpi/weelife_icon_foreground.png"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
         "merged": "com.tracolivre.automator.app-debug-22:/drawable_ic_launcher_background.xml.flat",
         "source": "com.tracolivre.automator.app-main-24:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.tracolivre.automator.app-debug-22:/xml_update_file_paths.xml.flat",
-        "source": "com.tracolivre.automator.app-main-24:/xml/update_file_paths.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable-mdpi_weelife_icon_foreground.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable-mdpi/weelife_icon_foreground.png"
     },
     {
-        "merged": "com.tracolivre.automator.app-debug-22:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.tracolivre.automator.app-main-24:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.tracolivre.automator.app-debug-22:/xml_drawing_accessibility_service.xml.flat",
-        "source": "com.tracolivre.automator.app-main-24:/xml/drawing_accessibility_service.xml"
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable-hdpi_weelife_icon_foreground.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable-hdpi/weelife_icon_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\xml_drawing_accessibility_service.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\xml\\drawing_accessibility_service.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-debug-22:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.11.1\\com.tracolivre.automator.app-main-24:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-xhdpi/ic_launcher.png"
     },
     {
         "merged": "com.tracolivre.automator.app-debug-22:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "com.tracolivre.automator.app-main-24:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tracolivre.automator.app-debug-22:/drawable-xxxhdpi_weelife_icon_foreground.png.flat",
+        "source": "com.tracolivre.automator.app-main-24:/drawable-xxxhdpi/weelife_icon_foreground.png"
     }
 ]

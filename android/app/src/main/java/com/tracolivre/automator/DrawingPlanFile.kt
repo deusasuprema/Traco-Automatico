@@ -8,7 +8,7 @@ import java.io.DataOutputStream
 
 object DrawingPlanFile {
     private const val FILE_NAME = "drawing-plan.bin"
-    private const val FORMAT_VERSION = 3
+    private const val FORMAT_VERSION = 4
     private const val MAX_STROKES = 1600
     private const val MAX_POINTS = 120
 
@@ -18,6 +18,7 @@ object DrawingPlanFile {
             output.writeInt(strokes.size)
             strokes.forEach { stroke ->
                 output.writeInt(stroke.points.size)
+                output.writeInt(stroke.color)
                 stroke.points.forEach { point ->
                     output.writeFloat(point.x)
                     output.writeFloat(point.y)
@@ -35,10 +36,11 @@ object DrawingPlanFile {
             return List(strokeCount) {
                 if (formatVersion == 2) input.readInt()
                 val pointCount = input.readInt()
+                val color = if (formatVersion >= 4) input.readInt() else android.graphics.Color.BLACK
                 require(pointCount in 2..MAX_POINTS) { "Traço inválido." }
                 TraceStroke(List(pointCount) {
                     TracePoint(input.readFloat(), input.readFloat())
-                })
+                }, color)
             }
         }
     }

@@ -2,8 +2,8 @@
 <resources>
     <color name="brand_purple">#6858E8</color>
     <string name="accessibility_description">Analisa a tela para reconhecer a lousa escolhida e envia gestos de desenho somente na área confirmada pelo usuário.</string>
-    <string name="accessibility_service_name">Traço Automático</string>
-    <string name="app_name">Traço Automático</string>
+    <string name="accessibility_service_name">WeeLife Line Art</string>
+    <string name="app_name">WeeLife Line Art</string>
     <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:colorAccent">#6B5CE7</item>

@@ -8,12 +8,13 @@ import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
 data class TracePoint(val x: Float, val y: Float)
-data class TraceStroke(val points: List<TracePoint>)
+data class TraceStroke(val points: List<TracePoint>, val color: Int = android.graphics.Color.BLACK)
 
 object TraceProcessor {
     private const val MAX_SIDE = 220
     private const val MAX_STROKES = 1600
     private const val MAX_POINTS_PER_STROKE = 120
+    private const val MAX_COLORS = 8
 
     fun recommendDetail(bitmap: Bitmap): Int {
         val scale = min(1f, MAX_SIDE.toFloat() / max(bitmap.width, bitmap.height))
@@ -206,7 +207,107 @@ object TraceProcessor {
             if (edges[index] && !visited[index]) traceFrom(index)
             if (result.size >= MAX_STROKES) break
         }
-        return result
+        return colorize(bitmap, result)
+    }
+
+    private fun colorize(bitmap: Bitmap, strokes: List<TraceStroke>): List<TraceStroke> {
+        if (strokes.isEmpty()) return strokes
+        val sampleStep = max(1, max(bitmap.width, bitmap.height) / 140)
+        val samples = ArrayList<Int>()
+        val colorCounts = HashMap<Int, Int>()
+        for (y in 0 until bitmap.height step sampleStep) {
+            for (x in 0 until bitmap.width step sampleStep) {
+                val color = bitmap.getPixel(x, y)
+                if (android.graphics.Color.alpha(color) < 128) continue
+                samples.add(color)
+                val key = (android.graphics.Color.red(color) shr 3 shl 10) or
+                    (android.graphics.Color.green(color) shr 3 shl 5) or
+                    (android.graphics.Color.blue(color) shr 3)
+                colorCounts[key] = (colorCounts[key] ?: 0) + 1
+            }
+        }
+        if (colorCounts.isEmpty()) return strokes
+
+        fun colorFromKey(key: Int): Int {
+            val red = (((key shr 10) and 31) shl 3) + 4
+            val green = (((key shr 5) and 31) shl 3) + 4
+            val blue = ((key and 31) shl 3) + 4
+            return android.graphics.Color.rgb(red, green, blue)
+        }
+
+        val candidates = colorCounts.entries.map { colorFromKey(it.key) to it.value }
+        val centers = ArrayList<Int>()
+        centers.add(candidates.maxBy { it.second }.first)
+        while (centers.size < min(MAX_COLORS, candidates.size)) {
+            val next = candidates.maxByOrNull { (color, count) ->
+                val nearest = centers.minOf { center -> colorDistanceSquared(color, center) }
+                nearest.toLong() * count
+            }?.first ?: break
+            if (next in centers) break
+            centers.add(next)
+        }
+
+        repeat(8) {
+            val redSums = IntArray(centers.size)
+            val greenSums = IntArray(centers.size)
+            val blueSums = IntArray(centers.size)
+            val counts = IntArray(centers.size)
+            samples.forEach { color ->
+                val index = centers.indices.minBy { colorDistanceSquared(color, centers[it]) }
+                redSums[index] += android.graphics.Color.red(color)
+                greenSums[index] += android.graphics.Color.green(color)
+                blueSums[index] += android.graphics.Color.blue(color)
+                counts[index]++
+            }
+            centers.indices.forEach { index ->
+                if (counts[index] > 0) {
+                    centers[index] = android.graphics.Color.rgb(
+                        redSums[index] / counts[index],
+                        greenSums[index] / counts[index],
+                        blueSums[index] / counts[index]
+                    )
+                }
+            }
+        }
+
+        return strokes.map { stroke ->
+            val counts = IntArray(centers.size)
+            stroke.points.forEachIndexed { index, point ->
+                val x = (point.x * (bitmap.width - 1)).roundToInt()
+                val y = (point.y * (bitmap.height - 1)).roundToInt()
+                val previous = stroke.points.getOrNull(index - 1) ?: point
+                val next = stroke.points.getOrNull(index + 1) ?: point
+                val dx = (next.x - previous.x) * bitmap.width
+                val dy = (next.y - previous.y) * bitmap.height
+                val length = sqrt(dx * dx + dy * dy).coerceAtLeast(1f)
+                val offsetX = (-dy / length * 3f).roundToInt()
+                val offsetY = (dx / length * 3f).roundToInt()
+                listOf(
+                    x to y,
+                    x + offsetX to y + offsetY,
+                    x - offsetX to y - offsetY,
+                    x + offsetY to y - offsetX,
+                    x - offsetY to y + offsetX
+                ).forEach { (sampleX, sampleY) ->
+                    if (sampleX !in 0 until bitmap.width || sampleY !in 0 until bitmap.height) {
+                        return@forEach
+                    }
+                    val color = bitmap.getPixel(sampleX, sampleY)
+                    if (android.graphics.Color.alpha(color) < 128) return@forEach
+                    val colorIndex = centers.indices.minBy { colorDistanceSquared(color, centers[it]) }
+                    counts[colorIndex]++
+                }
+            }
+            val selectedColor = centers[counts.indices.maxBy { counts[it] }]
+            stroke.copy(color = selectedColor)
+        }
+    }
+
+    private fun colorDistanceSquared(first: Int, second: Int): Int {
+        val red = android.graphics.Color.red(first) - android.graphics.Color.red(second)
+        val green = android.graphics.Color.green(first) - android.graphics.Color.green(second)
+        val blue = android.graphics.Color.blue(first) - android.graphics.Color.blue(second)
+        return red * red + green * green + blue * blue
     }
 
     private fun simplify(points: List<TracePoint>, tolerance: Float): List<TracePoint> {

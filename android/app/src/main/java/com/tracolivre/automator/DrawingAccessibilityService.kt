@@ -73,6 +73,9 @@ class DrawingAccessibilityService : AccessibilityService() {
     private var targetPackage: String? = null
     private var strokes: List<TraceStroke> = emptyList()
     private var drawingBounds: RectF? = null
+    private var colorPickerControls: ColorPickerControls? = null
+    private var selectedColor: Int? = null
+    private var isSelectingColor = false
     private var nextStroke = 0
     private var isDrawing = false
     private var isPaused = false
@@ -520,7 +523,7 @@ class DrawingAccessibilityService : AccessibilityService() {
                 "Usar esta área" to {
                     removePrompt()
                     removePreviewView()
-                    startDrawing(bounds)
+                    showColorPickerPrompt(bounds)
                 },
                 (if (automatic) "Marcar manualmente" else "Marcar novamente") to {
                     removePrompt()
@@ -530,6 +533,85 @@ class DrawingAccessibilityService : AccessibilityService() {
                 "Cancelar" to { cancelFlow("Operação cancelada.") }
             )
         )
+    }
+
+    private fun showColorPickerPrompt(bounds: RectF) {
+        showActionPanel(
+            "Preparar cores",
+            "No WeeLife, selecione o lápis e a espessura. Abra o seletor de cores e deixe-o aberto; o APK vai ajustar as cores detectadas na imagem.",
+            listOf(
+                "Iniciar desenho colorido" to {
+                    removePrompt()
+                    detectColorPicker(bounds)
+                },
+                "Voltar à área" to {
+                    removePrompt()
+                    showDrawingPrompt()
+                },
+                "Cancelar" to { cancelFlow("Operação cancelada.") }
+            )
+        )
+    }
+
+    @TargetApi(Build.VERSION_CODES.R)
+    private fun detectColorPicker(bounds: RectF) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            publishStatus("A seleção automática de cores requer Android 11 ou superior.")
+            showColorPickerPrompt(bounds)
+            return
+        }
+        publishStatus("Verificando o seletor de cores do WeeLife...")
+        try {
+            takeScreenshot(Display.DEFAULT_DISPLAY, screenshotExecutor, object : TakeScreenshotCallback {
+                override fun onSuccess(screenshot: ScreenshotResult) {
+                    var controls: ColorPickerControls? = null
+                    var failure: Exception? = null
+                    try {
+                        val hardwareBuffer = screenshot.hardwareBuffer
+                        try {
+                            val captured = Bitmap.wrapHardwareBuffer(hardwareBuffer, screenshot.colorSpace)
+                                ?.copy(Bitmap.Config.ARGB_8888, false)
+                                ?: error("A captura da tela ficou vazia.")
+                            try {
+                                controls = ColorPickerDetector.find(captured)
+                            } finally {
+                                captured.recycle()
+                            }
+                        } finally {
+                            hardwareBuffer.close()
+                        }
+                    } catch (error: Exception) {
+                        Log.e(TAG, "Falha ao detectar o seletor de cores.", error)
+                        failure = error
+                    }
+                    mainHandler.post {
+                        if (!isConnected) return@post
+                        val detectedControls = controls
+                        if (failure != null || detectedControls == null) {
+                            val reason = failure?.let { " (${it.message ?: it.javaClass.simpleName})" }.orEmpty()
+                            publishStatus(
+                                "Não encontrei o seletor de cores$reason. Abra o círculo colorido do WeeLife e tente novamente."
+                            )
+                            showColorPickerPrompt(bounds)
+                        } else {
+                            startDrawing(bounds, detectedControls)
+                        }
+                    }
+                }
+
+                override fun onFailure(errorCode: Int) {
+                    mainHandler.post {
+                        if (!isConnected) return@post
+                        publishStatus("Não consegui verificar a paleta (código $errorCode). Tente novamente.")
+                        showColorPickerPrompt(bounds)
+                    }
+                }
+            })
+        } catch (error: RuntimeException) {
+            Log.e(TAG, "Não foi possível verificar o seletor de cores.", error)
+            publishStatus("Não foi possível verificar a paleta: ${error.message}")
+            showColorPickerPrompt(bounds)
+        }
     }
 
     private inner class BoardPreviewView(private val bounds: RectF) : View(this@DrawingAccessibilityService) {
@@ -635,7 +717,7 @@ class DrawingAccessibilityService : AccessibilityService() {
         showRecognizedBounds(bounds, automatic = false)
     }
 
-    private fun startDrawing(bounds: RectF) {
+    private fun startDrawing(bounds: RectF, controls: ColorPickerControls) {
         try {
             val preferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
             targetPackage = preferences.getString(KEY_TARGET_PACKAGE, targetPackage)
@@ -651,11 +733,14 @@ class DrawingAccessibilityService : AccessibilityService() {
                 val fittedWidth = bounds.height() * imageAspect
                 RectF(bounds.centerX() - fittedWidth / 2f, bounds.top, bounds.centerX() + fittedWidth / 2f, bounds.bottom)
             }
+            colorPickerControls = controls
         } catch (error: Exception) {
             publishStatus("Não foi possível carregar os traços: ${error.message}")
             return
         }
         nextStroke = 0
+        selectedColor = null
+        isSelectingColor = false
         isDrawing = true
         isPaused = false
         targetIsForeground = true
@@ -679,6 +764,23 @@ class DrawingAccessibilityService : AccessibilityService() {
 
         val bounds = drawingBounds ?: run {
             stopDrawing("Área de desenho indisponível.")
+            return
+        }
+        val desiredColor = strokes[nextStroke].color
+        if (selectedColor != desiredColor) {
+            if (isSelectingColor) return
+            isSelectingColor = true
+            publishStatus("Selecionando a cor ${String.format("#%06X", 0xFFFFFF and desiredColor)}...")
+            selectDrawingColor(desiredColor, openPicker = selectedColor != null) { success ->
+                isSelectingColor = false
+                if (!success) {
+                    stopDrawing("Não consegui ajustar a cor no WeeLife. Verifique a paleta e prepare o desenho novamente.")
+                    return@selectDrawingColor
+                }
+                selectedColor = desiredColor
+                if (!isDrawing) return@selectDrawingColor
+                dispatchNextBatch()
+            }
             return
         }
         val strokeIndex = nextStroke
@@ -726,6 +828,44 @@ class DrawingAccessibilityService : AccessibilityService() {
         }, mainHandler)
 
         if (!accepted) pauseDrawing("O Android não aceitou o próximo traço.", true)
+    }
+
+    private fun selectDrawingColor(color: Int, openPicker: Boolean, onFinished: (Boolean) -> Unit) {
+        val controls = colorPickerControls
+        if (controls == null) {
+            onFinished(false)
+            return
+        }
+
+        fun tap(point: PointF, onCompleted: () -> Unit) {
+            val path = Path().apply {
+                moveTo(point.x, point.y)
+                lineTo(point.x + 0.1f, point.y + 0.1f)
+            }
+            val gesture = GestureDescription.Builder()
+                .addStroke(GestureDescription.StrokeDescription(path, 0L, 100L))
+                .build()
+            val accepted = dispatchGesture(gesture, object : GestureResultCallback() {
+                override fun onCompleted(gestureDescription: GestureDescription) {
+                    onCompleted()
+                }
+
+                override fun onCancelled(gestureDescription: GestureDescription) {
+                    onFinished(false)
+                }
+            }, mainHandler)
+            if (!accepted) onFinished(false)
+        }
+
+        fun setColorAndClose() {
+            tap(controls.huePoint(color)) {
+                tap(controls.shadePoint(color)) {
+                    tap(controls.button) { onFinished(true) }
+                }
+            }
+        }
+
+        if (openPicker) tap(controls.button, ::setColorAndClose) else setColorAndClose()
     }
 
     private fun showProgressOverlay() {
