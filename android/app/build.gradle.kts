@@ -11,8 +11,8 @@ android {
         applicationId = "com.tracolivre.automator"
         minSdk = 26
         targetSdk = 35
-        versionCode = 29
-        versionName = "1.28"
+        versionCode = 31
+        versionName = "1.30"
         ndk {
             abiFilters += listOf("arm64-v8a", "armeabi-v7a")
         }

@@ -14,7 +14,11 @@ object TraceProcessor {
     private const val MAX_SIDE = 220
     private const val MAX_STROKES = 1600
     private const val MAX_POINTS_PER_STROKE = 120
-    private const val MAX_COLORS = 8
+    private const val MAX_COLORS = 16
+
+    fun recommendBrushSizeIndex(detail: Int): Int =
+        (((100 - detail.coerceIn(0, 100)) * 5) / 100f).roundToInt()
+            .coerceIn(0, 5)
 
     fun recommendDetail(bitmap: Bitmap): Int {
         val scale = min(1f, MAX_SIDE.toFloat() / max(bitmap.width, bitmap.height))

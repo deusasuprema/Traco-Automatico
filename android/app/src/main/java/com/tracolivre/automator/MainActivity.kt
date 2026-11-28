@@ -106,7 +106,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var traceSummaryLabel: TextView
     private lateinit var tracePreviewButton: Button
     private lateinit var targetSpinner: Spinner
-    private lateinit var brushSizeSpinner: Spinner
+    private lateinit var brushSizeLabel: TextView
     private lateinit var aiEnhancement: CheckBox
     private lateinit var detailLabel: TextView
     private lateinit var detailSlider: SeekBar
@@ -123,7 +123,7 @@ class MainActivity : ComponentActivity() {
     private var pendingUpdateApk: File? = null
     private lateinit var installPermissionLauncher: ActivityResultLauncher<Intent>
     private var imageSearchDialog: Dialog? = null
-    private var selectedBrushSize = 2
+    private var selectedBrushSize = TraceProcessor.recommendBrushSizeIndex(55)
     private var detail = 55
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -816,6 +816,10 @@ class MainActivity : ComponentActivity() {
             return
         }
         val selectedDetail = detail
+        selectedBrushSize = TraceProcessor.recommendBrushSizeIndex(selectedDetail)
+        if (::brushSizeLabel.isInitialized) {
+            brushSizeLabel.text = BRUSH_SIZES[selectedBrushSize]
+        }
         val useAiEnhancement = aiEnhancement.isChecked
         val imageAspect = bitmap.width.toFloat() / bitmap.height.toFloat()
         Thread {
@@ -1267,22 +1271,11 @@ class MainActivity : ComponentActivity() {
         targetSpinner = Spinner(this)
         card.addView(targetSpinner, spacedParams(height = 48, top = 4, bottom = 12))
 
-        card.addView(makeText("Espessura do lápis", 14f, INK, bold = true))
-        brushSizeSpinner = Spinner(this)
-        brushSizeSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, BRUSH_SIZES).also {
-            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        }
-        brushSizeSpinner.setSelection(selectedBrushSize)
-        brushSizeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedBrushSize = position.coerceIn(0, BRUSH_SIZES.lastIndex)
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) = Unit
-        }
-        card.addView(brushSizeSpinner, spacedParams(height = 48, top = 4, bottom = 8))
+        card.addView(makeText("Espessura recomendada", 14f, INK, bold = true))
+        brushSizeLabel = makeText(BRUSH_SIZES[selectedBrushSize], 16f, PURPLE, bold = true)
+        card.addView(brushSizeLabel, spacedParams(top = 6, bottom = 8))
         card.addView(makeText(
-            "No WeeLife, escolha manualmente esta espessura antes de iniciar; o app não altera as ferramentas.",
+            "Escolhida automaticamente conforme o detalhe. No WeeLife, o app selecionará o lápis e esta espessura ao iniciar.",
             12f,
             MUTED
         ),
@@ -1313,6 +1306,10 @@ class MainActivity : ComponentActivity() {
                 override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                     detail = progress
                     detailLabel.text = "Detalhe  ·  $detail%"
+                    selectedBrushSize = TraceProcessor.recommendBrushSizeIndex(detail)
+                    if (::brushSizeLabel.isInitialized) {
+                        brushSizeLabel.text = BRUSH_SIZES[selectedBrushSize]
+                    }
                 }
 
                 override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit

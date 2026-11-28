@@ -23,6 +23,11 @@ data class ColorPickerControls(
         )
     }
 
+    fun hueStartPoint(): PointF = PointF(
+        hueBar.left + hueBar.width() * 0.01f,
+        hueBar.centerY()
+    )
+
     fun shadePoint(color: Int): PointF {
         val hsv = FloatArray(3)
         Color.colorToHSV(color, hsv)
@@ -31,13 +36,24 @@ data class ColorPickerControls(
             colorField.top + colorField.height() * (1f - hsv[2])
         )
     }
+
+    fun shadeStartPoint(): PointF = PointF(
+        colorField.left + colorField.width() * 0.02f,
+        colorField.top + colorField.height() * 0.02f
+    )
 }
 
+data class ColorPickerDetection(
+    val controls: ColorPickerControls?,
+    val isOpen: Boolean,
+    val closedButton: PointF?
+)
+
 object ColorPickerDetector {
-    fun find(bitmap: Bitmap): ColorPickerControls? {
+    fun detect(bitmap: Bitmap): ColorPickerDetection {
         val width = bitmap.width
         val height = bitmap.height
-        if (width < 400 || height < 300) return null
+        if (width < 400 || height < 300) return ColorPickerDetection(null, false, null)
 
         var bestLeft = -1
         var bestRight = -1
@@ -77,7 +93,9 @@ object ColorPickerDetector {
                 }
             }
         }
-        if (bestScore < width * 0.25f) return null
+        if (bestScore < width * 0.25f) {
+            return ColorPickerDetection(null, false, findColorButton(bitmap))
+        }
 
         val barHeightLimit = maxOf(2, (height * 0.08f).toInt())
         var top = bestY
@@ -85,11 +103,13 @@ object ColorPickerDetector {
         while (top > bestY - barHeightLimit && isColorfulRow(bitmap, top, bestLeft, bestRight)) top--
         while (bottom < bestY + barHeightLimit && isColorfulRow(bitmap, bottom, bestLeft, bestRight)) bottom++
         val hueBar = RectF(
-            (bestLeft - height * 0.03f).coerceAtLeast(0f),
+            bestLeft.toFloat(),
             top.toFloat(),
             bestRight.toFloat(),
             bottom.toFloat()
         )
+        val button = findColorButton(bitmap)
+            ?: return ColorPickerDetection(null, true, null)
 
         val fieldTop = hueBar.bottom + height * 0.035f
         val fieldHeight = min(height * 0.35f, hueBar.width() * 0.43f)
@@ -99,12 +119,48 @@ object ColorPickerDetector {
             hueBar.right,
             fieldTop + fieldHeight
         )
-        if (colorField.bottom >= height) return null
-        if (!looksLikeColorField(bitmap, colorField)) return null
+        if (colorField.bottom >= height || !looksLikeColorField(bitmap, colorField)) {
+            return ColorPickerDetection(null, true, null)
+        }
+        if (!hasColorRing(bitmap, button, height * 0.04f)) {
+            return ColorPickerDetection(null, true, null)
+        }
+        return ColorPickerDetection(ColorPickerControls(button, hueBar, colorField), true, null)
+    }
 
-        val button = PointF(hueBar.right - width * 0.022f, height * 0.902f)
-        if (!hasColorRing(bitmap, button, height * 0.04f)) return null
-        return ColorPickerControls(button, hueBar, colorField)
+    private fun findColorButton(bitmap: Bitmap): PointF? {
+        val width = bitmap.width
+        val height = bitmap.height
+        val expected = PointF(width * 0.661f, height * 0.902f)
+        val step = maxOf(2, (height * 0.008f).toInt())
+        val left = (width * 0.61f).toInt()
+        val right = min(width - 1, (width * 0.71f).toInt())
+        val top = (height * 0.82f).toInt()
+        val bottom = min(height - 1, (height * 0.98f).toInt())
+        val radiusScales = floatArrayOf(0.022f, 0.03f, 0.04f, 0.05f)
+        var bestPoint: PointF? = null
+        var bestScore = 0
+        var bestDistance = Float.MAX_VALUE
+
+        for (y in top..bottom step step) {
+            for (x in left..right step step) {
+                val distance = (x - expected.x) * (x - expected.x) +
+                    (y - expected.y) * (y - expected.y)
+                for (scale in radiusScales) {
+                    val score = colorRingScore(
+                        bitmap,
+                        PointF(x.toFloat(), y.toFloat()),
+                        height * scale
+                    )
+                    if (score > bestScore || score == bestScore && distance < bestDistance) {
+                        bestPoint = PointF(x.toFloat(), y.toFloat())
+                        bestScore = score
+                        bestDistance = distance
+                    }
+                }
+            }
+        }
+        return bestPoint.takeIf { bestScore >= 12 }
     }
 
     private fun isColorfulRow(bitmap: Bitmap, y: Int, left: Int, right: Int): Boolean {
@@ -147,6 +203,10 @@ object ColorPickerDetector {
     }
 
     private fun hasColorRing(bitmap: Bitmap, center: PointF, radius: Float): Boolean {
+        return colorRingScore(bitmap, center, radius) >= 12
+    }
+
+    private fun colorRingScore(bitmap: Bitmap, center: PointF, radius: Float): Int {
         val hsv = FloatArray(3)
         var colorful = 0
         for (angle in 0 until 360 step 15) {
@@ -157,6 +217,6 @@ object ColorPickerDetector {
             Color.colorToHSV(bitmap.getPixel(x, y), hsv)
             if (hsv[1] > 0.35f && hsv[2] > 0.25f) colorful++
         }
-        return colorful >= 12
+        return colorful
     }
 }

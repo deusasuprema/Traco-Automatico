@@ -55,12 +55,12 @@
         message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/MainActivity.kt"
-            line="1232"
+            line="1236"
             column="34"
-            startOffset="53620"
-            endLine="1232"
+            startOffset="53864"
+            endLine="1236"
             endColumn="55"
-            endOffset="53641"/>
+            endOffset="53885"/>
         <map>
             <entry
                 name="queryAll"
@@ -78,17 +78,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                startOffset="15228"
-                endOffset="15261"/>
+                startOffset="15953"
+                endOffset="15986"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="419"
+            line="440"
             column="5"
-            startOffset="15228"
-            endLine="419"
+            startOffset="15953"
+            endLine="440"
             endColumn="38"
-            endOffset="15261"/>
+            endOffset="15986"/>
         <map>
             <condition minGE="30-∞"/>
         </map>
@@ -104,17 +104,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-                startOffset="21372"
-                endOffset="21405"/>
+                startOffset="21863"
+                endOffset="21896"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/tracolivre/automator/DrawingAccessibilityService.kt"
-            line="556"
+            line="574"
             column="5"
-            startOffset="21372"
-            endLine="556"
+            startOffset="21863"
+            endLine="574"
             endColumn="38"
-            endOffset="21405"/>
+            endOffset="21896"/>
         <map>
             <condition minGE="30-∞"/>
         </map>

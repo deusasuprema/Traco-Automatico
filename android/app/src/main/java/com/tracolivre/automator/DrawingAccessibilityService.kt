@@ -53,11 +53,31 @@ class DrawingAccessibilityService : AccessibilityService() {
         )
         private const val DRAWING_SPEED_PIXELS_PER_SECOND = 1000f
         private const val MAX_STROKE_DURATION_MS = 2200L
+        private const val COLOR_PICKER_OPEN_DELAY_MS = 350L
+        private const val TOOL_SELECTION_DELAY_MS = 180L
         private const val TAG = "DrawingAccessibility"
 
         @Volatile
         var isConnected = false
             private set
+    }
+
+    private fun selectDrawingTools(
+        controls: BrushControls,
+        brushSize: Int,
+        onFinished: (Boolean) -> Unit
+    ) {
+        dispatchTap(controls.pencilButton) { pencilSelected ->
+            if (!pencilSelected) {
+                onFinished(false)
+                return@dispatchTap
+            }
+            mainHandler.postDelayed({
+                dispatchTap(controls.sizeButtons[brushSize]) { sizeSelected ->
+                    onFinished(sizeSelected)
+                }
+            }, TOOL_SELECTION_DELAY_MS)
+        }
     }
 
     private val mainHandler = Handler(Looper.getMainLooper())
@@ -76,6 +96,7 @@ class DrawingAccessibilityService : AccessibilityService() {
     private var colorPickerControls: ColorPickerControls? = null
     private var selectedColor: Int? = null
     private var isSelectingColor = false
+    private var brushToolsConfigured = false
     private var nextStroke = 0
     private var isDrawing = false
     private var isPaused = false
@@ -205,7 +226,7 @@ class DrawingAccessibilityService : AccessibilityService() {
         showActionPanel(
             "WeeLife Line Art",
             if (isTargetApp) {
-                "No WeeLife, escolha manualmente o lápis e a espessura desejada; depois reconheça a lousa."
+                "O app escolherá o lápis e a espessura conforme o detalhe do desenho; depois, reconheça a lousa."
             } else {
                 "Selecione o lápis e marque a área do desenho."
             },
@@ -503,12 +524,8 @@ class DrawingAccessibilityService : AccessibilityService() {
             return
         }
 
-        val manualToolInstructions = if (targetPackage == DRAWING_APP_PACKAGE) {
-            val brushSize = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-                .getInt(KEY_BRUSH_SIZE, 2)
-                .coerceIn(0, BRUSH_SIZE_LABELS.lastIndex)
-            "No WeeLife, selecione manualmente o lápis e a espessura \"${BRUSH_SIZE_LABELS[brushSize]}\". " +
-                "O app não mudará essas ferramentas."
+        val toolInstructions = if (targetPackage == DRAWING_APP_PACKAGE) {
+            "O app selecionará automaticamente o lápis e a espessura recomendada. "
         } else {
             ""
         }
@@ -518,7 +535,7 @@ class DrawingAccessibilityService : AccessibilityService() {
         )
         showActionPanel(
             if (automatic) "Lousa reconhecida" else "Área marcada",
-            "Confira o retângulo destacado. $manualToolInstructions O desenho ficará dentro desta área.",
+            "Confira o retângulo destacado. ${toolInstructions}O desenho ficará dentro desta área.",
             listOf(
                 "Usar esta área" to {
                     removePrompt()
@@ -536,9 +553,10 @@ class DrawingAccessibilityService : AccessibilityService() {
     }
 
     private fun showColorPickerPrompt(bounds: RectF) {
+        brushToolsConfigured = false
         showActionPanel(
             "Preparar cores",
-            "No WeeLife, selecione o lápis e a espessura. Abra o seletor de cores e deixe-o aberto; o APK vai ajustar as cores detectadas na imagem.",
+            "Ao iniciar, o app escolherá o lápis e a espessura pelo detalhe do desenho, abrirá o seletor de cores e aplicará as cores detectadas.",
             listOf(
                 "Iniciar desenho colorido" to {
                     removePrompt()
@@ -554,17 +572,21 @@ class DrawingAccessibilityService : AccessibilityService() {
     }
 
     @TargetApi(Build.VERSION_CODES.R)
-    private fun detectColorPicker(bounds: RectF) {
+    private fun detectColorPicker(bounds: RectF, openingAttempted: Boolean = false) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
             publishStatus("A seleção automática de cores requer Android 11 ou superior.")
             showColorPickerPrompt(bounds)
             return
         }
-        publishStatus("Verificando o seletor de cores do WeeLife...")
+        publishStatus(
+            if (openingAttempted) "Verificando o seletor de cores do WeeLife..."
+            else "Localizando o seletor de cores do WeeLife..."
+        )
         try {
             takeScreenshot(Display.DEFAULT_DISPLAY, screenshotExecutor, object : TakeScreenshotCallback {
                 override fun onSuccess(screenshot: ScreenshotResult) {
-                    var controls: ColorPickerControls? = null
+                    var detection: ColorPickerDetection? = null
+                    var brushControls: BrushControls? = null
                     var failure: Exception? = null
                     try {
                         val hardwareBuffer = screenshot.hardwareBuffer
@@ -573,7 +595,8 @@ class DrawingAccessibilityService : AccessibilityService() {
                                 ?.copy(Bitmap.Config.ARGB_8888, false)
                                 ?: error("A captura da tela ficou vazia.")
                             try {
-                                controls = ColorPickerDetector.find(captured)
+                                detection = ColorPickerDetector.detect(captured)
+                                brushControls = BrushSizeDetector.detect(captured)
                             } finally {
                                 captured.recycle()
                             }
@@ -586,15 +609,84 @@ class DrawingAccessibilityService : AccessibilityService() {
                     }
                     mainHandler.post {
                         if (!isConnected) return@post
-                        val detectedControls = controls
-                        if (failure != null || detectedControls == null) {
+                        val result = detection
+                        val tools = brushControls
+                        if (failure != null || result == null) {
                             val reason = failure?.let { " (${it.message ?: it.javaClass.simpleName})" }.orEmpty()
+                            publishStatus("Não consegui verificar o seletor de cores$reason. Tente novamente.")
+                            showColorPickerPrompt(bounds)
+                        } else if (!brushToolsConfigured && targetPackage == DRAWING_APP_PACKAGE &&
+                            result.controls != null
+                        ) {
+                            publishStatus("Fechando o seletor para escolher o lápis e a espessura...")
+                            dispatchTap(result.controls.button) { closed ->
+                                if (!isConnected) return@dispatchTap
+                                if (!closed) {
+                                    publishStatus("Não consegui fechar o seletor de cores. Tente novamente.")
+                                    showColorPickerPrompt(bounds)
+                                } else {
+                                    mainHandler.postDelayed(
+                                        { detectColorPicker(bounds) },
+                                        COLOR_PICKER_OPEN_DELAY_MS
+                                    )
+                                }
+                            }
+                        } else if (!brushToolsConfigured && targetPackage == DRAWING_APP_PACKAGE &&
+                            tools != null
+                        ) {
+                            val brushSize = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+                                .getInt(KEY_BRUSH_SIZE, 2)
+                                .coerceIn(0, BRUSH_SIZE_LABELS.lastIndex)
                             publishStatus(
-                                "Não encontrei o seletor de cores$reason. Abra o círculo colorido do WeeLife e tente novamente."
+                                "Selecionando lápis e espessura ${BRUSH_SIZE_LABELS[brushSize]}..."
+                            )
+                            selectDrawingTools(tools, brushSize) { selected ->
+                                if (!isConnected) return@selectDrawingTools
+                                if (!selected) {
+                                    publishStatus("Não consegui selecionar o lápis e a espessura. Tente novamente.")
+                                    showColorPickerPrompt(bounds)
+                                } else {
+                                    brushToolsConfigured = true
+                                    mainHandler.postDelayed(
+                                        { detectColorPicker(bounds) },
+                                        COLOR_PICKER_OPEN_DELAY_MS
+                                    )
+                                }
+                            }
+                        } else if (!brushToolsConfigured && targetPackage == DRAWING_APP_PACKAGE) {
+                            publishStatus(
+                                "Não reconheci os controles do lápis. Deixe a barra inferior visível e tente novamente."
+                            )
+                            showColorPickerPrompt(bounds)
+                        } else if (result.controls != null) {
+                            startDrawing(bounds, result.controls)
+                        } else if (result.isOpen) {
+                            publishStatus(
+                                "O seletor abriu, mas não reconheci os controles de cor. Feche outras janelas e tente novamente."
+                            )
+                            showColorPickerPrompt(bounds)
+                        } else if (openingAttempted) {
+                            publishStatus("Não consegui abrir o seletor de cores do WeeLife. Tente novamente.")
+                            showColorPickerPrompt(bounds)
+                        } else if (result.closedButton == null) {
+                            publishStatus(
+                                "Não encontrei o botão colorido do WeeLife. Deixe-o visível e tente novamente."
                             )
                             showColorPickerPrompt(bounds)
                         } else {
-                            startDrawing(bounds, detectedControls)
+                            publishStatus("Abrindo o seletor de cores do WeeLife...")
+                            dispatchTap(result.closedButton) { opened ->
+                                if (!isConnected) return@dispatchTap
+                                if (!opened) {
+                                    publishStatus("Não consegui abrir o seletor de cores do WeeLife. Tente novamente.")
+                                    showColorPickerPrompt(bounds)
+                                } else {
+                                    mainHandler.postDelayed(
+                                        { detectColorPicker(bounds, openingAttempted = true) },
+                                        COLOR_PICKER_OPEN_DELAY_MS
+                                    )
+                                }
+                            }
                         }
                     }
                 }
@@ -602,7 +694,9 @@ class DrawingAccessibilityService : AccessibilityService() {
                 override fun onFailure(errorCode: Int) {
                     mainHandler.post {
                         if (!isConnected) return@post
-                        publishStatus("Não consegui verificar a paleta (código $errorCode). Tente novamente.")
+                        publishStatus(
+                            "Não consegui capturar a tela para verificar a paleta (código $errorCode). Tente novamente."
+                        )
                         showColorPickerPrompt(bounds)
                     }
                 }
@@ -612,6 +706,40 @@ class DrawingAccessibilityService : AccessibilityService() {
             publishStatus("Não foi possível verificar a paleta: ${error.message}")
             showColorPickerPrompt(bounds)
         }
+    }
+
+    private fun dispatchTap(point: PointF, onFinished: (Boolean) -> Unit) {
+        dispatchTouchPath(
+            point,
+            PointF(point.x + 0.1f, point.y + 0.1f),
+            100L,
+            onFinished
+        )
+    }
+
+    private fun dispatchTouchPath(
+        start: PointF,
+        end: PointF,
+        duration: Long,
+        onFinished: (Boolean) -> Unit
+    ) {
+        val path = Path().apply {
+            moveTo(start.x, start.y)
+            lineTo(end.x, end.y)
+        }
+        val gesture = GestureDescription.Builder()
+            .addStroke(GestureDescription.StrokeDescription(path, 0L, duration))
+            .build()
+        val accepted = dispatchGesture(gesture, object : GestureResultCallback() {
+            override fun onCompleted(gestureDescription: GestureDescription) {
+                onFinished(true)
+            }
+
+            override fun onCancelled(gestureDescription: GestureDescription) {
+                onFinished(false)
+            }
+        }, mainHandler)
+        if (!accepted) onFinished(false)
     }
 
     private inner class BoardPreviewView(private val bounds: RectF) : View(this@DrawingAccessibilityService) {
@@ -838,28 +966,20 @@ class DrawingAccessibilityService : AccessibilityService() {
         }
 
         fun tap(point: PointF, onCompleted: () -> Unit) {
-            val path = Path().apply {
-                moveTo(point.x, point.y)
-                lineTo(point.x + 0.1f, point.y + 0.1f)
+            dispatchTap(point) { success ->
+                if (success) onCompleted() else onFinished(false)
             }
-            val gesture = GestureDescription.Builder()
-                .addStroke(GestureDescription.StrokeDescription(path, 0L, 100L))
-                .build()
-            val accepted = dispatchGesture(gesture, object : GestureResultCallback() {
-                override fun onCompleted(gestureDescription: GestureDescription) {
-                    onCompleted()
-                }
+        }
 
-                override fun onCancelled(gestureDescription: GestureDescription) {
-                    onFinished(false)
-                }
-            }, mainHandler)
-            if (!accepted) onFinished(false)
+        fun drag(start: PointF, end: PointF, onCompleted: () -> Unit) {
+            dispatchTouchPath(start, end, 300L) { success ->
+                if (success) onCompleted() else onFinished(false)
+            }
         }
 
         fun setColorAndClose() {
-            tap(controls.huePoint(color)) {
-                tap(controls.shadePoint(color)) {
+            drag(controls.hueStartPoint(), controls.huePoint(color)) {
+                drag(controls.shadeStartPoint(), controls.shadePoint(color)) {
                     tap(controls.button) { onFinished(true) }
                 }
             }

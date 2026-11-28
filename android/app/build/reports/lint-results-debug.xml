@@ -93,7 +93,7 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="419"
+            line="440"
             column="5"/>
     </issue>
 
@@ -109,7 +109,7 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="556"
+            line="574"
             column="5"/>
     </issue>
 
@@ -179,7 +179,7 @@
         errorLine2="                           ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="625"
+            line="753"
             column="28"/>
     </issue>
 
@@ -195,7 +195,7 @@
         errorLine2="                              ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="627"
+            line="755"
             column="31"/>
     </issue>
 
@@ -211,7 +211,7 @@
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1356"
+            line="1353"
             column="32"/>
     </issue>
 
@@ -227,7 +227,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="421"
+            line="442"
             column="13"/>
     </issue>
 
@@ -243,7 +243,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="558"
+            line="576"
             column="13"/>
     </issue>
 
@@ -359,6 +359,22 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                    val color = bitmap.getPixel(x, y)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\BrushSizeDetector.kt"
+            line="61"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `Bitmap.get` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
         errorLine1="                if (isBoardPixel(bitmap.getPixel(x, y))) {"
         errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -379,7 +395,7 @@
         errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="51"
+            line="67"
             column="34"/>
     </issue>
 
@@ -395,7 +411,7 @@
         errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="119"
+            line="175"
             column="30"/>
     </issue>
 
@@ -411,7 +427,7 @@
         errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="129"
+            line="185"
             column="23"/>
     </issue>
 
@@ -427,7 +443,7 @@
         errorLine2="                         ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="130"
+            line="186"
             column="26"/>
     </issue>
 
@@ -443,7 +459,7 @@
         errorLine2="                       ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="134"
+            line="190"
             column="24"/>
     </issue>
 
@@ -459,7 +475,7 @@
         errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt"
-            line="157"
+            line="217"
             column="30"/>
     </issue>
 
@@ -475,7 +491,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="149"
+            line="170"
             column="13"/>
     </issue>
 
@@ -491,7 +507,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="169"
+            line="190"
             column="9"/>
     </issue>
 
@@ -507,7 +523,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="758"
+            line="886"
             column="13"/>
     </issue>
 
@@ -523,7 +539,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="986"
+            line="1106"
             column="9"/>
     </issue>
 
@@ -539,7 +555,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="996"
+            line="1116"
             column="9"/>
     </issue>
 
@@ -555,7 +571,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="1003"
+            line="1123"
             column="9"/>
     </issue>
 
@@ -667,7 +683,7 @@
         errorLine2="                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="925"
+            line="929"
             column="30"/>
     </issue>
 
@@ -683,7 +699,7 @@
         errorLine2="            ^">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="965"
+            line="969"
             column="13"/>
     </issue>
 
@@ -699,7 +715,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1186"
+            line="1190"
             column="21"/>
     </issue>
 
@@ -715,7 +731,7 @@
         errorLine2="            ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1349"
+            line="1346"
             column="13"/>
     </issue>
 
@@ -731,7 +747,7 @@
         errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="23"
+            line="27"
             column="22"/>
     </issue>
 
@@ -747,7 +763,7 @@
         errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="88"
+            line="92"
             column="22"/>
     </issue>
 
@@ -763,7 +779,7 @@
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="220"
+            line="224"
             column="29"/>
     </issue>
 
@@ -779,7 +795,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt"
-            line="295"
+            line="299"
             column="33"/>
     </issue>
 
@@ -795,7 +811,7 @@
         errorLine2="                     ~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="687"
+            line="815"
             column="22"/>
     </issue>
 
@@ -813,7 +829,7 @@
         errorLine2="                    ~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="269"
+            line="290"
             column="21"/>
     </issue>
 
@@ -831,7 +847,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="311"
+            line="332"
             column="21"/>
     </issue>
 
@@ -849,7 +865,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="881"
+            line="1001"
             column="20"/>
     </issue>
 
@@ -867,7 +883,7 @@
         errorLine2="                    ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="881"
+            line="1001"
             column="21"/>
     </issue>
 
@@ -885,7 +901,7 @@
         errorLine2="                                          ~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="881"
+            line="1001"
             column="43"/>
     </issue>
 
@@ -903,7 +919,7 @@
         errorLine2="                    ~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="885"
+            line="1005"
             column="21"/>
     </issue>
 
@@ -921,7 +937,7 @@
         errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="947"
+            line="1067"
             column="31"/>
     </issue>
 
@@ -939,7 +955,7 @@
         errorLine2="                               ~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="947"
+            line="1067"
             column="32"/>
     </issue>
 
@@ -957,7 +973,7 @@
         errorLine2="                                                     ~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt"
-            line="947"
+            line="1067"
             column="54"/>
     </issue>
 
@@ -1497,7 +1513,7 @@
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="864"
+            line="868"
             column="44"/>
     </issue>
 
@@ -1515,7 +1531,7 @@
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="864"
+            line="868"
             column="45"/>
     </issue>
 
@@ -1533,7 +1549,7 @@
         errorLine2="                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="864"
+            line="868"
             column="103"/>
     </issue>
 
@@ -1551,7 +1567,7 @@
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="882"
+            line="886"
             column="40"/>
     </issue>
 
@@ -1569,7 +1585,7 @@
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="882"
+            line="886"
             column="41"/>
     </issue>
 
@@ -1587,7 +1603,7 @@
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="17"/>
     </issue>
 
@@ -1605,7 +1621,7 @@
         errorLine2="                           ~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="28"/>
     </issue>
 
@@ -1623,7 +1639,7 @@
         errorLine2="                                                       ~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="56"/>
     </issue>
 
@@ -1641,7 +1657,7 @@
         errorLine2="                                                                           ~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="76"/>
     </issue>
 
@@ -1659,7 +1675,7 @@
         errorLine2="                                                                                      ~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="87"/>
     </issue>
 
@@ -1677,7 +1693,7 @@
         errorLine2="                                                                                                             ~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="979"
+            line="983"
             column="110"/>
     </issue>
 
@@ -1695,7 +1711,7 @@
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="981"
+            line="985"
             column="32"/>
     </issue>
 
@@ -1713,7 +1729,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="981"
+            line="985"
             column="33"/>
     </issue>
 
@@ -1731,7 +1747,7 @@
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="999"
+            line="1003"
             column="29"/>
     </issue>
 
@@ -1749,7 +1765,7 @@
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1013"
+            line="1017"
             column="44"/>
     </issue>
 
@@ -1767,7 +1783,7 @@
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1013"
+            line="1017"
             column="45"/>
     </issue>
 
@@ -1785,7 +1801,7 @@
         errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1079"
+            line="1083"
             column="28"/>
     </issue>
 
@@ -1803,7 +1819,7 @@
         errorLine2="                            ~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1079"
+            line="1083"
             column="29"/>
     </issue>
 
@@ -1821,7 +1837,7 @@
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1091"
+            line="1095"
             column="41"/>
     </issue>
 
@@ -1839,7 +1855,7 @@
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1099"
+            line="1103"
             column="25"/>
     </issue>
 
@@ -1857,7 +1873,7 @@
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1099"
+            line="1103"
             column="26"/>
     </issue>
 
@@ -1875,7 +1891,7 @@
         errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1181"
+            line="1185"
             column="37"/>
     </issue>
 
@@ -1893,7 +1909,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1201"
+            line="1205"
             column="33"/>
     </issue>
 
@@ -1911,7 +1927,7 @@
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1203"
+            line="1207"
             column="32"/>
     </issue>
 
@@ -1929,7 +1945,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1203"
+            line="1207"
             column="33"/>
     </issue>
 
@@ -1947,7 +1963,7 @@
         errorLine2="                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1254"
+            line="1258"
             column="18"/>
     </issue>
 
@@ -1965,7 +1981,7 @@
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1292"
+            line="1285"
             column="21"/>
     </issue>
 
@@ -1983,7 +1999,7 @@
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1315"
+            line="1308"
             column="40"/>
     </issue>
 
@@ -2001,7 +2017,7 @@
         errorLine2="                                        ~~~~~~~~~~~~">
         <location
             file="C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt"
-            line="1315"
+            line="1308"
             column="41"/>
     </issue>
 

@@ -39,10 +39,10 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\build.gradl
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:419: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of recognizeCanvas [UseRequiresApi]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:440: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of recognizeCanvas [UseRequiresApi]
     @TargetApi(Build.VERSION_CODES.R)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:556: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of detectColorPicker [UseRequiresApi]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:574: Warning: Use @RequiresApi(Build.VERSION_CODES.R) instead of @TargetApi` to propagate the requirement to callers of detectColorPicker [UseRequiresApi]
     @TargetApi(Build.VERSION_CODES.R)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,13 +103,13 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\An
    https://developer.android.com/about/versions/12/backup-restore#xml-changes
    https://goo.gle/DataExtractionRules
 
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:625: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:753: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
             val location = IntArray(2)
                            ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:627: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:755: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
             val localBounds = RectF(
                               ^
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1356: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1353: Warning: Avoid object allocations during draw/layout operations (preallocate and reuse instead) [DrawAllocation]
                     val path = android.graphics.Path()
                                ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -124,10 +124,10 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
    Some methods allocate memory on your behalf (such as Bitmap.create), and
    these should be handled in the same way.
 
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:421: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:442: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:558: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:576: Warning: Unnecessary; Build.VERSION.SDK_INT < Build.VERSION_CODES.R is never true here [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\res\mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
@@ -191,43 +191,46 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\re
    application iconwill not show if your monochrome attribute is not also
    specified in android:roundIcon.
 
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\BrushSizeDetector.kt:61: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+                    val color = bitmap.getPixel(x, y)
+                                ~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\CanvasDetector.kt:28: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
                 if (isBoardPixel(bitmap.getPixel(x, y))) {
                                  ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:51: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:67: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
                 Color.colorToHSV(bitmap.getPixel(x, y), hsv)
                                  ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:119: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:175: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
             Color.colorToHSV(bitmap.getPixel(x, y), hsv)
                              ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:129: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:185: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
         val leftTop = bitmap.getPixel((bounds.left + insetX).toInt(), (bounds.top + insetY).toInt())
                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:130: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:186: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
         val leftBottom = bitmap.getPixel(
                          ^
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:134: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:190: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
         val rightTop = bitmap.getPixel(
                        ^
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:157: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\ColorPickerDetector.kt:217: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
             Color.colorToHSV(bitmap.getPixel(x, y), hsv)
                              ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:149: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:170: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             preferences.edit()
             ~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:169: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:190: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:758: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:886: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:986: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1106: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:996: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1116: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1003: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1123: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:452: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
@@ -248,28 +251,28 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:797: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
         getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE).edit()
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:925: Warning: Use the KTX function createBitmap instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:929: Warning: Use the KTX function createBitmap instead? [UseKtx]
             val foreground = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:965: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:969: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             getSharedPreferences(DrawingAccessibilityService.PREFERENCES, MODE_PRIVATE)
             ^
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1186: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1190: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
                     Uri.parse("package:$packageName")
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1349: Warning: Use the KTX extension function Canvas.withTranslation instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1346: Warning: Use the KTX extension function Canvas.withTranslation instead? [UseKtx]
             canvas.save()
             ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:23: Warning: Use the KTX extension function Bitmap.scale instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:27: Warning: Use the KTX extension function Bitmap.scale instead? [UseKtx]
         val scaled = Bitmap.createScaledBitmap(bitmap, width, height, true)
                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:88: Warning: Use the KTX extension function Bitmap.scale instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:92: Warning: Use the KTX extension function Bitmap.scale instead? [UseKtx]
         val scaled = Bitmap.createScaledBitmap(bitmap, width, height, true)
                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:220: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:224: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
                 val color = bitmap.getPixel(x, y)
                             ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:295: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\TraceProcessor.kt:299: Warning: Use the KTX extension function Bitmap.get instead? [UseKtx]
                     val color = bitmap.getPixel(sampleX, sampleY)
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -326,7 +329,7 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
    </lint>
    ```
 
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:687: Warning: Custom view AreaSelectionView overrides onTouchEvent but not performClick [ClickableViewAccessibility]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:815: Warning: Custom view AreaSelectionView overrides onTouchEvent but not performClick [ClickableViewAccessibility]
         override fun onTouchEvent(event: MotionEvent): Boolean {
                      ~~~~~~~~~~~~
 
@@ -337,31 +340,31 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
    actions should ideally be placed in View#performClick as some accessibility
    services invoke performClick when a click action should occur.
 
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:269: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:290: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "WL"
                     ~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:311: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:332: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "WeeLife Line Art"
                     ~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:881: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1001: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:881: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1001: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                     ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:881: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1001: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Desenhando $nextStroke de ${strokes.size}..."
                                           ~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:885: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1005: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Pausar"
                     ~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:947: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1067: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:947: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1067: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                                ~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:947: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\DrawingAccessibilityService.kt:1067: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         progressLabel?.text = "Desenhando $nextStroke de ${strokes.size}..."
                                                      ~~~~
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
@@ -451,91 +454,91 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
 C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:815: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar uma cópia da imagem."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:864: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:868: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:864: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:868: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:864: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:868: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         statusLabel.text = "A IA não ficou disponível (${preparation.aiFallbackReason}); vou usar o traçado local sem IA."
                                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:882: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:886: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     statusLabel.text = "Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}"
                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:882: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:886: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     statusLabel.text = "Não foi possível preparar o desenho: ${error.cause?.message ?: error.message}"
                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                            ~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                                                        ~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                                                                            ~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                                                                                       ~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:979: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:983: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "${warning}Tudo pronto: ${strokes.size} traços, $colorCount cores$mode. Abra “${target.label}” para desenhar."
                                                                                                              ~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:981: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:985: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar o desenho: ${error.message}"
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:981: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:985: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Não foi possível preparar o desenho: ${error.message}"
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:999: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1003: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         statusLabel.text = "Verificando atualizações..."
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1013: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1017: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                         statusLabel.text = "O WeeLife Line Art já está atualizado ($currentVersion)."
                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1013: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1017: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         statusLabel.text = "O WeeLife Line Art já está atualizado ($currentVersion)."
                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1079: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1083: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         statusLabel.text = "Baixando ${release.title}..."
                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1079: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1083: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
         statusLabel.text = "Baixando ${release.title}..."
                             ~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1091: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1095: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     statusLabel.text = "Download concluído. Preparando a instalação..."
                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1099: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1103: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                         "Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}"
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1099: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1103: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                         "Não foi possível baixar a atualização: ${error.message ?: error.javaClass.simpleName}"
                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1181: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1185: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 statusLabel.text = "Atualização baixada. Permita a instalação para continuar."
                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1201: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1205: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Confirme a instalação na tela do Android."
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1203: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1207: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
             statusLabel.text = "Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}"
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1203: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1207: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             statusLabel.text = "Não foi possível abrir o instalador: ${error.message ?: error.javaClass.simpleName}"
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1254: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1258: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                 "A Acessibilidade está marcada como ativa, mas o serviço não conectou. Desative e ative “WeeLife Line Art” nas configurações."
                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1292: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1285: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
             text = "Separar o assunto com IA local"
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1315: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1308: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
                     detailLabel.text = "Detalhe  ·  $detail%"
                                        ~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1315: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\java\com\tracolivre\automator\MainActivity.kt:1308: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
                     detailLabel.text = "Detalhe  ·  $detail%"
                                         ~~~~~~~~~~~~
 
@@ -552,4 +555,4 @@ C:\Users\Administrator\Documents\GitHub\Traco Automatico\android\app\src\main\ja
 
    https://developer.android.com/guide/topics/resources/localization.html
 
-0 errors, 118 warnings
+0 errors, 119 warnings
